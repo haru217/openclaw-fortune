@@ -94,6 +94,36 @@ async function generateDailyFortunes(date) {
 
   saveDailyFortune(DAILY_DIR, date, fortunes);
   console.log(`[batch] Saved to data/daily/${date}.json`);
+
+  await uploadToWorkers(date, fortunes);
+}
+
+async function uploadToWorkers(date, fortunes) {
+  const workerUrl = process.env.WORKER_URL;
+  const apiKey = process.env.API_KEY;
+
+  if (!workerUrl || !apiKey) {
+    console.log('[batch] WORKER_URL or API_KEY not set, skipping Workers upload');
+    return;
+  }
+
+  console.log('[batch] Uploading to Workers...');
+
+  try {
+    const response = await fetch(`${workerUrl}/api/daily`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Api-Key': apiKey,
+      },
+      body: JSON.stringify({ date, fortunes }),
+    });
+
+    const result = await response.json();
+    console.log('[batch] Workers upload:', result.ok ? 'OK' : 'FAILED', result);
+  } catch (error) {
+    console.error('[batch] Workers upload error:', error.message);
+  }
 }
 
 // Main
