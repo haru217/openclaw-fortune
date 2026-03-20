@@ -1,5 +1,3 @@
-'use strict';
-
 // Color palette
 const COLOR_BG = '#1a1a2e';
 const COLOR_GOLD = '#c9a84c';
@@ -371,7 +369,7 @@ function buildPaidReadingInfo() {
   return makeBubble({ body });
 }
 
-module.exports = {
+export {
   buildWelcomeCard,
   buildRegistrationCompleteCard,
   buildFortuneCard,

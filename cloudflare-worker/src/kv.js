@@ -1,6 +1,4 @@
-﻿'use strict';
-
-function dailyKey(date) {
+﻿function dailyKey(date) {
   return `daily:${date}`;
 }
 
@@ -61,7 +59,7 @@ async function incrementViewCount(kv, userId) {
   return user.view_count;
 }
 
-module.exports = {
+export {
   dailyKey,
   userKey,
   getDailyFortune,

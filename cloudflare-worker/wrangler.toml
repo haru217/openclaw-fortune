@@ -5,10 +5,10 @@ workers_dev = true
 
 [[kv_namespaces]]
 binding = "FORTUNE_KV"
-id = "__FILL_AFTER_CREATE__"
+id = "cf68e524cbe344b087eb7d060ea01b8b"
 
 # R2は画像のパブリックURL直指定のため、バインディング不要
 
 [vars]
-# 非機密設定はここに書ける
+ASSETS_BASE_URL = "https://raw.githubusercontent.com/haru217/openclaw-fortune/master/assets"
 # LINE_CHANNEL_SECRET, LINE_CHANNEL_ACCESS_TOKEN, API_KEY は wrangler secret put で設定

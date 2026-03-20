@@ -1,5 +1,3 @@
-'use strict';
-
 const ZODIAC_SIGNS = [
   { id: 'aries',       name: '牡羊座',   startMonth: 3,  startDay: 21 },
   { id: 'taurus',      name: '牡牛座',   startMonth: 4,  startDay: 20 },
@@ -115,4 +113,4 @@ function getZodiacSignFromBirthday(input) {
   return { ...sign, birthday };
 }
 
-module.exports = { ZODIAC_SIGNS, getZodiacSign, getZodiacSignFromBirthday, parseMonthDay };
+export { ZODIAC_SIGNS, getZodiacSign, getZodiacSignFromBirthday, parseMonthDay };

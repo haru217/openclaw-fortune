@@ -1,10 +1,8 @@
-﻿'use strict';
+﻿import { verifySignature, replyMessage } from './line.js';
+import { handleEvent } from './handlers.js';
+import { saveDailyFortune } from './kv.js';
 
-const { verifySignature, replyMessage } = require('./line.js');
-const { handleEvent } = require('./handlers.js');
-const { saveDailyFortune } = require('./kv.js');
-
-module.exports = {
+export default {
   async fetch(request, env) {
     const url = new URL(request.url);
 

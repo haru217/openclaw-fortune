@@ -1,19 +1,17 @@
-﻿'use strict';
-
-const { getZodiacSignFromBirthday } = require('./zodiac.js');
-const {
+﻿import { getZodiacSignFromBirthday } from './zodiac.js';
+import {
   getUser,
   saveUser,
   getDailyFortune,
   incrementViewCount,
-} = require('./kv.js');
-const {
+} from './kv.js';
+import {
   buildWelcomeCard,
   buildRegistrationCompleteCard,
   buildFortuneCard,
   buildFortuneCardWithPromo,
   buildPaidReadingInfo,
-} = require('./flex-messages.js');
+} from './flex-messages.js';
 
 async function handleEvent(event, env) {
   const kv = env.FORTUNE_KV;
@@ -118,4 +116,4 @@ async function handleDailyFortune(kv, baseUrl, userId, user) {
   ];
 }
 
-module.exports = { handleEvent };
+export { handleEvent };

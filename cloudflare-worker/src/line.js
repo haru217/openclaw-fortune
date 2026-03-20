@@ -1,6 +1,4 @@
-﻿'use strict';
-
-function toBase64(bytes) {
+﻿function toBase64(bytes) {
   if (typeof btoa === 'function') {
     return btoa(String.fromCharCode(...bytes));
   }
@@ -74,4 +72,4 @@ async function replyMessage(replyToken, messages, channelAccessToken) {
   return response;
 }
 
-module.exports = { verifySignature, replyMessage, buildReplyBody };
+export { verifySignature, replyMessage, buildReplyBody };
