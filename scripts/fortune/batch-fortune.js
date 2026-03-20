@@ -104,7 +104,11 @@ async function generateDailyFortunes(date) {
   saveDailyFortune(DAILY_DIR, date, fortunes);
   console.log(`[batch] Saved to data/daily/${date}.json`);
 
-  await uploadToWorkers(date, fortunes);
+  if (process.env.BATCH_AUTO_UPLOAD === '1') {
+    await uploadToWorkers(date, fortunes);
+  } else {
+    console.log('[batch] アップロードはスキップ（upload-daily.js で別途実行）');
+  }
 }
 
 async function uploadToWorkers(date, fortunes) {
@@ -135,11 +139,21 @@ async function uploadToWorkers(date, fortunes) {
   }
 }
 
-// Main
-const today = new Date().toISOString().slice(0, 10);
-generateDailyFortunes(today).then(() => {
+// Main: 引数で日数を指定可能（デフォルト7日分）
+const days = parseInt(process.argv[2], 10) || 7;
+
+async function main() {
+  const today = new Date();
+  for (let i = 0; i < days; i++) {
+    const d = new Date(today);
+    d.setDate(d.getDate() + i);
+    const date = d.toISOString().slice(0, 10);
+    await generateDailyFortunes(date);
+  }
   console.log('[batch] Done');
-}).catch(err => {
+}
+
+main().catch(err => {
   console.error('[batch] Fatal error:', err.message);
   process.exit(1);
 });
