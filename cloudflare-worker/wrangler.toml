@@ -1,0 +1,14 @@
+﻿name = "openclaw-fortune"
+main = "src/index.js"
+compatibility_date = "2026-03-20"
+workers_dev = true
+
+[[kv_namespaces]]
+binding = "FORTUNE_KV"
+id = "__FILL_AFTER_CREATE__"
+
+# R2は画像のパブリックURL直指定のため、バインディング不要
+
+[vars]
+# 非機密設定はここに書ける
+# LINE_CHANNEL_SECRET, LINE_CHANNEL_ACCESS_TOKEN, API_KEY は wrangler secret put で設定
