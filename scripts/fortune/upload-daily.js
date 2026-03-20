@@ -36,7 +36,7 @@ async function uploadToWorkers(date, fortunes) {
   }
 }
 
-const today = new Date().toISOString().slice(0, 10);
+const today = new Date(Date.now() + 9 * 3600_000).toISOString().slice(0, 10);
 const file = path.join(DAILY_DIR, `${today}.json`);
 
 if (!fs.existsSync(file)) {

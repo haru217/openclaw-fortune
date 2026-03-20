@@ -143,7 +143,7 @@ async function uploadToWorkers(date, fortunes) {
 const days = parseInt(process.argv[2], 10) || 7;
 
 async function main() {
-  const today = new Date();
+  const today = new Date(Date.now() + 9 * 3600_000);
   for (let i = 0; i < days; i++) {
     const d = new Date(today);
     d.setDate(d.getDate() + i);
