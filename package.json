@@ -4,15 +4,15 @@
   "description": "占い自動マネタイズシステム - LINE公式 × タロット × 西洋占星術",
   "private": true,
   "scripts": {
-    "test": "node --test tests/",
+    "test": "node --test tests/test_*.js",
     "server": "node scripts/fortune/server.js"
   },
   "dependencies": {
     "@line/bot-sdk": "^9.0.0",
+    "dotenv": "^17.3.1",
     "express": "^4.21.0",
     "stripe": "^17.0.0"
   },
-  "devDependencies": {},
   "engines": {
     "node": ">=20.0.0"
   }
