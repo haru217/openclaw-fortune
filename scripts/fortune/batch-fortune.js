@@ -11,31 +11,33 @@ const { saveDailyFortune } = require('../../lib/daily-fortune');
 
 const DAILY_DIR = path.join(__dirname, '..', '..', 'data', 'daily');
 const TEMPLATE_PATH = path.join(__dirname, '..', '..', 'data', 'templates', 'line-daily.txt');
-const GATEWAY_URL = process.env.KLAW_GATEWAY_URL || 'http://localhost:18789';
+const { execSync } = require('node:child_process');
+const os = require('node:os');
 
-async function callKlaw(message, retries = 1) {
-  for (let attempt = 0; attempt <= retries; attempt++) {
-    try {
-      const res = await fetch(`${GATEWAY_URL}/api/chat`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message, session: 'isolated' }),
-        signal: AbortSignal.timeout(120_000),
-      });
+function callKlaw(message, retries = 1) {
+  const tmpFile = path.join(os.tmpdir(), `fortune-prompt-${Date.now()}.txt`);
+  fs.writeFileSync(tmpFile, message, 'utf8');
 
-      if (!res.ok) {
-        throw new Error(`klaw API error: ${res.status} ${res.statusText}`);
+  try {
+    for (let attempt = 0; attempt <= retries; attempt++) {
+      try {
+        const stdout = execSync(
+          `openclaw agent --message "$(cat '${tmpFile.replace(/\\/g, '/')}')" --session-id fortune-batch --json`,
+          { timeout: 120_000, encoding: 'utf8', maxBuffer: 1024 * 1024, shell: 'bash' },
+        );
+
+        const data = JSON.parse(stdout);
+        return data.result?.payloads?.[0]?.text || stdout.trim();
+      } catch (err) {
+        if (attempt < retries) {
+          console.log(`[batch]   Retry ${attempt + 1}/${retries}: ${err.message}`);
+          continue;
+        }
+        throw err;
       }
-
-      const data = await res.json();
-      return data.response;
-    } catch (err) {
-      if (attempt < retries) {
-        console.log(`[batch]   Retry ${attempt + 1}/${retries}: ${err.message}`);
-        continue;
-      }
-      throw err;
     }
+  } finally {
+    try { fs.unlinkSync(tmpFile); } catch {}
   }
 }
 

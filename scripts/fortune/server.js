@@ -8,10 +8,18 @@ const { middleware, messagingApi } = require('@line/bot-sdk');
 
 const { getZodiacSignFromBirthday } = require('../../lib/zodiac');
 const { loadDailyFortune } = require('../../lib/daily-fortune');
-const { getUser, saveUser } = require('../../lib/users');
+const { getUser, saveUser, incrementViewCount } = require('../../lib/users');
+const {
+  buildWelcomeCard,
+  buildRegistrationCompleteCard,
+  buildFortuneCard,
+  buildFortuneCardWithPromo,
+  buildPaidReadingInfo,
+} = require('../../lib/flex-messages');
 
 const DAILY_DIR = path.join(__dirname, '..', '..', 'data', 'daily');
 const USERS_PATH = path.join(__dirname, '..', '..', 'data', 'users.json');
+const BASE_URL = process.env.BASE_URL || 'http://localhost:3000';
 
 const config = {
   channelSecret: process.env.LINE_CHANNEL_SECRET || '',
@@ -36,74 +44,108 @@ app.post('/webhook', middleware(config), async (req, res) => {
 });
 
 async function handleEvent(event) {
+  if (event.type === 'follow') {
+    return handleFollow(event);
+  }
   if (event.type !== 'message' || event.message.type !== 'text') {
     return;
   }
-
   const userId = event.source.userId;
   const text = event.message.text.trim();
-
-  // Check if user is registered
   const user = getUser(USERS_PATH, userId);
-
   if (!user) {
     return handleRegistration(event, userId, text);
   }
-
-  // Registered user — check for "今日の占い" trigger
   if (text === '今日の占い' || text === '占い') {
-    return handleDailyFortune(event, user);
+    return handleDailyFortune(event, userId, user);
   }
-
-  // Default: remind about rich menu
+  if (text === '個別鑑定') {
+    return handlePaidReading(event);
+  }
   return client.replyMessage({
     replyToken: event.replyToken,
-    messages: [{ type: 'text', text: 'リッチメニューの「今日の占い」をタップしてみてください🌙' }],
+    messages: [{ type: 'text', text: 'メニューの「今日の占い」からいつでも占いが見れます。ぜひどうぞ' }],
+  });
+}
+
+async function handleFollow(event) {
+  return client.replyMessage({
+    replyToken: event.replyToken,
+    messages: [{
+      type: 'flex',
+      altText: 'はじめまして、カイです。あなたの星を読みます。',
+      contents: buildWelcomeCard(BASE_URL),
+    }],
   });
 }
 
 async function handleRegistration(event, userId, text) {
-  // Try to parse as birthday
   try {
     const result = getZodiacSignFromBirthday(text);
     saveUser(USERS_PATH, userId, { sign: result.id, birthday: result.birthday });
-
+    const today = new Date().toISOString().slice(0, 10);
+    const data = loadDailyFortune(DAILY_DIR, today, { fallbackDays: 1 });
+    const fortune = data && data.fortunes[result.id];
+    const fortuneText = fortune ? fortune.message : '明日から毎日の占いをお届けします。お楽しみに';
     return client.replyMessage({
       replyToken: event.replyToken,
       messages: [{
-        type: 'text',
-        text: `${result.name}ですね。登録しました✨\nリッチメニューから「今日の占い」をどうぞ🌙`,
+        type: 'flex',
+        altText: `${result.name}で登録しました。今日の占いをお届けします。`,
+        contents: buildRegistrationCompleteCard(result.name, fortuneText, BASE_URL),
       }],
     });
-  } catch (_) {
-    // Not a valid birthday — prompt for it
+  } catch (err) {
+    console.error('[handleRegistration]', err.message);
     return client.replyMessage({
       replyToken: event.replyToken,
       messages: [{
-        type: 'text',
-        text: 'はじめまして、カイです🌙\n生年月日を教えてください（例: 1990/10/23）',
+        type: 'flex',
+        altText: 'カイです。生年月日を教えてください。',
+        contents: buildWelcomeCard(BASE_URL),
       }],
     });
   }
 }
 
-async function handleDailyFortune(event, user) {
+async function handleDailyFortune(event, userId, user) {
   const today = new Date().toISOString().slice(0, 10);
   const data = loadDailyFortune(DAILY_DIR, today, { fallbackDays: 1 });
-
   if (!data || !data.fortunes[user.sign]) {
     return client.replyMessage({
       replyToken: event.replyToken,
-      messages: [{ type: 'text', text: '本日の占いは準備中です。もう少しお待ちください🌙' }],
+      messages: [{ type: 'text', text: '本日の占いは準備中です。もう少しお待ちください' }],
     });
   }
-
   const fortune = data.fortunes[user.sign];
+  const viewCount = incrementViewCount(USERS_PATH, userId);
+  const isPromoTime = viewCount > 0 && viewCount % 3 === 0;
+  const card = isPromoTime
+    ? buildFortuneCardWithPromo(fortune, BASE_URL)
+    : buildFortuneCard(fortune, BASE_URL);
   return client.replyMessage({
     replyToken: event.replyToken,
-    messages: [{ type: 'text', text: fortune.message }],
+    messages: [{
+      type: 'flex',
+      altText: `${fortune.sign}の今日の占い`,
+      contents: card,
+    }],
   });
 }
+
+async function handlePaidReading(event) {
+  return client.replyMessage({
+    replyToken: event.replyToken,
+    messages: [{
+      type: 'flex',
+      altText: '個別タロット鑑定のご案内',
+      contents: buildPaidReadingInfo(),
+    }],
+  });
+}
+
+// Static assets (profile icon, tarot images)
+app.use('/assets', express.static(path.join(__dirname, '..', '..', 'assets')));
 
 // Health check
 app.get('/health', (req, res) => res.json({ status: 'ok' }));
