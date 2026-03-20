@@ -39,7 +39,7 @@ const TAROT_FILENAMES = [
 function tarotImageUrl(id, baseUrl) {
   const filename = TAROT_FILENAMES[id];
   if (!filename) throw new Error(`Unknown tarot card id: ${id}`);
-  return `${baseUrl}/assets/tarot/${filename}`;
+  return `${baseUrl}/tarot/${filename}`;
 }
 
 /**
@@ -70,7 +70,7 @@ function makeBubble({ hero, body, footer }) {
 function buildWelcomeCard(baseUrl) {
   const hero = {
     type: 'image',
-    url: `${baseUrl}/assets/welcome-hero.jpg`,
+    url: `${baseUrl}/welcome-hero.jpg`,
     size: 'full',
     aspectRatio: '20:13',
     aspectMode: 'cover',
