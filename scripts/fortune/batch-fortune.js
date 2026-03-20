@@ -57,6 +57,15 @@ function buildPrompt(template, sign, date, ephemeris, card) {
 }
 
 async function generateDailyFortunes(date) {
+  const existingFile = path.join(DAILY_DIR, `${date}.json`);
+  if (fs.existsSync(existingFile)) {
+    console.log(`[batch] ${date} は生成済み、スキップ`);
+    // 既存データをWorkersにアップロードだけ行う
+    const existing = JSON.parse(fs.readFileSync(existingFile, 'utf8'));
+    await uploadToWorkers(date, existing.fortunes || existing);
+    return;
+  }
+
   console.log(`[batch] Generating fortunes for ${date}`);
 
   const template = fs.readFileSync(TEMPLATE_PATH, 'utf8');
