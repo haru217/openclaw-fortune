@@ -6,7 +6,8 @@
   "scripts": {
     "test": "node --test tests/test_*.js",
     "server": "node scripts/fortune/server.js",
-    "setup-rich-menu": "node scripts/fortune/setup-rich-menu.js"
+    "setup-rich-menu": "node scripts/fortune/setup-rich-menu.js",
+    "upload-assets": "node scripts/fortune/upload-assets.js"
   },
   "dependencies": {
     "@line/bot-sdk": "^9.0.0",
