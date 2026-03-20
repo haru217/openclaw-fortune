@@ -1,0 +1,19 @@
+{
+  "name": "openclaw-fortune",
+  "version": "0.1.0",
+  "description": "占い自動マネタイズシステム - LINE公式 × タロット × 西洋占星術",
+  "private": true,
+  "scripts": {
+    "test": "node --test tests/",
+    "server": "node scripts/fortune/server.js"
+  },
+  "dependencies": {
+    "@line/bot-sdk": "^9.0.0",
+    "express": "^4.21.0",
+    "stripe": "^17.0.0"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

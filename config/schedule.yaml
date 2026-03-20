@@ -1,0 +1,55 @@
+timezone: Asia/Tokyo
+
+cron_jobs:
+  threads_morning:
+    name: fortune-threads-morning
+    cron: "0 7 * * *"
+    command: "node scripts/fortune/post-threads.js --type morning"
+
+  threads_afternoon:
+    name: fortune-threads-afternoon
+    cron: "0 12 * * *"
+    command: "node scripts/fortune/post-threads.js --type afternoon"
+
+  threads_evening:
+    name: fortune-threads-evening
+    cron: "0 19 * * *"
+    command: "node scripts/fortune/post-threads.js --type evening"
+
+  note_daily:
+    name: fortune-note-daily
+    cron: "0 8 * * *"
+    command: "node scripts/fortune/post-note.js --type daily"
+
+  note_weekly:
+    name: fortune-note-weekly
+    cron: "0 7 * * 1"
+    command: "node scripts/fortune/post-note-premium.js --type weekly"
+
+  line_broadcast:
+    name: fortune-line-broadcast
+    cron: "0 8 * * 1"
+    command: "node scripts/fortune/line-broadcast.js"
+
+  coconala_poll:
+    name: fortune-coconala-poll
+    every: 30m
+    command: "node scripts/fortune/check-coconala.js"
+
+  monthly_gen:
+    name: fortune-monthly-gen
+    cron: "0 6 1 * *"
+    command: "node scripts/fortune/generate-monthly.js"
+
+  backup:
+    name: fortune-backup
+    cron: "0 2 * * *"
+    command: "cp data/users.json data/backups/users-$(date +%Y%m%d).json"
+
+services:
+  webhook_server:
+    command: "node scripts/fortune/server.js"
+    port: 3000
+
+  cloudflare_tunnel:
+    command: "cloudflared tunnel --url http://localhost:3000"

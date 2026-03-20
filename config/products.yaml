@@ -1,0 +1,21 @@
+single_reading:
+  name: "🔮 カイの個別タロット鑑定"
+  price: 1500
+  currency: JPY
+  type: one_time
+  description: "西洋占星術×タロット3枚引きによる詳細鑑定（1500〜2000文字）"
+
+premium_monthly:
+  name: "⭐ プレミアム会員（月額）"
+  price: 980
+  currency: JPY
+  type: recurring
+  interval: month
+  description: "毎日の詳細占い + 月1回のフル鑑定 + 限定コラム"
+
+love_reading:
+  name: "💕 恋愛特化タロットリーディング"
+  price: 2500
+  currency: JPY
+  type: one_time
+  description: "恋愛に特化した5枚引きスプレッドによる詳細鑑定"

@@ -1,0 +1,27 @@
+以下の情報をもとに、Threads向けの朝の占い投稿を生成してください。
+
+【日付】: {{date}}（{{weekday}}）
+【注目の星座】: {{zodiac_name}}
+【タロットカード】: {{card_name}}（{{position}}）
+【月の状態】: {{moon_phase}}
+
+【出力フォーマット】
+🌙 {{date}}（{{weekday}}）の星空メッセージ ⭐
+
+今日、星たちが語りかけているのは【{{zodiac_name}}】さん。
+🔮 タロット：{{card_name}}（{{position}}）
+
+{{reading_short}}（80〜120文字の短い占いメッセージ）
+
+✨ ラッキーカラー：{{lucky_color}}
+
+━━━━━━━━━━━━
+🌙 毎日の占いをLINEでお届け中
+→ {{line_add_friend_url}}
+#今日の運勢 #タロット #{{zodiac_name}}
+
+【制約】
+- Threads投稿は500文字以内
+- カイとして（丁寧語、前向き）
+- LINE友だち追加リンクを必ず含める
+- ハッシュタグ3〜5個

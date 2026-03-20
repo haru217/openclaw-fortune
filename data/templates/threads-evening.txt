@@ -1,0 +1,28 @@
+以下の情報をもとに、Threads向けの夜の運勢予報を生成してください。
+
+【明日の日付】: {{tomorrow_date}}（{{tomorrow_weekday}}）
+【注目の星座】: {{zodiac_name}}
+【月の状態】: {{moon_phase}}
+【タロットカード】: {{card_name}}（{{position}}）
+
+【出力フォーマット】
+🌙 明日の星空予報 ⭐
+
+{{tomorrow_date}}（{{tomorrow_weekday}}）
+月は{{moon_phase}}を迎えます。
+
+明日特に注目の星座は【{{zodiac_name}}】さん。
+🔮 {{card_name}}（{{position}}）が示すのは…
+
+{{reading}}（80〜120文字。明日に向けたメッセージ）
+
+おやすみ前に、明日への準備を✨
+
+━━━━━━━━━━━━
+🌙 毎朝の占いをLINEでお届け中
+→ {{line_add_friend_url}}
+#明日の運勢 #タロット #星占い
+
+【制約】
+- 400文字以内
+- 穏やかな夜のトーン
