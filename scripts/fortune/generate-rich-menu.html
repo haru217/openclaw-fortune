@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 2500px; height: 843px; display: flex; font-family: 'Segoe UI', 'Yu Gothic UI', sans-serif; }
+  .btn {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #1a1a2e;
+    color: #e0e0e0;
+    border: none;
+  }
+  .btn:first-child {
+    border-right: 2px solid #c9a84c;
+  }
+  .icon {
+    font-size: 120px;
+    margin-bottom: 30px;
+  }
+  .label {
+    font-size: 64px;
+    font-weight: bold;
+    color: #c9a84c;
+    letter-spacing: 4px;
+  }
+  .sub {
+    font-size: 36px;
+    color: #999;
+    margin-top: 12px;
+  }
+</style>
+</head>
+<body>
+  <div class="btn">
+    <div class="icon">&#9734;</div>
+    <div class="label">今日の占い</div>
+    <div class="sub">毎日無料</div>
+  </div>
+  <div class="btn">
+    <div class="icon">&#127917;</div>
+    <div class="label">個別鑑定</div>
+    <div class="sub">あなただけの鑑定</div>
+  </div>
+</body>
+</html>
