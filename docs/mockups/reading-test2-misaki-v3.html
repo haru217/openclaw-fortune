@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>個別鑑定 — ミサキさん</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #111; display: flex; flex-direction: column; align-items: center; gap: 0; padding: 0; margin: 0; }
+  @media screen { body { gap: 30px; padding: 40px; } }
+  @media print {
+    .page { page-break-after: always; }
+    .page:last-child { page-break-after: avoid; }
+  }
+  .page {
+    width: 595px; height: 842px;
+    background: #141428;
+    font-family: 'Noto Serif JP', serif;
+    color: #e0e0e0;
+    padding: 36px 46px 44px;
+    position: relative;
+  }
+  .z { position: relative; z-index: 1; }
+  .sp { height: 12px; }
+  .sp-s { height: 8px; }
+  strong { color: #e8d5a3; font-weight: 700; }
+  .divider { width: 50%; margin: 0 auto 18px; height: 1px; background: linear-gradient(90deg, transparent, #c9a84c, transparent); }
+  .divider-f { width: 100%; height: 1px; margin: 16px 0; background: rgba(201,168,76,0.2); }
+  .footer {
+    position: absolute; bottom: 16px; left: 46px; right: 46px;
+    display: flex; justify-content: space-between;
+    color: #555; font-size: 9px; letter-spacing: 1px;
+  }
+  .hdr { text-align: center; margin-bottom: 16px; }
+  .hdr h1 { color: #c9a84c; font-size: 21px; letter-spacing: 5px; margin-bottom: 5px; }
+  .hdr .meta { color: #777; font-size: 11px; }
+  .usr { text-align: center; margin-bottom: 16px; }
+  .usr .name { color: #c9a84c; font-size: 20px; font-weight: 700; }
+  .usr .info { color: #888; font-size: 13px; margin-top: 3px; }
+  .stat-row { display: flex; justify-content: center; gap: 28px; }
+  .stat { text-align: center; }
+  .stat .l { color: #999; font-size: 9px; letter-spacing: 1px; margin-bottom: 3px; }
+  .stat .v { color: #c9a84c; font-size: 15px; font-weight: 700; }
+  .con { display: flex; gap: 16px; }
+  .timg { width: 88px; height: 132px; border: 2px solid #c9a84c; border-radius: 4px; overflow: hidden; flex-shrink: 0; box-shadow: 0 2px 12px rgba(201,168,76,0.12); }
+  .timg img { width: 100%; height: 100%; object-fit: cover; }
+  .con-r { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+  .con-r .cat { color: #c9a84c; font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+  .con-r .q { color: #ccc; font-size: 13px; line-height: 1.9; font-style: italic; }
+  .con-r .tn { color: #999; font-size: 12px; margin-top: 8px; }
+  .con-r .tn strong { font-size: 14px; }
+  .st { color: #c9a84c; font-size: 15px; font-weight: 700; letter-spacing: 1px; margin-bottom: 10px; }
+  p.b { font-size: 15px; line-height: 2.1; color: #d0d0d0; }
+  .act { background: rgba(201,168,76,0.06); border-radius: 6px; padding: 12px 16px; margin-bottom: 8px; }
+  .act .an { color: #c9a84c; font-size: 13px; font-weight: 700; margin-bottom: 3px; }
+  .act p { font-size: 14px; line-height: 1.9; color: #d0d0d0; }
+  .ti { display: flex; gap: 16px; margin-bottom: 8px; }
+  .ti-img { width: 64px; height: 96px; border: 1.5px solid #c9a84c; border-radius: 4px; overflow: hidden; flex-shrink: 0; }
+  .ti-img img { width: 100%; height: 100%; object-fit: cover; }
+  .ti-d { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+  .ti-d .cn { color: #c9a84c; font-size: 14px; font-weight: 700; margin-bottom: 3px; }
+  .ti-d p { font-size: 13px; line-height: 1.9; color: #d0d0d0; }
+  .nr { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+  .nc { width: 40px; height: 40px; border: 2px solid #c9a84c; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #c9a84c; font-size: 18px; font-weight: 700; flex-shrink: 0; }
+  .nl { color: #c9a84c; font-size: 14px; font-weight: 700; }
+  .tl-row { display: flex; gap: 8px; }
+  .tl-m { flex: 1; background: rgba(201,168,76,0.06); border-radius: 6px; padding: 10px 12px; }
+  .tl-m .ml { color: #c9a84c; font-size: 13px; font-weight: 700; margin-bottom: 2px; }
+  .tl-m .ms { font-size: 11px; color: #aaa; margin-bottom: 5px; }
+  .tl-m p { font-size: 12px; line-height: 1.8; color: #d0d0d0; }
+  .ci { display: flex; gap: 10px; margin-bottom: 9px; align-items: baseline; }
+  .cd { font-size: 13px; font-weight: 700; width: 72px; flex-shrink: 0; }
+  .cg { color: #c9a84c; }
+  .cw { color: #c27c4c; }
+  .cx { font-size: 13px; line-height: 1.7; color: #d0d0d0; }
+  .lr { display: flex; gap: 12px; }
+  .li { flex: 1; text-align: center; background: rgba(201,168,76,0.06); border-radius: 6px; padding: 10px; }
+  .li .ll { color: #999; font-size: 9px; letter-spacing: 1px; margin-bottom: 3px; }
+  .li .lv { color: #c9a84c; font-size: 15px; font-weight: 700; }
+  .cr { display: flex; gap: 10px; }
+  .ci2 { flex: 1; background: rgba(201,168,76,0.06); border-radius: 6px; padding: 10px 12px; }
+  .ci2 .cs { color: #c9a84c; font-size: 14px; font-weight: 700; margin-bottom: 2px; }
+  .ci2 .cw2 { font-size: 10px; color: #999; font-style: italic; margin-bottom: 3px; }
+  .ci2 p { font-size: 12px; line-height: 1.7; color: #d0d0d0; }
+  .adv {
+    background: rgba(201,168,76,0.08); border-left: 3px solid #c9a84c;
+    padding: 16px 18px; border-radius: 0 8px 8px 0;
+  }
+  .adv p { font-size: 15px; line-height: 2.1; color: #d0d0d0; }
+</style>
+</head>
+<body>
+
+<!-- P1 -->
+<div class="page">
+  <div class="hdr z"><h1>個 別 鑑 定 書</h1><div class="meta">2026年3月21日 鑑定</div></div>
+  <div class="divider"></div>
+  <div class="usr z"><div class="name">ミサキさん</div><div class="info">♏ 蠍座 — 1993年11月22日 生まれ</div></div>
+  <div class="stat-row z">
+    <div class="stat"><div class="l">太陽星座</div><div class="v">蠍座</div></div>
+    <div class="stat"><div class="l">ライフパス</div><div class="v">1</div></div>
+    <div class="stat"><div class="l">個人年数</div><div class="v">5</div></div>
+    <div class="stat"><div class="l">3月の個人月</div><div class="v">8</div></div>
+  </div>
+  <div class="divider-f"></div>
+  <div class="con z">
+    <div class="timg"><img src="../../assets/tarot/18-moon.jpg" alt="月"></div>
+    <div class="con-r">
+      <div class="cat">恋愛・人間関係 — パートナーとの関係</div>
+      <div class="q">夫とは7年目で関係が冷え切っています。1年ほど前から職場の人と関係を持っていて、最初は軽い気持ちだったのに本気になってしまいました。彼も独身じゃない。お互い家庭があるのに、会えない日が続くと苦しくて仕方ない。このまま続けていいのか、離婚して一緒になるべきなのか、全部やめるべきなのか。自分でも何が正解か分からなくなっています。</div>
+      <div class="tn">タロット: <strong>月（正位置）</strong></div>
+    </div>
+  </div>
+  <div class="divider-f"></div>
+  <div class="z">
+    <div class="st">ミサキさんの星の配置</div>
+    <p class="b">太陽・蠍座のミサキさんは、<strong>感情の深さと一途さ</strong>が際立つ人。愛情は表面的には見せないけれど、内側では激しく燃えている。一度本気になったら簡単には手放せない性質です。</p>
+    <div class="sp"></div>
+    <p class="b">個人年数5は<strong>「変化と選択の年」</strong>。現状維持が最も苦しくなる年であり、何かを変えなければという衝動が内側から湧いてきているはずです。それは間違いではありません。</p>
+  </div>
+  <div class="footer"><span>Fortune by カイ — 西洋占星術 × 数秘術 × タロット</span><span>1</span></div>
+</div>
+
+<!-- P2 -->
+<div class="page">
+  <div class="z">
+    <div class="st">ミサキさんの問いへの答え</div>
+    <p class="b">星・カード・数字は「今すぐ決断しなくていい」と伝えています。ただし、<strong>今の状態を続けることが最もミサキさんを消耗させる</strong>ことも同時に示しています。</p>
+    <div class="sp-s"></div>
+    <div class="act">
+      <div class="an">① まず「彼なしの自分」を3日間だけ試してみる</div>
+      <p>連絡を3日断ってみてください。辛いはずです。その辛さが<strong>「彼が好きだから」なのか「1人が怖いから」なのか</strong>を、自分の身体で確かめてください。水星逆行明け直後の今が、一番冷静に観察できるタイミングです。</p>
+    </div>
+    <div class="act">
+      <div class="an">② 5月2日の蠍座満月が最大の転換点</div>
+      <p>ミサキさんの太陽星座と同じ蠍座で満月。<strong>隠してきた感情が表面化する日</strong>。この日前後に、自分の中で決着がつく可能性が高い。周囲にバレるリスクも高まる時期なので、行動は慎重に。</p>
+    </div>
+    <div class="act">
+      <div class="an">③ 決断は6月以降。それまでは「自分を取り戻す時間」</div>
+      <p>金星が6月14日に獅子座入りすると、<strong>自分自身の価値を再確認できる</strong>流れが来ます。相手に依存する愛から、自分を軸にした愛へ。その変化を待ってから決断しても遅くありません。</p>
+    </div>
+  </div>
+  <div class="divider-f"></div>
+  <div class="z">
+    <div class="st">タロット — 月が映し出すもの</div>
+    <div class="ti">
+      <div class="ti-img"><img src="../../assets/tarot/18-moon.jpg" alt="月"></div>
+      <div class="ti-d">
+        <div class="cn">月（正位置）</div>
+        <p><strong>「見えていない真実がある」</strong>。月のカードは不安・幻想・隠された感情を示します。今のミサキさんが見ているものと、現実は少し違うかもしれない。</p>
+      </div>
+    </div>
+    <p class="b">月が警告しているのは<strong>「相手を理想化していないか」</strong>ということ。苦しい日常の中で彼が輝いて見えるのは、逃げ場としての錯覚かもしれません。</p>
+  </div>
+  <div class="footer"><span>Fortune by カイ — 西洋占星術 × 数秘術 × タロット</span><span>2</span></div>
+</div>
+
+<!-- P3 -->
+<div class="page">
+  <div class="z">
+    <div class="st">西洋占星術 — 星が示す背景</div>
+    <p class="b">現在、<strong>水星と火星がともに魚座を運行中</strong>。魚座は境界線が曖昧になる星座。「許されないこと」と「本当の気持ち」の区別がつきにくくなる配置です。</p>
+    <div class="sp"></div>
+    <p class="b">3月21日に水星逆行が終わりました。<strong>ここから思考がクリアになっていきます</strong>。逆行中に感じていた混乱や堂々巡りが少しずつ晴れていくでしょう。</p>
+    <div class="sp"></div>
+    <p class="b">金星は牡羊座にあり、3月31日に牡牛座へ移動します。牡羊座の金星は<strong>衝動的な恋</strong>を、牡牛座の金星は<strong>安定した愛</strong>を求めます。4月以降、ミサキさんの中で「本当に必要な愛の形」が変わり始めます。</p>
+  </div>
+  <div class="divider-f"></div>
+  <div class="z">
+    <div class="st">数秘術 — ミサキさんの内側の力</div>
+    <p class="b" style="margin-bottom:12px; color:#aaa; font-size:14px;">星の配置が外側の流れなら、数秘術はミサキさんの内側に備わっている力を示しています。</p>
+    <div class="nr"><div class="nc">1</div><div class="nl">ライフパスナンバー 1 — 自立・意志・開拓</div></div>
+    <p class="b">ナンバー1は<strong>「自分の意志で道を切り開く人」</strong>。本来、誰かに依存する生き方はミサキさんには合いません。今の苦しさの一部は、自分の軸を見失っていることから来ています。</p>
+    <div class="sp"></div>
+    <div class="nr"><div class="nc">5</div><div class="nl">2026年の個人年数 5 — 変化と自由</div></div>
+    <p class="b">5の年は<strong>「現状維持ができなくなる年」</strong>。何かが変わらざるを得ない。ただし、それは「別れ」か「一緒になる」の二択ではなく、<strong>ミサキさん自身が変わる</strong>ことかもしれません。</p>
+  </div>
+  <div class="footer"><span>Fortune by カイ — 西洋占星術 × 数秘術 × タロット</span><span>3</span></div>
+</div>
+
+<!-- P4 -->
+<div class="page">
+  <div class="z">
+    <div class="st">3ヶ月タイムライン</div>
+    <div class="tl-row">
+      <div class="tl-m">
+        <div class="ml">4月</div><div class="ms">自分と向き合う月</div>
+        <p><strong>4/2天秤座満月</strong>で人間関係を俯瞰。<strong>4/17新月</strong>で自分の本音に気づく。</p>
+      </div>
+      <div class="tl-m">
+        <div class="ml">5月</div><div class="ms">感情が表面化する月</div>
+        <p><strong>5/2蠍座満月</strong>が最大の山場。隠していた感情が溢れ出る。</p>
+      </div>
+      <div class="tl-m">
+        <div class="ml">6月</div><div class="ms">自分を取り戻す月</div>
+        <p><strong>6/14金星獅子座入り</strong>で自己価値を再確認。決断の準備が整う。</p>
+      </div>
+    </div>
+  </div>
+  <div class="divider-f"></div>
+  <div class="z">
+    <div class="st">好機日・注意日カレンダー</div>
+    <div class="ci"><div class="cd cg">3月31日 ◎</div><div class="cx"><strong>金星牡牛座入り</strong> — 愛の質が変わる日。衝動的な恋から安定した愛を求め始める</div></div>
+    <div class="ci"><div class="cd cw">4月2日 △</div><div class="cx"><strong>天秤座満月</strong> — 人間関係のバランスが問われる。<strong>この日は大きな決断を避ける</strong></div></div>
+    <div class="ci"><div class="cd cg">4月17日 ◎</div><div class="cx"><strong>牡羊座新月</strong> — 新しい自分を始める日。日記に「本当に望むこと」を書いてみて</div></div>
+    <div class="ci"><div class="cd cw">5月2日 △</div><div class="cx"><strong>蠍座満月</strong> — 感情が最も激しくなる日。<strong>衝動的な連絡・告白は絶対に避ける</strong></div></div>
+    <div class="ci"><div class="cd cg">5月17日 ◎</div><div class="cx"><strong>牡牛座新月</strong> — 心が落ち着く日。冷静に自分の気持ちを整理できる</div></div>
+    <div class="ci"><div class="cd cg">6月14日 ◎</div><div class="cx"><strong>金星獅子座入り</strong> — 自分の価値を再認識。他者への依存から自立した愛へ</div></div>
+    <div class="ci"><div class="cd cg">6月30日 ◎</div><div class="cx"><strong>山羊座満月</strong> — 社会的な立場を考慮した判断ができる日。決断に最適</div></div>
+  </div>
+  <div class="sp"></div>
+  <div class="z">
+    <p class="b" style="color:#aaa; font-size:13px;">△の日は感情が揺さぶられやすい日。<strong>衝動的な行動を1日待つ</strong>だけで結果が変わります。</p>
+    <div class="sp-s"></div>
+    <p class="b" style="color:#aaa; font-size:13px;">特に<strong>5月2日の蠍座満月</strong>はミサキさんにとって最も影響の大きい日。この日だけは、何があっても「一晩寝てから」を徹底してください。</p>
+  </div>
+  <div class="footer"><span>Fortune by カイ — 西洋占星術 × 数秘術 × タロット</span><span>4</span></div>
+</div>
+
+<!-- P5 -->
+<div class="page">
+  <div class="z">
+    <div class="st">ラッキーポイント</div>
+    <div class="lr">
+      <div class="li"><div class="ll">色</div><div class="lv">白</div></div>
+      <div class="li"><div class="ll">数字</div><div class="lv">1・5</div></div>
+      <div class="li"><div class="ll">方角</div><div class="lv">北西</div></div>
+      <div class="li"><div class="ll">アクション</div><div class="lv">朝の散歩</div></div>
+    </div>
+    <div class="sp-s"></div>
+    <p class="b">白は浄化の色。感情が重い日は白いものを身につけて、朝の空気を吸ってみてください。</p>
+  </div>
+  <div class="divider-f"></div>
+  <div class="z">
+    <div class="st">自分の気持ちを確かめるための3つの問い</div>
+    <p class="b" style="margin-bottom:10px;">答えを急がなくていい。ただ、正直に向き合ってみてください。</p>
+    <div class="ci"><div class="cd" style="width:20px; color:#c9a84c;">1</div><div class="cx"><strong>彼がいなくなっても、夫と離婚したいと思うか？</strong> — Yesなら、問題は彼ではなく夫婦関係にある。</div></div>
+    <div class="ci"><div class="cd" style="width:20px; color:#c9a84c;">2</div><div class="cx"><strong>彼の欠点を3つ、すぐに言えるか？</strong> — 言えないなら、まだ「本当の彼」ではなく「理想の彼」を見ているかもしれない。</div></div>
+    <div class="ci"><div class="cd" style="width:20px; color:#c9a84c;">3</div><div class="cx"><strong>1人で過ごす夜は怖いか？</strong> — 怖いなら、求めているのは「彼」ではなく「孤独じゃない安心感」かもしれない。</div></div>
+  </div>
+  <div class="divider-f"></div>
+  <div class="z">
+    <div class="st">最後にミサキさんへ</div>
+    <div class="adv">
+      <p>ミサキさん、星は善悪を判断しません。ただ、今のミサキさんが<strong>苦しんでいること</strong>を、星ははっきり映し出しています。</p>
+      <div class="sp"></div>
+      <p>ナンバー1のミサキさんは、本来<strong>自分の足で立てる人</strong>です。まず自分を取り戻してから、それでも残る気持ちが本物です。5月の蠍座満月を越えた先に、答えが見えてきます。</p>
+    </div>
+  </div>
+  <div class="footer"><span>Fortune by カイ — 西洋占星術 × 数秘術 × タロット</span><span>5</span></div>
+</div>
+
+</body>
+</html>
