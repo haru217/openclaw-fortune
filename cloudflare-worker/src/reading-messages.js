@@ -18,22 +18,13 @@ function makeBubble({ body, footer }) {
   return bubble;
 }
 
-// ③ボタンに区切り線を追加してタップミス防止
 function goldButton(label, text) {
   return {
-    type: 'box',
-    layout: 'vertical',
-    spacing: 'none',
-    contents: [
-      { type: 'separator', color: 'rgba(201,168,76,0.2)', margin: 'sm' },
-      {
-        type: 'button',
-        style: 'link',
-        color: COLOR_GOLD,
-        action: { type: 'message', label, text },
-        height: 'sm',
-      },
-    ],
+    type: 'button',
+    style: 'link',
+    color: COLOR_GOLD,
+    action: { type: 'message', label, text },
+    margin: 'md',
   };
 }
 
@@ -56,7 +47,7 @@ export function buildReadingIntroCard(baseUrl) {
       { type: 'text', text: '📄 PDF鑑定書', color: COLOR_LIGHT, size: 'sm', margin: 'md' },
       { type: 'text', text: '🔮 3ヶ月タイムライン', color: COLOR_LIGHT, size: 'sm' },
       { type: 'text', text: '📅 好機日カレンダー付き', color: COLOR_LIGHT, size: 'sm' },
-      { type: 'text', text: '⏰ 鑑定結果は数時間後にお届け', color: COLOR_MUTED, size: 'xs', margin: 'md' },
+      { type: 'text', text: '⏰ 鑑定が終わり次第お届け', color: COLOR_MUTED, size: 'xs', margin: 'md' },
     ],
   };
 
@@ -153,7 +144,7 @@ export function buildQ2(question) {
         size: 'xs',
         wrap: true,
       },
-      { type: 'separator', color: 'rgba(201,168,76,0.2)', margin: 'sm' },
+      { type: 'separator', color: '#333344', margin: 'sm' },
       ...question.q2.options.map((opt, i) => ({
         type: 'text',
         text: `${i + 1}. ${opt}`,
@@ -221,7 +212,7 @@ export function buildReadingComplete(name, categoryLabel, subcategoryLabel) {
       { type: 'separator', color: 'rgba(201,168,76,0.2)', margin: 'md' },
       {
         type: 'text',
-        text: 'カイが星を読み、カードを引き、数字を紐解いています。鑑定結果は数時間後にお届けします。',
+        text: 'カイが星を読み、カードを引き、数字を紐解いています。鑑定が終わり次第お届けします。',
         color: COLOR_LIGHT,
         size: 'sm',
         wrap: true,
