@@ -27,10 +27,8 @@ import { saveReadingRequest } from './reading-request.js';
 
 // ② ボタンテキスト→IDのマッピング（英語を見せない）
 const CATEGORY_MAP = {
-  '総合鑑定を選ぶ': 'general',
   '恋愛を選ぶ': 'love',
   '仕事を選ぶ': 'career',
-  '転機を選ぶ': 'destiny',
 };
 
 function buildSubcategoryMap(categoryId) {

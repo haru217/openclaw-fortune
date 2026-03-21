@@ -87,10 +87,8 @@ export function buildCategorySelect() {
     spacing: 'none',
     contents: [
       { type: 'text', text: 'どのテーマを鑑定しますか？', weight: 'bold', color: COLOR_GOLD, size: 'lg', margin: 'md' },
-      goldButton('総合鑑定', '総合鑑定を選ぶ'),
       goldButton('恋愛・人間関係', '恋愛を選ぶ'),
       goldButton('仕事・キャリア', '仕事を選ぶ'),
-      goldButton('運命の転機', '転機を選ぶ'),
     ],
   };
   return makeBubble({ body });
