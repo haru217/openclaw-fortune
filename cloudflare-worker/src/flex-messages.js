@@ -70,7 +70,7 @@ function makeBubble({ hero, body, footer }) {
 function buildWelcomeCard(baseUrl) {
   const hero = {
     type: 'image',
-    url: `${baseUrl}/welcome-hero.jpg`,
+    url: `${baseUrl}/welcome-hero.png`,
     size: 'full',
     aspectRatio: '20:13',
     aspectMode: 'cover',
