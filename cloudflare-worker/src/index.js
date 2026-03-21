@@ -1,6 +1,7 @@
 ﻿import { verifySignature, replyMessage } from './line.js';
 import { handleEvent } from './handlers.js';
 import { saveDailyFortune } from './kv.js';
+import { listPendingRequests, updateRequestStatus } from './reading-request.js';
 
 export default {
   async fetch(request, env) {
@@ -16,6 +17,14 @@ export default {
 
     if (url.pathname === '/api/daily' && request.method === 'POST') {
       return handleDailyUpload(request, env);
+    }
+
+    if (url.pathname === '/api/readings' && request.method === 'GET') {
+      return handleListReadings(request, env);
+    }
+
+    if (url.pathname === '/api/readings/status' && request.method === 'POST') {
+      return handleUpdateReadingStatus(request, env);
     }
 
     return new Response('Not Found', { status: 404 });
@@ -77,4 +86,39 @@ async function handleDailyUpload(request, env) {
   });
 
   return Response.json({ ok: true, date: data.date });
+}
+
+async function handleListReadings(request, env) {
+  const apiKey = request.headers.get('x-api-key') || '';
+  if (!apiKey || apiKey !== env.API_KEY) {
+    return new Response('Unauthorized', { status: 401 });
+  }
+
+  const pending = await listPendingRequests(env.FORTUNE_KV);
+  return Response.json({ ok: true, requests: pending });
+}
+
+async function handleUpdateReadingStatus(request, env) {
+  const apiKey = request.headers.get('x-api-key') || '';
+  if (!apiKey || apiKey !== env.API_KEY) {
+    return new Response('Unauthorized', { status: 401 });
+  }
+
+  let data;
+  try {
+    data = await request.json();
+  } catch {
+    return Response.json({ error: 'invalid json' }, { status: 400 });
+  }
+
+  if (!data.id || !data.status) {
+    return Response.json({ error: 'id and status required' }, { status: 400 });
+  }
+
+  const updated = await updateRequestStatus(env.FORTUNE_KV, data.id, data.status);
+  if (!updated) {
+    return Response.json({ error: 'request not found' }, { status: 404 });
+  }
+
+  return Response.json({ ok: true, request: updated });
 }

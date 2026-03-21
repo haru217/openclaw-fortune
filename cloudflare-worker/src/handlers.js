@@ -1,4 +1,4 @@
-﻿import { getZodiacSignFromBirthday } from './zodiac.js';
+import { getZodiacSignFromBirthday } from './zodiac.js';
 import {
   getUser,
   saveUser,
@@ -10,21 +10,31 @@ import {
   buildRegistrationCompleteCard,
   buildFortuneCard,
   buildFortuneCardWithPromo,
-  buildPaidReadingInfo,
 } from './flex-messages.js';
+import { getReadingState, setReadingState, clearReadingState } from './reading-state.js';
+import { CATEGORIES, SUBCATEGORIES, getQuestion } from './reading-questions.js';
+import {
+  buildReadingIntroCard,
+  buildNamePrompt,
+  buildCategorySelect,
+  buildSubcategorySelect,
+  buildQ1,
+  buildQ2,
+  buildQ3,
+  buildReadingComplete,
+} from './reading-messages.js';
+import { saveReadingRequest } from './reading-request.js';
 
 async function handleEvent(event, env) {
   const kv = env.FORTUNE_KV;
   const baseUrl = env.ASSETS_BASE_URL || '';
 
   if (event.type === 'follow') {
-    return [
-      {
-        type: 'flex',
-        altText: 'はじめまして、カイです。あなたの星を読みます。',
-        contents: buildWelcomeCard(baseUrl),
-      },
-    ];
+    return [{
+      type: 'flex',
+      altText: 'はじめまして、カイです。あなたの星を読みます。',
+      contents: buildWelcomeCard(baseUrl),
+    }];
   }
 
   if (event.type !== 'message' || event.message.type !== 'text') {
@@ -39,26 +49,210 @@ async function handleEvent(event, env) {
     return handleRegistration(kv, baseUrl, text, userId);
   }
 
+  // 鑑定フローの状態チェック
+  const readingState = await getReadingState(kv, userId);
+  if (readingState) {
+    return handleReadingFlow(kv, baseUrl, userId, user, text, readingState);
+  }
+
+  // 鑑定フロー開始トリガー
+  if (text === '個別鑑定') {
+    return [{
+      type: 'flex',
+      altText: '個別鑑定のご案内',
+      contents: buildReadingIntroCard(baseUrl),
+    }];
+  }
+
+  if (text === '鑑定を受ける') {
+    await setReadingState(kv, userId, { step: 'awaiting_name' });
+    return [{
+      type: 'flex',
+      altText: 'お名前を教えてください',
+      contents: buildNamePrompt(),
+    }];
+  }
+
   if (text === '今日の占い' || text === '占い') {
     return handleDailyFortune(kv, baseUrl, userId, user);
   }
 
-  if (text === '個別鑑定') {
-    return [
-      {
-        type: 'flex',
-        altText: '個別タロット鑑定のご案内',
-        contents: buildPaidReadingInfo(),
-      },
-    ];
+  return [{
+    type: 'text',
+    text: 'メニューの「今日の占い」からいつでも占いが見れます。ぜひどうぞ',
+  }];
+}
+
+async function handleReadingFlow(kv, baseUrl, userId, user, text, state) {
+  const { step } = state;
+
+  // awaiting_name: 呼び名入力
+  if (step === 'awaiting_name') {
+    if (text.length > 20) {
+      return [{ type: 'text', text: '20文字以内でお願いします🙏' }];
+    }
+    await setReadingState(kv, userId, { step: 'awaiting_category', name: text });
+    return [{
+      type: 'flex',
+      altText: 'どのテーマを鑑定しますか？',
+      contents: buildCategorySelect(),
+    }];
   }
 
-  return [
-    {
-      type: 'text',
-      text: 'メニューの「今日の占い」からいつでも占いが見れます。ぜひどうぞ',
-    },
-  ];
+  // awaiting_category: 大項目選択
+  if (step === 'awaiting_category') {
+    const match = text.match(/^鑑定:(\w+)$/);
+    if (!match) {
+      return [{
+        type: 'flex',
+        altText: 'テーマを選んでください',
+        contents: buildCategorySelect(),
+      }];
+    }
+    const categoryId = match[1];
+    const category = CATEGORIES.find(c => c.id === categoryId);
+    if (!category) {
+      return [{
+        type: 'flex',
+        altText: 'テーマを選んでください',
+        contents: buildCategorySelect(),
+      }];
+    }
+    const subs = SUBCATEGORIES[categoryId];
+    await setReadingState(kv, userId, {
+      step: 'awaiting_subcategory',
+      category: categoryId,
+      categoryLabel: category.label,
+    });
+    return [{
+      type: 'flex',
+      altText: 'もう少し絞りましょう',
+      contents: buildSubcategorySelect(categoryId, subs),
+    }];
+  }
+
+  // awaiting_subcategory: サブメニュー選択
+  if (step === 'awaiting_subcategory') {
+    const match = text.match(/^鑑定:(\w+):(\w+)$/);
+    if (!match) {
+      const subs = SUBCATEGORIES[state.category];
+      return [{
+        type: 'flex',
+        altText: 'メニューを選んでください',
+        contents: buildSubcategorySelect(state.category, subs),
+      }];
+    }
+    const subcategoryId = match[2];
+    const sub = SUBCATEGORIES[state.category]?.find(s => s.id === subcategoryId);
+    if (!sub) {
+      const subs = SUBCATEGORIES[state.category];
+      return [{
+        type: 'flex',
+        altText: 'メニューを選んでください',
+        contents: buildSubcategorySelect(state.category, subs),
+      }];
+    }
+    const question = getQuestion(state.category, subcategoryId);
+    await setReadingState(kv, userId, {
+      step: 'awaiting_q1',
+      subcategory: subcategoryId,
+      subcategoryLabel: sub.label,
+    });
+    return [{
+      type: 'flex',
+      altText: question.q1.label,
+      contents: buildQ1(question),
+    }];
+  }
+
+  // awaiting_q1: Q1 回答
+  if (step === 'awaiting_q1') {
+    const match = text.match(/^鑑定q1:(\d+)$/);
+    const question = getQuestion(state.category, state.subcategory);
+    if (!match || !question) {
+      return [{
+        type: 'flex',
+        altText: '選択してください',
+        contents: buildQ1(question),
+      }];
+    }
+    const idx = parseInt(match[1], 10);
+    const answer = question.q1.options[idx];
+    if (!answer) {
+      return [{
+        type: 'flex',
+        altText: '選択してください',
+        contents: buildQ1(question),
+      }];
+    }
+    await setReadingState(kv, userId, { step: 'awaiting_q2', q1: answer });
+    return [{
+      type: 'flex',
+      altText: question.q2.label,
+      contents: buildQ2(question),
+    }];
+  }
+
+  // awaiting_q2: Q2 回答（番号カンマ区切り）
+  if (step === 'awaiting_q2') {
+    const question = getQuestion(state.category, state.subcategory);
+    const nums = text.split(/[,、\s]+/).map(s => parseInt(s, 10) - 1).filter(n => !isNaN(n));
+    const answers = nums
+      .map(n => question.q2.options[n])
+      .filter(Boolean);
+
+    if (answers.length === 0) {
+      return [{
+        type: 'flex',
+        altText: '番号で選んでください',
+        contents: buildQ2(question),
+      }];
+    }
+    await setReadingState(kv, userId, { step: 'awaiting_q3', q2: answers });
+    return [{
+      type: 'flex',
+      altText: '詳しく教えてください',
+      contents: buildQ3(question),
+    }];
+  }
+
+  // awaiting_q3: Q3 回答 or スキップ
+  if (step === 'awaiting_q3') {
+    const q3 = text === '鑑定:開始' ? '' : text;
+    await clearReadingState(kv, userId);
+
+    // タロットカードをランダムに引く
+    const cardId = Math.floor(Math.random() * 22);
+    const reversed = Math.random() < 0.3;
+
+    // 鑑定リクエスト保存
+    const request = await saveReadingRequest(kv, {
+      userId,
+      name: state.name,
+      birthday: user.birthday,
+      sign: user.sign,
+      category: state.category,
+      subcategory: state.subcategory,
+      categoryLabel: state.categoryLabel,
+      subcategoryLabel: state.subcategoryLabel,
+      q1: state.q1,
+      q2: state.q2,
+      q3,
+      tarotCard: { id: cardId, reversed },
+    });
+
+    console.log('[reading] Request saved:', request.id);
+
+    return [{
+      type: 'flex',
+      altText: '鑑定を受け付けました',
+      contents: buildReadingComplete(state.name, state.categoryLabel, state.subcategoryLabel),
+    }];
+  }
+
+  // 不明な状態 → リセット
+  await clearReadingState(kv, userId);
+  return [{ type: 'text', text: 'もう一度「個別鑑定」からお試しください' }];
 }
 
 async function handleRegistration(kv, baseUrl, text, userId) {
@@ -73,22 +267,18 @@ async function handleRegistration(kv, baseUrl, text, userId) {
       ? fortune.message
       : '明日から毎日の占いをお届けします。お楽しみに';
 
-    return [
-      {
-        type: 'flex',
-        altText: `${result.name}で登録しました。今日の占いをお届けします。`,
-        contents: buildRegistrationCompleteCard(result.name, fortuneText, baseUrl),
-      },
-    ];
+    return [{
+      type: 'flex',
+      altText: `${result.name}で登録しました。今日の占いをお届けします。`,
+      contents: buildRegistrationCompleteCard(result.name, fortuneText, baseUrl),
+    }];
   } catch (error) {
     console.error('[handleRegistration]', error.message);
-    return [
-      {
-        type: 'flex',
-        altText: 'カイです。生年月日を教えてください。',
-        contents: buildWelcomeCard(baseUrl),
-      },
-    ];
+    return [{
+      type: 'flex',
+      altText: 'カイです。生年月日を教えてください。',
+      contents: buildWelcomeCard(baseUrl),
+    }];
   }
 }
 
@@ -107,13 +297,11 @@ async function handleDailyFortune(kv, baseUrl, userId, user) {
     ? buildFortuneCardWithPromo(fortune, baseUrl)
     : buildFortuneCard(fortune, baseUrl);
 
-  return [
-    {
-      type: 'flex',
-      altText: `${fortune.sign}の今日の占い`,
-      contents: card,
-    },
-  ];
+  return [{
+    type: 'flex',
+    altText: `${fortune.sign}の今日の占い`,
+    contents: card,
+  }];
 }
 
 export { handleEvent };
