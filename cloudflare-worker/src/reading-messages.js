@@ -18,15 +18,26 @@ function makeBubble({ body, footer }) {
   return bubble;
 }
 
+// ③ボタンに区切り線を追加してタップミス防止
 function goldButton(label, text) {
   return {
-    type: 'button',
-    style: 'link',
-    color: COLOR_GOLD,
-    action: { type: 'message', label, text },
+    type: 'box',
+    layout: 'vertical',
+    spacing: 'none',
+    contents: [
+      { type: 'separator', color: 'rgba(201,168,76,0.2)', margin: 'sm' },
+      {
+        type: 'button',
+        style: 'link',
+        color: COLOR_GOLD,
+        action: { type: 'message', label, text },
+        height: 'sm',
+      },
+    ],
   };
 }
 
+// ① 紹介カード: 改行修正
 export function buildReadingIntroCard(baseUrl) {
   const body = {
     type: 'box',
@@ -42,8 +53,9 @@ export function buildReadingIntroCard(baseUrl) {
         wrap: true,
       },
       { type: 'separator', color: COLOR_GOLD, margin: 'md' },
-      { type: 'text', text: '📄 PDF鑑定書（5ページ）', color: COLOR_LIGHT, size: 'sm', margin: 'md' },
-      { type: 'text', text: '🔮 3ヶ月タイムライン＋好機日カレンダー付き', color: COLOR_LIGHT, size: 'sm' },
+      { type: 'text', text: '📄 PDF鑑定書', color: COLOR_LIGHT, size: 'sm', margin: 'md' },
+      { type: 'text', text: '🔮 3ヶ月タイムライン', color: COLOR_LIGHT, size: 'sm' },
+      { type: 'text', text: '📅 好機日カレンダー付き', color: COLOR_LIGHT, size: 'sm' },
       { type: 'text', text: '⏰ 鑑定結果は数時間後にお届け', color: COLOR_MUTED, size: 'xs', margin: 'md' },
     ],
   };
@@ -76,33 +88,34 @@ export function buildNamePrompt() {
   return makeBubble({ body });
 }
 
+// ②ボタンのテキストを日本語に（英語が見えない）
 export function buildCategorySelect() {
   const body = {
     type: 'box',
     layout: 'vertical',
-    spacing: 'sm',
+    spacing: 'none',
     contents: [
-      { type: 'text', text: 'どのテーマを鑑定しますか？', weight: 'bold', color: COLOR_GOLD, size: 'lg' },
-      goldButton('総合鑑定', '鑑定:general'),
-      goldButton('恋愛・人間関係', '鑑定:love'),
-      goldButton('仕事・キャリア', '鑑定:career'),
-      goldButton('運命の転機', '鑑定:destiny'),
+      { type: 'text', text: 'どのテーマを鑑定しますか？', weight: 'bold', color: COLOR_GOLD, size: 'lg', margin: 'md' },
+      goldButton('総合鑑定', '総合鑑定を選ぶ'),
+      goldButton('恋愛・人間関係', '恋愛を選ぶ'),
+      goldButton('仕事・キャリア', '仕事を選ぶ'),
+      goldButton('運命の転機', '転機を選ぶ'),
     ],
   };
   return makeBubble({ body });
 }
 
-export function buildSubcategorySelect(categoryId, subcategories) {
+export function buildSubcategorySelect(categoryLabel, subcategories) {
   const buttons = subcategories.map(sub =>
-    goldButton(sub.label, `鑑定:${categoryId}:${sub.id}`)
+    goldButton(sub.label, `${sub.label}を選ぶ`)
   );
 
   const body = {
     type: 'box',
     layout: 'vertical',
-    spacing: 'sm',
+    spacing: 'none',
     contents: [
-      { type: 'text', text: 'もう少し絞りましょう', weight: 'bold', color: COLOR_GOLD, size: 'lg' },
+      { type: 'text', text: 'もう少し絞りましょう', weight: 'bold', color: COLOR_GOLD, size: 'lg', margin: 'md' },
       ...buttons,
     ],
   };
@@ -111,15 +124,15 @@ export function buildSubcategorySelect(categoryId, subcategories) {
 
 export function buildQ1(question) {
   const buttons = question.q1.options.map((opt, i) =>
-    goldButton(opt, `鑑定q1:${i}`)
+    goldButton(opt, `回答:${i}`)
   );
 
   const body = {
     type: 'box',
     layout: 'vertical',
-    spacing: 'sm',
+    spacing: 'none',
     contents: [
-      { type: 'text', text: question.q1.label, weight: 'bold', color: COLOR_GOLD, size: 'md', wrap: true },
+      { type: 'text', text: question.q1.label, weight: 'bold', color: COLOR_GOLD, size: 'md', wrap: true, margin: 'md' },
       ...buttons,
     ],
   };
@@ -140,11 +153,13 @@ export function buildQ2(question) {
         size: 'xs',
         wrap: true,
       },
+      { type: 'separator', color: 'rgba(201,168,76,0.2)', margin: 'sm' },
       ...question.q2.options.map((opt, i) => ({
         type: 'text',
         text: `${i + 1}. ${opt}`,
         color: COLOR_LIGHT,
         size: 'sm',
+        margin: 'sm',
       })),
     ],
   };
@@ -186,12 +201,13 @@ export function buildQ3(question) {
   const footer = {
     type: 'box',
     layout: 'vertical',
-    contents: [goldButton('このまま鑑定する', '鑑定:開始')],
+    contents: [goldButton('このまま鑑定する', 'このまま鑑定する')],
   };
 
   return makeBubble({ body, footer });
 }
 
+// ⑥ 受付完了カード: 待ち時間のメッセージを充実
 export function buildReadingComplete(name, categoryLabel, subcategoryLabel) {
   const body = {
     type: 'box',
@@ -202,13 +218,22 @@ export function buildReadingComplete(name, categoryLabel, subcategoryLabel) {
       { type: 'separator', color: COLOR_GOLD, margin: 'sm' },
       { type: 'text', text: `${name}さん`, color: COLOR_LIGHT, size: 'md', margin: 'md' },
       { type: 'text', text: `${categoryLabel} — ${subcategoryLabel}`, color: COLOR_MUTED, size: 'sm' },
+      { type: 'separator', color: 'rgba(201,168,76,0.2)', margin: 'md' },
       {
         type: 'text',
-        text: '鑑定結果は数時間後にお届けします。お楽しみに✨',
+        text: 'カイが星を読み、カードを引き、数字を紐解いています。鑑定結果は数時間後にお届けします。',
         color: COLOR_LIGHT,
         size: 'sm',
         wrap: true,
-        margin: 'lg',
+        margin: 'sm',
+      },
+      {
+        type: 'text',
+        text: '届くまでの間、今日の占いもぜひご覧ください✨',
+        color: COLOR_MUTED,
+        size: 'xs',
+        wrap: true,
+        margin: 'md',
       },
     ],
   };

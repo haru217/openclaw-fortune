@@ -9,6 +9,7 @@ export const CATEGORIES = [
 
 export const SUBCATEGORIES = {
   general: [
+    { id: 'self', label: '自分を知る（性格・才能・傾向）' },
     { id: 'flow', label: '今後の運勢の流れ' },
     { id: 'direction', label: '人生の方向性' },
     { id: 'advice', label: '今の悩みへのアドバイス' },
@@ -31,10 +32,22 @@ export const SUBCATEGORIES = {
 };
 
 export const QUESTIONS = {
+  'general:self': {
+    q1: {
+      label: 'きっかけを教えてください',
+      options: ['自分の強みが分からない', '人間関係で悩むことが多い', '自分に自信が持てない', '新しい環境に入る前に知りたい'],
+    },
+    q2: {
+      label: '特に知りたいことは？（複数OK）',
+      options: ['性格の本質', '隠れた才能', '人間関係の傾向', '仕事の適性', '恋愛の傾向', 'その他'],
+      multi: true,
+    },
+    q3: { placeholder: '例: 周りからどう見られているか気になる。自分では分からない部分を知りたい' },
+  },
   'general:flow': {
     q1: {
       label: '特に気になる期間は？',
-      options: ['直近1ヶ月', '3ヶ月先まで', '半年先まで', '1年の流れ'],
+      options: ['直近1ヶ月', '3ヶ月先まで', '半年先まで', '1年の流れ', '2〜3年先まで'],
     },
     q2: {
       label: '知りたいことは？（複数OK）',

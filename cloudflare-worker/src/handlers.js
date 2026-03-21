@@ -25,6 +25,23 @@ import {
 } from './reading-messages.js';
 import { saveReadingRequest } from './reading-request.js';
 
+// ② ボタンテキスト→IDのマッピング（英語を見せない）
+const CATEGORY_MAP = {
+  '総合鑑定を選ぶ': 'general',
+  '恋愛を選ぶ': 'love',
+  '仕事を選ぶ': 'career',
+  '転機を選ぶ': 'destiny',
+};
+
+function buildSubcategoryMap(categoryId) {
+  const subs = SUBCATEGORIES[categoryId] || [];
+  const map = {};
+  for (const sub of subs) {
+    map[`${sub.label}を選ぶ`] = sub;
+  }
+  return map;
+}
+
 async function handleEvent(event, env) {
   const kv = env.FORTUNE_KV;
   const baseUrl = env.ASSETS_BASE_URL || '';
@@ -55,7 +72,6 @@ async function handleEvent(event, env) {
     return handleReadingFlow(kv, baseUrl, userId, user, text, readingState);
   }
 
-  // 鑑定フロー開始トリガー
   if (text === '個別鑑定') {
     return [{
       type: 'flex',
@@ -86,7 +102,7 @@ async function handleEvent(event, env) {
 async function handleReadingFlow(kv, baseUrl, userId, user, text, state) {
   const { step } = state;
 
-  // awaiting_name: 呼び名入力
+  // awaiting_name
   if (step === 'awaiting_name') {
     if (text.length > 20) {
       return [{ type: 'text', text: '20文字以内でお願いします🙏' }];
@@ -99,25 +115,17 @@ async function handleReadingFlow(kv, baseUrl, userId, user, text, state) {
     }];
   }
 
-  // awaiting_category: 大項目選択
+  // awaiting_category
   if (step === 'awaiting_category') {
-    const match = text.match(/^鑑定:(\w+)$/);
-    if (!match) {
+    const categoryId = CATEGORY_MAP[text];
+    if (!categoryId) {
       return [{
         type: 'flex',
         altText: 'テーマを選んでください',
         contents: buildCategorySelect(),
       }];
     }
-    const categoryId = match[1];
     const category = CATEGORIES.find(c => c.id === categoryId);
-    if (!category) {
-      return [{
-        type: 'flex',
-        altText: 'テーマを選んでください',
-        contents: buildCategorySelect(),
-      }];
-    }
     const subs = SUBCATEGORIES[categoryId];
     await setReadingState(kv, userId, {
       step: 'awaiting_subcategory',
@@ -127,35 +135,27 @@ async function handleReadingFlow(kv, baseUrl, userId, user, text, state) {
     return [{
       type: 'flex',
       altText: 'もう少し絞りましょう',
-      contents: buildSubcategorySelect(categoryId, subs),
+      contents: buildSubcategorySelect(category.label, subs),
     }];
   }
 
-  // awaiting_subcategory: サブメニュー選択
+  // awaiting_subcategory
   if (step === 'awaiting_subcategory') {
-    const match = text.match(/^鑑定:(\w+):(\w+)$/);
-    if (!match) {
-      const subs = SUBCATEGORIES[state.category];
-      return [{
-        type: 'flex',
-        altText: 'メニューを選んでください',
-        contents: buildSubcategorySelect(state.category, subs),
-      }];
-    }
-    const subcategoryId = match[2];
-    const sub = SUBCATEGORIES[state.category]?.find(s => s.id === subcategoryId);
+    const subMap = buildSubcategoryMap(state.category);
+    const sub = subMap[text];
     if (!sub) {
       const subs = SUBCATEGORIES[state.category];
+      const category = CATEGORIES.find(c => c.id === state.category);
       return [{
         type: 'flex',
         altText: 'メニューを選んでください',
-        contents: buildSubcategorySelect(state.category, subs),
+        contents: buildSubcategorySelect(category.label, subs),
       }];
     }
-    const question = getQuestion(state.category, subcategoryId);
+    const question = getQuestion(state.category, sub.id);
     await setReadingState(kv, userId, {
       step: 'awaiting_q1',
-      subcategory: subcategoryId,
+      subcategory: sub.id,
       subcategoryLabel: sub.label,
     });
     return [{
@@ -165,9 +165,9 @@ async function handleReadingFlow(kv, baseUrl, userId, user, text, state) {
     }];
   }
 
-  // awaiting_q1: Q1 回答
+  // awaiting_q1
   if (step === 'awaiting_q1') {
-    const match = text.match(/^鑑定q1:(\d+)$/);
+    const match = text.match(/^回答:(\d+)$/);
     const question = getQuestion(state.category, state.subcategory);
     if (!match || !question) {
       return [{
@@ -193,7 +193,7 @@ async function handleReadingFlow(kv, baseUrl, userId, user, text, state) {
     }];
   }
 
-  // awaiting_q2: Q2 回答（番号カンマ区切り）
+  // awaiting_q2
   if (step === 'awaiting_q2') {
     const question = getQuestion(state.category, state.subcategory);
     const nums = text.split(/[,、\s]+/).map(s => parseInt(s, 10) - 1).filter(n => !isNaN(n));
@@ -216,16 +216,14 @@ async function handleReadingFlow(kv, baseUrl, userId, user, text, state) {
     }];
   }
 
-  // awaiting_q3: Q3 回答 or スキップ
+  // awaiting_q3
   if (step === 'awaiting_q3') {
-    const q3 = text === '鑑定:開始' ? '' : text;
+    const q3 = text === 'このまま鑑定する' ? '' : text;
     await clearReadingState(kv, userId);
 
-    // タロットカードをランダムに引く
     const cardId = Math.floor(Math.random() * 22);
     const reversed = Math.random() < 0.3;
 
-    // 鑑定リクエスト保存
     const request = await saveReadingRequest(kv, {
       userId,
       name: state.name,
@@ -250,7 +248,6 @@ async function handleReadingFlow(kv, baseUrl, userId, user, text, state) {
     }];
   }
 
-  // 不明な状態 → リセット
   await clearReadingState(kv, userId);
   return [{ type: 'text', text: 'もう一度「個別鑑定」からお試しください' }];
 }
