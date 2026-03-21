@@ -14,7 +14,7 @@ const blobClient = new messagingApi.MessagingApiBlobClient({
   channelAccessToken: process.env.LINE_CHANNEL_ACCESS_TOKEN || '',
 });
 
-const RICH_MENU_IMAGE = path.join(__dirname, '..', '..', 'assets', 'rich-menu.png');
+const RICH_MENU_IMAGE = path.join(__dirname, '..', '..', 'assets', 'rich-menu.jpg');
 
 async function main() {
   console.log('[rich-menu] Creating rich menu...');
@@ -47,7 +47,7 @@ async function main() {
     console.warn(`[rich-menu] Rich menu ID: ${richMenuId} (image not set)`);
   } else {
     const imageBuffer = fs.readFileSync(RICH_MENU_IMAGE);
-    const blob = new Blob([imageBuffer], { type: 'image/png' });
+    const blob = new Blob([imageBuffer], { type: 'image/jpeg' });
     await blobClient.setRichMenuImage(richMenuId, blob);
     console.log('[rich-menu] Image uploaded.');
   }
