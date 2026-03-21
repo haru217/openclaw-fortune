@@ -11322,6 +11322,7 @@
   "ingresses": [
     {
       "date": "2026-01-02",
+      "time": "11:48",
       "planet": "mercury",
       "planetJp": "水星",
       "fromSign": "sagittarius",
@@ -11331,6 +11332,7 @@
     },
     {
       "date": "2026-01-18",
+      "time": "04:35",
       "planet": "venus",
       "planetJp": "金星",
       "fromSign": "capricorn",
@@ -11340,6 +11342,7 @@
     },
     {
       "date": "2026-01-21",
+      "time": "06:51",
       "planet": "mercury",
       "planetJp": "水星",
       "fromSign": "capricorn",
@@ -11349,6 +11352,7 @@
     },
     {
       "date": "2026-01-24",
+      "time": "05:22",
       "planet": "mars",
       "planetJp": "火星",
       "fromSign": "capricorn",
@@ -11357,7 +11361,8 @@
       "toSignJp": "水瓶座"
     },
     {
-      "date": "2026-02-08",
+      "date": "2026-02-07",
+      "time": "12:44",
       "planet": "mercury",
       "planetJp": "水星",
       "fromSign": "aquarius",
@@ -11367,6 +11372,7 @@
     },
     {
       "date": "2026-02-11",
+      "time": "02:13",
       "planet": "venus",
       "planetJp": "金星",
       "fromSign": "aquarius",
@@ -11375,7 +11381,8 @@
       "toSignJp": "魚座"
     },
     {
-      "date": "2026-02-18",
+      "date": "2026-02-17",
+      "time": "15:20",
       "planet": "saturn",
       "planetJp": "土星",
       "fromSign": "pisces",
@@ -11385,6 +11392,7 @@
     },
     {
       "date": "2026-03-03",
+      "time": "10:17",
       "planet": "mars",
       "planetJp": "火星",
       "fromSign": "aquarius",
@@ -11394,6 +11402,7 @@
     },
     {
       "date": "2026-03-07",
+      "time": "02:44",
       "planet": "venus",
       "planetJp": "金星",
       "fromSign": "pisces",
@@ -11403,6 +11412,7 @@
     },
     {
       "date": "2026-03-31",
+      "time": "08:05",
       "planet": "venus",
       "planetJp": "金星",
       "fromSign": "aries",
@@ -11411,7 +11421,8 @@
       "toSignJp": "牡牛座"
     },
     {
-      "date": "2026-04-11",
+      "date": "2026-04-10",
+      "time": "15:48",
       "planet": "mars",
       "planetJp": "火星",
       "fromSign": "pisces",
@@ -11420,7 +11431,8 @@
       "toSignJp": "牡羊座"
     },
     {
-      "date": "2026-04-16",
+      "date": "2026-04-15",
+      "time": "18:32",
       "planet": "mercury",
       "planetJp": "水星",
       "fromSign": "pisces",
@@ -11429,7 +11441,8 @@
       "toSignJp": "牡羊座"
     },
     {
-      "date": "2026-04-25",
+      "date": "2026-04-24",
+      "time": "20:14",
       "planet": "venus",
       "planetJp": "金星",
       "fromSign": "taurus",
@@ -11438,7 +11451,8 @@
       "toSignJp": "双子座"
     },
     {
-      "date": "2026-05-04",
+      "date": "2026-05-03",
+      "time": "16:28",
       "planet": "mercury",
       "planetJp": "水星",
       "fromSign": "aries",
@@ -11447,7 +11461,8 @@
       "toSignJp": "牡牛座"
     },
     {
-      "date": "2026-05-18",
+      "date": "2026-05-17",
+      "time": "23:26",
       "planet": "mercury",
       "planetJp": "水星",
       "fromSign": "taurus",
@@ -11456,7 +11471,8 @@
       "toSignJp": "双子座"
     },
     {
-      "date": "2026-05-20",
+      "date": "2026-05-19",
+      "time": "17:25",
       "planet": "venus",
       "planetJp": "金星",
       "fromSign": "gemini",
@@ -11465,7 +11481,8 @@
       "toSignJp": "蟹座"
     },
     {
-      "date": "2026-05-20",
+      "date": "2026-05-19",
+      "time": "19:04",
       "planet": "mars",
       "planetJp": "火星",
       "fromSign": "aries",
@@ -11475,6 +11492,7 @@
     },
     {
       "date": "2026-06-02",
+      "time": "02:06",
       "planet": "mercury",
       "planetJp": "水星",
       "fromSign": "gemini",
@@ -11484,6 +11502,7 @@
     },
     {
       "date": "2026-06-14",
+      "time": "03:20",
       "planet": "venus",
       "planetJp": "金星",
       "fromSign": "cancer",
@@ -11492,7 +11511,8 @@
       "toSignJp": "獅子座"
     },
     {
-      "date": "2026-06-30",
+      "date": "2026-06-29",
+      "time": "16:51",
       "planet": "mars",
       "planetJp": "火星",
       "fromSign": "taurus",
@@ -11502,6 +11522,7 @@
     },
     {
       "date": "2026-07-02",
+      "time": "08:00",
       "planet": "jupiter",
       "planetJp": "木星",
       "fromSign": "cancer",
@@ -11511,6 +11532,7 @@
     },
     {
       "date": "2026-07-10",
+      "time": "10:18",
       "planet": "venus",
       "planetJp": "金星",
       "fromSign": "leo",
@@ -11519,7 +11541,8 @@
       "toSignJp": "乙女座"
     },
     {
-      "date": "2026-08-08",
+      "date": "2026-08-07",
+      "time": "13:01",
       "planet": "venus",
       "planetJp": "金星",
       "fromSign": "virgo",
@@ -11529,6 +11552,7 @@
     },
     {
       "date": "2026-08-10",
+      "time": "07:04",
       "planet": "mercury",
       "planetJp": "水星",
       "fromSign": "cancer",
@@ -11538,6 +11562,7 @@
     },
     {
       "date": "2026-08-12",
+      "time": "06:56",
       "planet": "mars",
       "planetJp": "火星",
       "fromSign": "gemini",
@@ -11547,6 +11572,7 @@
     },
     {
       "date": "2026-08-26",
+      "time": "00:31",
       "planet": "mercury",
       "planetJp": "水星",
       "fromSign": "leo",
@@ -11556,6 +11582,7 @@
     },
     {
       "date": "2026-09-11",
+      "time": "06:35",
       "planet": "mercury",
       "planetJp": "水星",
       "fromSign": "virgo",
@@ -11565,6 +11592,7 @@
     },
     {
       "date": "2026-09-11",
+      "time": "06:47",
       "planet": "venus",
       "planetJp": "金星",
       "fromSign": "libra",
@@ -11574,6 +11602,7 @@
     },
     {
       "date": "2026-09-29",
+      "time": "03:04",
       "planet": "mars",
       "planetJp": "火星",
       "fromSign": "cancer",
@@ -11583,6 +11612,7 @@
     },
     {
       "date": "2026-10-01",
+      "time": "03:24",
       "planet": "mercury",
       "planetJp": "水星",
       "fromSign": "libra",
@@ -11592,6 +11622,7 @@
     },
     {
       "date": "2026-10-25",
+      "time": "03:37",
       "planet": "venus",
       "planetJp": "金星",
       "fromSign": "scorpio",
@@ -11601,6 +11632,7 @@
     },
     {
       "date": "2026-11-27",
+      "time": "07:32",
       "planet": "mars",
       "planetJp": "火星",
       "fromSign": "leo",
@@ -11610,6 +11642,7 @@
     },
     {
       "date": "2026-12-05",
+      "time": "07:11",
       "planet": "venus",
       "planetJp": "金星",
       "fromSign": "libra",
@@ -11618,7 +11651,8 @@
       "toSignJp": "蠍座"
     },
     {
-      "date": "2026-12-07",
+      "date": "2026-12-06",
+      "time": "23:28",
       "planet": "mercury",
       "planetJp": "水星",
       "fromSign": "scorpio",
@@ -11628,6 +11662,7 @@
     },
     {
       "date": "2026-12-26",
+      "time": "09:04",
       "planet": "mercury",
       "planetJp": "水星",
       "fromSign": "sagittarius",
@@ -11649,5 +11684,6 @@
       "start": "2026-10-25",
       "end": "2026-11-14"
     }
-  ]
+  ],
+  "ingressSource": "pyephem 4.2.1 binary-search (1-minute precision)"
 }

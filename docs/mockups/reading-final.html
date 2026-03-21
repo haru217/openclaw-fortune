@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>個別鑑定 — ハルさん</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #111; display: flex; flex-direction: column; align-items: center; gap: 0; padding: 0; margin: 0; }
+  @media screen { body { gap: 30px; padding: 40px; } }
+  @media print {
+    .page { page-break-after: always; }
+    .page:last-child { page-break-after: avoid; }
+  }
+  .page {
+    width: 595px; height: 842px;
+    background: #141428;
+    font-family: 'Noto Serif JP', serif;
+    color: #e0e0e0;
+    padding: 36px 46px 44px;
+    position: relative;
+  }
+  .z { position: relative; z-index: 1; }
+  .sp { height: 12px; }
+  .sp-s { height: 8px; }
+  strong { color: #e8d5a3; font-weight: 700; }
+  .gold { color: #c9a84c; }
+  .divider { width: 50%; margin: 0 auto 18px; height: 1px; background: linear-gradient(90deg, transparent, #c9a84c, transparent); }
+  .divider-f { width: 100%; height: 1px; margin: 16px 0; background: rgba(201,168,76,0.2); }
+  .footer {
+    position: absolute; bottom: 16px; left: 46px; right: 46px;
+    display: flex; justify-content: space-between;
+    color: #555; font-size: 9px; letter-spacing: 1px;
+  }
+  .hdr { text-align: center; margin-bottom: 16px; }
+  .hdr h1 { color: #c9a84c; font-size: 21px; letter-spacing: 5px; margin-bottom: 5px; }
+  .hdr .meta { color: #777; font-size: 11px; }
+  .usr { text-align: center; margin-bottom: 16px; }
+  .usr .name { color: #c9a84c; font-size: 20px; font-weight: 700; }
+  .usr .info { color: #888; font-size: 13px; margin-top: 3px; }
+  .stat-row { display: flex; justify-content: center; gap: 28px; }
+  .stat { text-align: center; }
+  .stat .l { color: #999; font-size: 9px; letter-spacing: 1px; margin-bottom: 3px; }
+  .stat .v { color: #c9a84c; font-size: 15px; font-weight: 700; }
+  .con { display: flex; gap: 16px; }
+  .timg { width: 88px; height: 132px; border: 2px solid #c9a84c; border-radius: 4px; overflow: hidden; flex-shrink: 0; box-shadow: 0 2px 12px rgba(201,168,76,0.12); }
+  .timg img { width: 100%; height: 100%; object-fit: cover; }
+  .con-r { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+  .con-r .cat { color: #c9a84c; font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+  .con-r .q { color: #ccc; font-size: 14px; line-height: 1.9; font-style: italic; }
+  .con-r .tn { color: #999; font-size: 12px; margin-top: 8px; }
+  .con-r .tn strong { font-size: 14px; }
+  .st { color: #c9a84c; font-size: 15px; font-weight: 700; letter-spacing: 1px; margin-bottom: 10px; }
+  p.b { font-size: 15px; line-height: 2.1; color: #d0d0d0; }
+  .act { background: rgba(201,168,76,0.06); border-radius: 6px; padding: 12px 16px; margin-bottom: 8px; }
+  .act .an { color: #c9a84c; font-size: 13px; font-weight: 700; margin-bottom: 3px; }
+  .act p { font-size: 14px; line-height: 1.9; color: #d0d0d0; }
+  .ti { display: flex; gap: 16px; margin-bottom: 8px; }
+  .ti-img { width: 64px; height: 96px; border: 1.5px solid #c9a84c; border-radius: 4px; overflow: hidden; flex-shrink: 0; }
+  .ti-img img { width: 100%; height: 100%; object-fit: cover; }
+  .ti-d { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+  .ti-d .cn { color: #c9a84c; font-size: 14px; font-weight: 700; margin-bottom: 3px; }
+  .ti-d p { font-size: 13px; line-height: 1.9; color: #d0d0d0; }
+  .nr { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+  .nc { width: 40px; height: 40px; border: 2px solid #c9a84c; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #c9a84c; font-size: 18px; font-weight: 700; flex-shrink: 0; }
+  .nl { color: #c9a84c; font-size: 14px; font-weight: 700; }
+  .tl-row { display: flex; gap: 8px; }
+  .tl-m { flex: 1; background: rgba(201,168,76,0.06); border-radius: 6px; padding: 10px 12px; }
+  .tl-m .ml { color: #c9a84c; font-size: 13px; font-weight: 700; margin-bottom: 2px; }
+  .tl-m .ms { font-size: 11px; color: #aaa; margin-bottom: 5px; }
+  .tl-m p { font-size: 12px; line-height: 1.8; color: #d0d0d0; }
+  .ci { display: flex; gap: 10px; margin-bottom: 9px; align-items: baseline; }
+  .cd { font-size: 13px; font-weight: 700; width: 72px; flex-shrink: 0; }
+  .cg { color: #c9a84c; }
+  .cw { color: #c27c4c; }
+  .cx { font-size: 13px; line-height: 1.7; color: #d0d0d0; }
+  .lr { display: flex; gap: 12px; }
+  .li { flex: 1; text-align: center; background: rgba(201,168,76,0.06); border-radius: 6px; padding: 10px; }
+  .li .ll { color: #999; font-size: 9px; letter-spacing: 1px; margin-bottom: 3px; }
+  .li .lv { color: #c9a84c; font-size: 15px; font-weight: 700; }
+  .cr { display: flex; gap: 10px; }
+  .ci2 { flex: 1; background: rgba(201,168,76,0.06); border-radius: 6px; padding: 10px 12px; }
+  .ci2 .cs { color: #c9a84c; font-size: 14px; font-weight: 700; margin-bottom: 2px; }
+  .ci2 .cw2 { font-size: 10px; color: #999; font-style: italic; margin-bottom: 3px; }
+  .ci2 p { font-size: 12px; line-height: 1.7; color: #d0d0d0; }
+  .adv {
+    background: rgba(201,168,76,0.08); border-left: 3px solid #c9a84c;
+    padding: 16px 18px; border-radius: 0 8px 8px 0;
+  }
+  .adv p { font-size: 15px; line-height: 2.1; color: #d0d0d0; }
+</style>
+</head>
+<body>
+
+<!-- P1: 導入 + 星の配置 ≈ 700px -->
+<div class="page">
+  <div class="hdr z"><h1>個 別 鑑 定 書</h1><div class="meta">2026年3月21日 鑑定</div></div>
+  <div class="divider"></div>
+  <div class="usr z"><div class="name">ハルさん</div><div class="info">♌ 獅子座 — 1987年8月17日 生まれ</div></div>
+  <div class="stat-row z">
+    <div class="stat"><div class="l">太陽星座</div><div class="v">獅子座</div></div>
+    <div class="stat"><div class="l">ライフパス</div><div class="v">5</div></div>
+    <div class="stat"><div class="l">個人年数</div><div class="v">8</div></div>
+    <div class="stat"><div class="l">4月の個人月</div><div class="v">3</div></div>
+  </div>
+  <div class="divider-f"></div>
+  <div class="con z">
+    <div class="timg"><img src="../../assets/tarot/07-chariot.jpg" alt="戦車"></div>
+    <div class="con-r">
+      <div class="cat">仕事・キャリア — 転職・適職</div>
+      <div class="q">4月から新しい会社に入社するので、そこでの初動の立ち回りを教えてほしい。</div>
+      <div class="tn">タロット: <strong>戦車（正位置）</strong></div>
+    </div>
+  </div>
+  <div class="divider-f"></div>
+  <div class="z">
+    <div class="st">ハルさんの星の配置</div>
+    <p class="b">太陽・獅子座のハルさんは、<strong>存在感とリーダーシップ</strong>で周囲を自然と巻き込む力の持ち主。人の前に立つことに抵抗がなく、場の空気を変える華があります。</p>
+    <div class="sp"></div>
+    <p class="b">個人年数8は「達成と権威の年」。これまで培ってきた経験やスキルが、新しい場所でも<strong>確かな武器になる年</strong>です。転職先でもゼロからではありません。</p>
+    <div class="sp"></div>
+    <p class="b">4月の個人月数3は<strong>コミュニケーションと自己表現が鍵</strong>になる月。言葉で人と繋がる力が高まっています。現在、木星が蟹座を運行中で、安定した基盤づくりを後押ししています。</p>
+  </div>
+  <div class="footer"><span>Fortune by カイ — 西洋占星術 × 数秘術 × タロット</span><span>1</span></div>
+</div>
+
+<!-- P2: ハルさんへの回答 + タロット ≈ 700px -->
+<div class="page">
+  <div class="z">
+    <div class="st">ハルさんの問いへの答え</div>
+    <p class="b">星・カード・数字を総合して、初動の立ち回りは<strong>3つのアクション</strong>に集約されます。</p>
+    <div class="sp-s"></div>
+    <div class="act">
+      <div class="an">① 最初の2週間は「聞く側」に立つ（特に4/2〜4/16）</div>
+      <p>4月前半は火星がまだ魚座。<strong>実力を見せるより信頼の土台を作る時期</strong>。4月2日の天秤座満月で気持ちを整え、4月10日の火星牡羊座入りまで観察に徹してください。</p>
+    </div>
+    <div class="act">
+      <div class="an">② 5月17日の新月までに、小さな成果を1つ出す</div>
+      <p>個人年数8は<strong>数字やデータに関わる提案と相性が良い</strong>。分析や改善提案など、根拠のある貢献が評価されます。</p>
+    </div>
+    <div class="act">
+      <div class="an">③ 射手座か牡羊座の人を最初の1人目に</div>
+      <p>火のエレメント同士で直感的に通じ合える相手。<strong>最初の30日で3人のキーパーソン</strong>を見つけて。仕事を教えてくれる人、社内事情に詳しい人、相談相手。</p>
+    </div>
+  </div>
+  <div class="divider-f"></div>
+  <div class="z">
+    <div class="st">タロット — 戦車が伝えること</div>
+    <div class="ti">
+      <div class="ti-img"><img src="../../assets/tarot/07-chariot.jpg" alt="戦車"></div>
+      <div class="ti-d">
+        <div class="cn">戦車（正位置）</div>
+        <p><strong>「意志を持って前進する者に、道は開ける」</strong>。御者が2頭の馬を制御する姿は「積極性と慎重さの使い分け」を示しています。</p>
+      </div>
+    </div>
+    <p class="b">入社直後は<strong>慎重さ6割、積極性4割</strong>。1ヶ月経ったら逆転させてください。</p>
+  </div>
+  <div class="footer"><span>Fortune by カイ — 西洋占星術 × 数秘術 × タロット</span><span>2</span></div>
+</div>
+
+<!-- P3: 占星術 + 数秘術 ≈ 680px -->
+<div class="page">
+  <div class="z">
+    <div class="st">西洋占星術 — 星が示す背景</div>
+    <p class="b"><strong>木星が蟹座を運行中</strong>。蟹座の木星は「安心できる居場所を築く力」を与えます。新しい職場に根を下ろすことを後押しする配置です。</p>
+    <div class="sp"></div>
+    <p class="b">4月前半は火星が魚座で<strong>種まきの時期</strong>。4月10日に火星が牡羊座入りすると行動力が一気に高まり、5月20日の牡牛座入り以降は着実な成果が見え始めます。</p>
+    <div class="sp"></div>
+    <p class="b">個人月数3は表現力が冴える月。<strong>4月17日の牡羊座新月</strong>が新しいスタートに最適なタイミング。金星が牡牛座（本来の座）にあるため、<strong>対人関係は安定</strong>。自然体でいることが最大の魅力になります。</p>
+  </div>
+  <div class="divider-f"></div>
+  <div class="z">
+    <div class="st">数秘術 — ハルさんの内側の力</div>
+    <p class="b" style="margin-bottom:12px; color:#aaa; font-size:14px;">星の配置が外側の追い風なら、数秘術はハルさんの内側に備わっている力を示しています。</p>
+    <div class="nr"><div class="nc">5</div><div class="nl">ライフパスナンバー 5 — 変化・自由・適応力</div></div>
+    <p class="b">ナンバー5の本質は<strong>「変化を恐れず、新しい環境で真価を発揮する力」</strong>。動いた先で花開くタイプです。今回の転職はハルさんの本質に合った選択です。</p>
+    <div class="sp"></div>
+    <div class="nr"><div class="nc">8</div><div class="nl">2026年の個人年数 8 — 達成と権威</div></div>
+    <p class="b">8の年は<strong>これまでの積み重ねが形になる年</strong>。過去の経験が新しい環境でも必ず活きます。ゼロからではありません。</p>
+  </div>
+  <div class="footer"><span>Fortune by カイ — 西洋占星術 × 数秘術 × タロット</span><span>3</span></div>
+</div>
+
+<!-- P4: タイムライン + カレンダー ≈ 700px -->
+<div class="page">
+  <div class="z">
+    <div class="st">3ヶ月タイムライン</div>
+    <div class="tl-row">
+      <div class="tl-m">
+        <div class="ml">4月</div><div class="ms">観察と信頼構築</div>
+        <p>聞き役に徹する。<strong>4/17の牡羊座新月</strong>で仕事の目標を定める月。</p>
+      </div>
+      <div class="tl-m">
+        <div class="ml">5月</div><div class="ms">小さな成果を出す</div>
+        <p><strong>5/17新月</strong>に提案を出す。<strong>5/19火星牡牛座入り</strong>で実行力UP。</p>
+      </div>
+      <div class="tl-m">
+        <div class="ml">6月</div><div class="ms">存在感の確立</div>
+        <p><strong>6/29火星双子座入り+6/30山羊座満月</strong>が転換点。発言力と存在感が確立。</p>
+      </div>
+    </div>
+  </div>
+  <div class="divider-f"></div>
+  <div class="z">
+    <div class="st">好機日・注意日カレンダー</div>
+    <div class="ci"><div class="cd cg">4月2日 ◎</div><div class="cx"><strong>天秤座満月</strong> — 対人関係に光が当たる日。入社前の不安を手放し気持ちを整える</div></div>
+    <div class="ci"><div class="cd cg">4月10日 ◎</div><div class="cx"><strong>火星が牡羊座入り</strong> — 行動力が一気に高まる。キーパーソンに自分から声をかけて</div></div>
+    <div class="ci"><div class="cd cg">4月17日 ◎</div><div class="cx"><strong>牡羊座新月</strong> — 「始まり」の新月。<strong>この日に仕事の目標を立てる</strong>と追い風に乗れる</div></div>
+    <div class="ci"><div class="cd cg">5月2日 ◎</div><div class="cx"><strong>蠍座満月</strong> — 深い信頼が生まれる日。最初の1ヶ月の人間関係が実を結ぶ</div></div>
+    <div class="ci"><div class="cd cg">5月17日 ◎</div><div class="cx"><strong>牡牛座新月</strong> — 実務面の新月。<strong>具体的な提案を出すベストタイミング</strong></div></div>
+    <div class="ci"><div class="cd cg">5月19日 ◎</div><div class="cx"><strong>火星が牡牛座入り</strong> — 地に足のついた実行力が増す。コツコツ積み上げが評価される</div></div>
+    <div class="ci"><div class="cd cg">6月29-30日 ◎</div><div class="cx"><strong>火星双子座入り(6/29) + 山羊座満月(6/30)</strong> — 発言力UPとキャリアの満月が連続する最強の2日間</div></div>
+  </div>
+  <div class="sp"></div>
+  <div class="z">
+    <p class="b" style="color:#aaa; font-size:13px;">◎の日は積極的に動いてOK。△の日は「判断を急がない」だけで十分です。</p>
+    <div class="sp-s"></div>
+    <p class="b" style="color:#aaa; font-size:13px;">カレンダーに印をつけて、1週間ごとに見返してみてください。</p>
+    <div class="sp-s"></div>
+    <p class="b" style="color:#aaa; font-size:13px;">特に<strong>4月17日の牡羊座新月</strong>と<strong>6月30日の山羊座満月</strong>はハルさんにとって最も重要な2日間。この2つの日を意識するだけで、3ヶ月の流れが変わります。</p>
+  </div>
+  <div class="footer"><span>Fortune by カイ — 西洋占星術 × 数秘術 × タロット</span><span>4</span></div>
+</div>
+
+<!-- P5: ラッキー + 味方星座 + クロージング ≈ 700px -->
+<div class="page">
+  <div class="z">
+    <div class="st">ラッキーポイント</div>
+    <div class="lr">
+      <div class="li"><div class="ll">色</div><div class="lv">ネイビー</div></div>
+      <div class="li"><div class="ll">数字</div><div class="lv">5・8</div></div>
+      <div class="li"><div class="ll">方角</div><div class="lv">南東</div></div>
+      <div class="li"><div class="ll">アクション</div><div class="lv">朝の挨拶</div></div>
+    </div>
+    <div class="sp-s"></div>
+    <p class="b">入社初日はネイビーのアイテムを。毎朝の挨拶がハルさんの運気を底上げします。</p>
+  </div>
+  <div class="divider-f"></div>
+  <div class="z">
+    <div class="st">味方になる星座</div>
+    <div class="cr">
+      <div class="ci2"><div class="cs">♐ 射手座</div><div class="cw2">火のエレメント</div><p>ビジョンを共有でき、ハルさんの挑戦を応援してくれる</p></div>
+      <div class="ci2"><div class="cs">♈ 牡羊座</div><div class="cw2">火のエレメント</div><p>行動力で意気投合。困った時に真っ先に助けてくれる</p></div>
+      <div class="ci2"><div class="cs">♎ 天秤座</div><div class="cw2">4/2天秤座満月の縁</div><p>社内の橋渡し役。人間関係の地図を教えてくれる</p></div>
+    </div>
+  </div>
+  <div class="divider-f"></div>
+  <div class="z">
+    <div class="st">カイからハルさんへ</div>
+    <div class="adv">
+      <p>ハルさん、星もカードも数字も、揃って<strong>「この転職は正解」</strong>と伝えています。</p>
+      <div class="sp"></div>
+      <p>初動で一番大切なのは、<strong>焦らないこと</strong>。獅子座のハルさんは、慣れた頃に自然と輝き始めます。最初の2週間は聞き役に徹して、1ヶ月目の終わりに小さな成果を1つ。それだけで十分です。</p>
+      <div class="sp"></div>
+      <p>3ヶ月後の夏至を迎える頃、「あの時動いてよかった」と思えているはずです。ハルさんの新しいスタートが、素晴らしいものになりますように。</p>
+    </div>
+  </div>
+  <div class="footer"><span>Fortune by カイ — 西洋占星術 × 数秘術 × タロット</span><span>5</span></div>
+</div>
+
+</body>
+</html>
