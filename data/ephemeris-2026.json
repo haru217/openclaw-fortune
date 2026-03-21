@@ -1393,8 +1393,8 @@
           "signJp": "蟹座"
         },
         "saturn": {
-          "sign": "pisces",
-          "signJp": "魚座"
+          "sign": "aries",
+          "signJp": "牡羊座"
         }
       }
     },
@@ -1424,8 +1424,8 @@
           "signJp": "蟹座"
         },
         "saturn": {
-          "sign": "pisces",
-          "signJp": "魚座"
+          "sign": "aries",
+          "signJp": "牡羊座"
         }
       }
     },
@@ -1455,8 +1455,8 @@
           "signJp": "蟹座"
         },
         "saturn": {
-          "sign": "pisces",
-          "signJp": "魚座"
+          "sign": "aries",
+          "signJp": "牡羊座"
         }
       }
     },
@@ -1486,8 +1486,8 @@
           "signJp": "蟹座"
         },
         "saturn": {
-          "sign": "pisces",
-          "signJp": "魚座"
+          "sign": "aries",
+          "signJp": "牡羊座"
         }
       }
     },
@@ -5605,8 +5605,8 @@
           "signJp": "双子座"
         },
         "jupiter": {
-          "sign": "cancer",
-          "signJp": "蟹座"
+          "sign": "leo",
+          "signJp": "獅子座"
         },
         "saturn": {
           "sign": "aries",
@@ -11381,14 +11381,15 @@
       "toSignJp": "魚座"
     },
     {
-      "date": "2026-02-17",
-      "time": "15:20",
+      "date": "2026-02-14",
+      "time": "04:00",
       "planet": "saturn",
       "planetJp": "土星",
       "fromSign": "pisces",
       "fromSignJp": "魚座",
       "toSign": "aries",
-      "toSignJp": "牡羊座"
+      "toSignJp": "牡羊座",
+      "overrideSource": "Cafe Astrology: Feb 13 14:00 ET → JST"
     },
     {
       "date": "2026-03-03",
@@ -11521,14 +11522,15 @@
       "toSignJp": "双子座"
     },
     {
-      "date": "2026-07-02",
-      "time": "08:00",
+      "date": "2026-07-01",
+      "time": "03:00",
       "planet": "jupiter",
       "planetJp": "木星",
       "fromSign": "cancer",
       "fromSignJp": "蟹座",
       "toSign": "leo",
-      "toSignJp": "獅子座"
+      "toSignJp": "獅子座",
+      "overrideSource": "Cafe Astrology: Jun 30 → JST"
     },
     {
       "date": "2026-07-10",
@@ -11685,5 +11687,6 @@
       "end": "2026-11-14"
     }
   ],
-  "ingressSource": "pyephem 4.2.1 binary-search (1-minute precision)"
+  "ingressSource": "pyephem 4.2.1 binary-search (1-minute precision)",
+  "overrideNote": "Jupiter/Saturn ingresses overridden with Cafe Astrology verified dates"
 }
