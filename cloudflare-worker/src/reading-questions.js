@@ -9,7 +9,7 @@ export const CATEGORIES = [
 
 export const SUBCATEGORIES = {
   general: [
-    { id: 'self', label: '自分を知る（性格・才能・傾向）' },
+    { id: 'self', label: '自分を知る' },
     { id: 'flow', label: '今後の運勢の流れ' },
     { id: 'direction', label: '人生の方向性' },
     { id: 'advice', label: '今の悩みへのアドバイス' },
@@ -35,7 +35,7 @@ export const QUESTIONS = {
   'general:self': {
     q1: {
       label: 'きっかけを教えてください',
-      options: ['自分の強みが分からない', '人間関係で悩むことが多い', '自分に自信が持てない', '新しい環境に入る前に知りたい'],
+      options: ['自分の強みが分からない', '人間関係で悩みやすい', '自信が持てない', '環境が変わる前に知りたい', 'なんとなく気になった'],
     },
     q2: {
       label: '特に知りたいことは？（複数OK）',
