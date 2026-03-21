@@ -1,0 +1,177 @@
+[
+  {
+    "date_jst": "2026-01-03",
+    "time_jst": "19:02",
+    "phase": "full_moon",
+    "sign": "cancer",
+    "sign_jp": "蟹座"
+  },
+  {
+    "date_jst": "2026-01-19",
+    "time_jst": "04:51",
+    "phase": "new_moon",
+    "sign": "capricorn",
+    "sign_jp": "山羊座"
+  },
+  {
+    "date_jst": "2026-02-02",
+    "time_jst": "07:09",
+    "phase": "full_moon",
+    "sign": "leo",
+    "sign_jp": "獅子座"
+  },
+  {
+    "date_jst": "2026-02-17",
+    "time_jst": "21:01",
+    "phase": "new_moon",
+    "sign": "aquarius",
+    "sign_jp": "水瓶座"
+  },
+  {
+    "date_jst": "2026-03-03",
+    "time_jst": "20:37",
+    "phase": "full_moon",
+    "sign": "virgo",
+    "sign_jp": "乙女座"
+  },
+  {
+    "date_jst": "2026-03-19",
+    "time_jst": "10:23",
+    "phase": "new_moon",
+    "sign": "pisces",
+    "sign_jp": "魚座"
+  },
+  {
+    "date_jst": "2026-04-02",
+    "time_jst": "11:11",
+    "phase": "full_moon",
+    "sign": "libra",
+    "sign_jp": "天秤座"
+  },
+  {
+    "date_jst": "2026-04-17",
+    "time_jst": "20:51",
+    "phase": "new_moon",
+    "sign": "aries",
+    "sign_jp": "牡羊座"
+  },
+  {
+    "date_jst": "2026-05-02",
+    "time_jst": "02:23",
+    "phase": "full_moon",
+    "sign": "scorpio",
+    "sign_jp": "蠍座"
+  },
+  {
+    "date_jst": "2026-05-17",
+    "time_jst": "05:00",
+    "phase": "new_moon",
+    "sign": "taurus",
+    "sign_jp": "牡牛座"
+  },
+  {
+    "date_jst": "2026-05-31",
+    "time_jst": "17:45",
+    "phase": "full_moon",
+    "sign": "sagittarius",
+    "sign_jp": "射手座"
+  },
+  {
+    "date_jst": "2026-06-15",
+    "time_jst": "11:54",
+    "phase": "new_moon",
+    "sign": "gemini",
+    "sign_jp": "双子座"
+  },
+  {
+    "date_jst": "2026-06-30",
+    "time_jst": "08:56",
+    "phase": "full_moon",
+    "sign": "capricorn",
+    "sign_jp": "山羊座"
+  },
+  {
+    "date_jst": "2026-07-14",
+    "time_jst": "18:43",
+    "phase": "new_moon",
+    "sign": "cancer",
+    "sign_jp": "蟹座"
+  },
+  {
+    "date_jst": "2026-07-29",
+    "time_jst": "23:35",
+    "phase": "full_moon",
+    "sign": "aquarius",
+    "sign_jp": "水瓶座"
+  },
+  {
+    "date_jst": "2026-08-13",
+    "time_jst": "02:36",
+    "phase": "new_moon",
+    "sign": "leo",
+    "sign_jp": "獅子座"
+  },
+  {
+    "date_jst": "2026-08-28",
+    "time_jst": "13:18",
+    "phase": "full_moon",
+    "sign": "pisces",
+    "sign_jp": "魚座"
+  },
+  {
+    "date_jst": "2026-09-11",
+    "time_jst": "12:26",
+    "phase": "new_moon",
+    "sign": "virgo",
+    "sign_jp": "乙女座"
+  },
+  {
+    "date_jst": "2026-09-27",
+    "time_jst": "01:48",
+    "phase": "full_moon",
+    "sign": "aries",
+    "sign_jp": "牡羊座"
+  },
+  {
+    "date_jst": "2026-10-11",
+    "time_jst": "00:50",
+    "phase": "new_moon",
+    "sign": "libra",
+    "sign_jp": "天秤座"
+  },
+  {
+    "date_jst": "2026-10-26",
+    "time_jst": "13:11",
+    "phase": "full_moon",
+    "sign": "taurus",
+    "sign_jp": "牡牛座"
+  },
+  {
+    "date_jst": "2026-11-09",
+    "time_jst": "16:02",
+    "phase": "new_moon",
+    "sign": "scorpio",
+    "sign_jp": "蠍座"
+  },
+  {
+    "date_jst": "2026-11-24",
+    "time_jst": "23:53",
+    "phase": "full_moon",
+    "sign": "gemini",
+    "sign_jp": "双子座"
+  },
+  {
+    "date_jst": "2026-12-09",
+    "time_jst": "09:51",
+    "phase": "new_moon",
+    "sign": "sagittarius",
+    "sign_jp": "射手座"
+  },
+  {
+    "date_jst": "2026-12-24",
+    "time_jst": "10:28",
+    "phase": "full_moon",
+    "sign": "cancer",
+    "sign_jp": "蟹座"
+  }
+]

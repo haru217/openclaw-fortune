@@ -1,3290 +1,3292 @@
 {
   "year": 2026,
+  "source": "pyephem 4.2.1",
+  "generated": "2026-03-21T14:47:46.005639",
   "data": [
     {
       "date": "2026-01-01",
       "sunSign": "山羊座",
-      "sunSignEn": "Capricorn",
-      "moonAge": 11.3,
+      "sunSignEn": "capricorn",
+      "moonAge": 12.1,
       "moonPhase": "十三夜月",
       "moonSign": "双子座",
-      "moonSignEn": "Gemini"
+      "moonSignEn": "gemini"
     },
     {
       "date": "2026-01-02",
       "sunSign": "山羊座",
-      "sunSignEn": "Capricorn",
-      "moonAge": 12.3,
+      "sunSignEn": "capricorn",
+      "moonAge": 13.1,
       "moonPhase": "十三夜月",
       "moonSign": "双子座",
-      "moonSignEn": "Gemini"
+      "moonSignEn": "gemini"
     },
     {
       "date": "2026-01-03",
       "sunSign": "山羊座",
-      "sunSignEn": "Capricorn",
-      "moonAge": 13.3,
-      "moonPhase": "十三夜月",
-      "moonSign": "双子座",
-      "moonSignEn": "Gemini"
+      "sunSignEn": "capricorn",
+      "moonAge": 14.1,
+      "moonPhase": "満月",
+      "moonSign": "蟹座",
+      "moonSignEn": "cancer"
     },
     {
       "date": "2026-01-04",
       "sunSign": "山羊座",
-      "sunSignEn": "Capricorn",
-      "moonAge": 14.3,
+      "sunSignEn": "capricorn",
+      "moonAge": 15.1,
       "moonPhase": "満月",
       "moonSign": "蟹座",
-      "moonSignEn": "Cancer"
+      "moonSignEn": "cancer"
     },
     {
       "date": "2026-01-05",
       "sunSign": "山羊座",
-      "sunSignEn": "Capricorn",
-      "moonAge": 15.3,
-      "moonPhase": "満月",
-      "moonSign": "蟹座",
-      "moonSignEn": "Cancer"
+      "sunSignEn": "capricorn",
+      "moonAge": 16.1,
+      "moonPhase": "寝待月",
+      "moonSign": "獅子座",
+      "moonSignEn": "leo"
     },
     {
       "date": "2026-01-06",
       "sunSign": "山羊座",
-      "sunSignEn": "Capricorn",
-      "moonAge": 16.3,
+      "sunSignEn": "capricorn",
+      "moonAge": 17.1,
       "moonPhase": "寝待月",
       "moonSign": "獅子座",
-      "moonSignEn": "Leo"
+      "moonSignEn": "leo"
     },
     {
       "date": "2026-01-07",
       "sunSign": "山羊座",
-      "sunSignEn": "Capricorn",
-      "moonAge": 17.3,
+      "sunSignEn": "capricorn",
+      "moonAge": 18.1,
       "moonPhase": "寝待月",
-      "moonSign": "獅子座",
-      "moonSignEn": "Leo"
+      "moonSign": "乙女座",
+      "moonSignEn": "virgo"
     },
     {
       "date": "2026-01-08",
       "sunSign": "山羊座",
-      "sunSignEn": "Capricorn",
-      "moonAge": 18.3,
+      "sunSignEn": "capricorn",
+      "moonAge": 19.1,
       "moonPhase": "寝待月",
-      "moonSign": "獅子座",
-      "moonSignEn": "Leo"
+      "moonSign": "乙女座",
+      "moonSignEn": "virgo"
     },
     {
       "date": "2026-01-09",
       "sunSign": "山羊座",
-      "sunSignEn": "Capricorn",
-      "moonAge": 19.3,
+      "sunSignEn": "capricorn",
+      "moonAge": 20.1,
       "moonPhase": "寝待月",
-      "moonSign": "乙女座",
-      "moonSignEn": "Virgo"
+      "moonSign": "天秤座",
+      "moonSignEn": "libra"
     },
     {
       "date": "2026-01-10",
       "sunSign": "山羊座",
-      "sunSignEn": "Capricorn",
-      "moonAge": 20.3,
+      "sunSignEn": "capricorn",
+      "moonAge": 21.1,
       "moonPhase": "寝待月",
-      "moonSign": "乙女座",
-      "moonSignEn": "Virgo"
+      "moonSign": "天秤座",
+      "moonSignEn": "libra"
     },
     {
       "date": "2026-01-11",
       "sunSign": "山羊座",
-      "sunSignEn": "Capricorn",
-      "moonAge": 21.3,
-      "moonPhase": "寝待月",
+      "sunSignEn": "capricorn",
+      "moonAge": 22.1,
+      "moonPhase": "下弦",
       "moonSign": "天秤座",
-      "moonSignEn": "Libra"
+      "moonSignEn": "libra"
     },
     {
       "date": "2026-01-12",
       "sunSign": "山羊座",
-      "sunSignEn": "Capricorn",
-      "moonAge": 22.3,
-      "moonPhase": "下弦",
-      "moonSign": "天秤座",
-      "moonSignEn": "Libra"
+      "sunSignEn": "capricorn",
+      "moonAge": 23.1,
+      "moonPhase": "有明月",
+      "moonSign": "蠍座",
+      "moonSignEn": "scorpio"
     },
     {
       "date": "2026-01-13",
       "sunSign": "山羊座",
-      "sunSignEn": "Capricorn",
-      "moonAge": 23.3,
+      "sunSignEn": "capricorn",
+      "moonAge": 24.1,
       "moonPhase": "有明月",
-      "moonSign": "天秤座",
-      "moonSignEn": "Libra"
+      "moonSign": "蠍座",
+      "moonSignEn": "scorpio"
     },
     {
       "date": "2026-01-14",
       "sunSign": "山羊座",
-      "sunSignEn": "Capricorn",
-      "moonAge": 24.3,
+      "sunSignEn": "capricorn",
+      "moonAge": 25.1,
       "moonPhase": "有明月",
-      "moonSign": "蠍座",
-      "moonSignEn": "Scorpio"
+      "moonSign": "射手座",
+      "moonSignEn": "sagittarius"
     },
     {
       "date": "2026-01-15",
       "sunSign": "山羊座",
-      "sunSignEn": "Capricorn",
-      "moonAge": 25.3,
+      "sunSignEn": "capricorn",
+      "moonAge": 26.1,
       "moonPhase": "有明月",
-      "moonSign": "蠍座",
-      "moonSignEn": "Scorpio"
+      "moonSign": "射手座",
+      "moonSignEn": "sagittarius"
     },
     {
       "date": "2026-01-16",
       "sunSign": "山羊座",
-      "sunSignEn": "Capricorn",
-      "moonAge": 26.3,
+      "sunSignEn": "capricorn",
+      "moonAge": 27.1,
       "moonPhase": "有明月",
       "moonSign": "射手座",
-      "moonSignEn": "Sagittarius"
+      "moonSignEn": "sagittarius"
     },
     {
       "date": "2026-01-17",
       "sunSign": "山羊座",
-      "sunSignEn": "Capricorn",
-      "moonAge": 27.3,
+      "sunSignEn": "capricorn",
+      "moonAge": 28.1,
       "moonPhase": "有明月",
-      "moonSign": "射手座",
-      "moonSignEn": "Sagittarius"
+      "moonSign": "山羊座",
+      "moonSignEn": "capricorn"
     },
     {
       "date": "2026-01-18",
       "sunSign": "山羊座",
-      "sunSignEn": "Capricorn",
-      "moonAge": 28.3,
+      "sunSignEn": "capricorn",
+      "moonAge": 29.1,
       "moonPhase": "有明月",
-      "moonSign": "射手座",
-      "moonSignEn": "Sagittarius"
+      "moonSign": "山羊座",
+      "moonSignEn": "capricorn"
     },
     {
       "date": "2026-01-19",
       "sunSign": "山羊座",
-      "sunSignEn": "Capricorn",
-      "moonAge": 29.3,
-      "moonPhase": "有明月",
-      "moonSign": "山羊座",
-      "moonSignEn": "Capricorn"
+      "sunSignEn": "capricorn",
+      "moonAge": 0.3,
+      "moonPhase": "新月",
+      "moonSign": "水瓶座",
+      "moonSignEn": "aquarius"
     },
     {
       "date": "2026-01-20",
-      "sunSign": "水瓶座",
-      "sunSignEn": "Aquarius",
-      "moonAge": 0.8,
-      "moonPhase": "新月",
-      "moonSign": "山羊座",
-      "moonSignEn": "Capricorn"
+      "sunSign": "山羊座",
+      "sunSignEn": "capricorn",
+      "moonAge": 1.3,
+      "moonPhase": "三日月",
+      "moonSign": "水瓶座",
+      "moonSignEn": "aquarius"
     },
     {
       "date": "2026-01-21",
       "sunSign": "水瓶座",
-      "sunSignEn": "Aquarius",
-      "moonAge": 1.8,
+      "sunSignEn": "aquarius",
+      "moonAge": 2.3,
       "moonPhase": "三日月",
       "moonSign": "水瓶座",
-      "moonSignEn": "Aquarius"
+      "moonSignEn": "aquarius"
     },
     {
       "date": "2026-01-22",
       "sunSign": "水瓶座",
-      "sunSignEn": "Aquarius",
-      "moonAge": 2.8,
+      "sunSignEn": "aquarius",
+      "moonAge": 3.3,
       "moonPhase": "三日月",
-      "moonSign": "水瓶座",
-      "moonSignEn": "Aquarius"
+      "moonSign": "魚座",
+      "moonSignEn": "pisces"
     },
     {
       "date": "2026-01-23",
       "sunSign": "水瓶座",
-      "sunSignEn": "Aquarius",
-      "moonAge": 3.8,
+      "sunSignEn": "aquarius",
+      "moonAge": 4.3,
       "moonPhase": "三日月",
-      "moonSign": "水瓶座",
-      "moonSignEn": "Aquarius"
+      "moonSign": "魚座",
+      "moonSignEn": "pisces"
     },
     {
       "date": "2026-01-24",
       "sunSign": "水瓶座",
-      "sunSignEn": "Aquarius",
-      "moonAge": 4.8,
+      "sunSignEn": "aquarius",
+      "moonAge": 5.3,
       "moonPhase": "三日月",
-      "moonSign": "魚座",
-      "moonSignEn": "Pisces"
+      "moonSign": "牡羊座",
+      "moonSignEn": "aries"
     },
     {
       "date": "2026-01-25",
       "sunSign": "水瓶座",
-      "sunSignEn": "Aquarius",
-      "moonAge": 5.8,
+      "sunSignEn": "aquarius",
+      "moonAge": 6.3,
       "moonPhase": "三日月",
-      "moonSign": "魚座",
-      "moonSignEn": "Pisces"
+      "moonSign": "牡羊座",
+      "moonSignEn": "aries"
     },
     {
       "date": "2026-01-26",
       "sunSign": "水瓶座",
-      "sunSignEn": "Aquarius",
-      "moonAge": 6.8,
-      "moonPhase": "三日月",
-      "moonSign": "牡羊座",
-      "moonSignEn": "Aries"
+      "sunSignEn": "aquarius",
+      "moonAge": 7.3,
+      "moonPhase": "上弦",
+      "moonSign": "牡牛座",
+      "moonSignEn": "taurus"
     },
     {
       "date": "2026-01-27",
       "sunSign": "水瓶座",
-      "sunSignEn": "Aquarius",
-      "moonAge": 7.8,
-      "moonPhase": "上弦",
-      "moonSign": "牡羊座",
-      "moonSignEn": "Aries"
+      "sunSignEn": "aquarius",
+      "moonAge": 8.3,
+      "moonPhase": "十三夜月",
+      "moonSign": "牡牛座",
+      "moonSignEn": "taurus"
     },
     {
       "date": "2026-01-28",
       "sunSign": "水瓶座",
-      "sunSignEn": "Aquarius",
-      "moonAge": 8.8,
+      "sunSignEn": "aquarius",
+      "moonAge": 9.3,
       "moonPhase": "十三夜月",
-      "moonSign": "牡羊座",
-      "moonSignEn": "Aries"
+      "moonSign": "双子座",
+      "moonSignEn": "gemini"
     },
     {
       "date": "2026-01-29",
       "sunSign": "水瓶座",
-      "sunSignEn": "Aquarius",
-      "moonAge": 9.8,
+      "sunSignEn": "aquarius",
+      "moonAge": 10.3,
       "moonPhase": "十三夜月",
-      "moonSign": "牡牛座",
-      "moonSignEn": "Taurus"
+      "moonSign": "双子座",
+      "moonSignEn": "gemini"
     },
     {
       "date": "2026-01-30",
       "sunSign": "水瓶座",
-      "sunSignEn": "Aquarius",
-      "moonAge": 10.8,
+      "sunSignEn": "aquarius",
+      "moonAge": 11.3,
       "moonPhase": "十三夜月",
-      "moonSign": "牡牛座",
-      "moonSignEn": "Taurus"
+      "moonSign": "蟹座",
+      "moonSignEn": "cancer"
     },
     {
       "date": "2026-01-31",
       "sunSign": "水瓶座",
-      "sunSignEn": "Aquarius",
-      "moonAge": 11.8,
+      "sunSignEn": "aquarius",
+      "moonAge": 12.3,
       "moonPhase": "十三夜月",
-      "moonSign": "双子座",
-      "moonSignEn": "Gemini"
+      "moonSign": "蟹座",
+      "moonSignEn": "cancer"
     },
     {
       "date": "2026-02-01",
       "sunSign": "水瓶座",
-      "sunSignEn": "Aquarius",
-      "moonAge": 12.8,
+      "sunSignEn": "aquarius",
+      "moonAge": 13.3,
       "moonPhase": "十三夜月",
-      "moonSign": "双子座",
-      "moonSignEn": "Gemini"
+      "moonSign": "獅子座",
+      "moonSignEn": "leo"
     },
     {
       "date": "2026-02-02",
       "sunSign": "水瓶座",
-      "sunSignEn": "Aquarius",
-      "moonAge": 13.8,
-      "moonPhase": "十三夜月",
-      "moonSign": "蟹座",
-      "moonSignEn": "Cancer"
+      "sunSignEn": "aquarius",
+      "moonAge": 14.3,
+      "moonPhase": "満月",
+      "moonSign": "獅子座",
+      "moonSignEn": "leo"
     },
     {
       "date": "2026-02-03",
       "sunSign": "水瓶座",
-      "sunSignEn": "Aquarius",
-      "moonAge": 14.8,
+      "sunSignEn": "aquarius",
+      "moonAge": 15.3,
       "moonPhase": "満月",
-      "moonSign": "蟹座",
-      "moonSignEn": "Cancer"
+      "moonSign": "獅子座",
+      "moonSignEn": "leo"
     },
     {
       "date": "2026-02-04",
       "sunSign": "水瓶座",
-      "sunSignEn": "Aquarius",
-      "moonAge": 15.8,
-      "moonPhase": "満月",
-      "moonSign": "蟹座",
-      "moonSignEn": "Cancer"
+      "sunSignEn": "aquarius",
+      "moonAge": 16.3,
+      "moonPhase": "寝待月",
+      "moonSign": "乙女座",
+      "moonSignEn": "virgo"
     },
     {
       "date": "2026-02-05",
       "sunSign": "水瓶座",
-      "sunSignEn": "Aquarius",
-      "moonAge": 16.8,
+      "sunSignEn": "aquarius",
+      "moonAge": 17.3,
       "moonPhase": "寝待月",
-      "moonSign": "獅子座",
-      "moonSignEn": "Leo"
+      "moonSign": "乙女座",
+      "moonSignEn": "virgo"
     },
     {
       "date": "2026-02-06",
       "sunSign": "水瓶座",
-      "sunSignEn": "Aquarius",
-      "moonAge": 17.8,
+      "sunSignEn": "aquarius",
+      "moonAge": 18.3,
       "moonPhase": "寝待月",
-      "moonSign": "獅子座",
-      "moonSignEn": "Leo"
+      "moonSign": "天秤座",
+      "moonSignEn": "libra"
     },
     {
       "date": "2026-02-07",
       "sunSign": "水瓶座",
-      "sunSignEn": "Aquarius",
-      "moonAge": 18.8,
+      "sunSignEn": "aquarius",
+      "moonAge": 19.3,
       "moonPhase": "寝待月",
-      "moonSign": "乙女座",
-      "moonSignEn": "Virgo"
+      "moonSign": "天秤座",
+      "moonSignEn": "libra"
     },
     {
       "date": "2026-02-08",
       "sunSign": "水瓶座",
-      "sunSignEn": "Aquarius",
-      "moonAge": 19.8,
+      "sunSignEn": "aquarius",
+      "moonAge": 20.3,
       "moonPhase": "寝待月",
-      "moonSign": "乙女座",
-      "moonSignEn": "Virgo"
+      "moonSign": "蠍座",
+      "moonSignEn": "scorpio"
     },
     {
       "date": "2026-02-09",
       "sunSign": "水瓶座",
-      "sunSignEn": "Aquarius",
-      "moonAge": 20.8,
+      "sunSignEn": "aquarius",
+      "moonAge": 21.3,
       "moonPhase": "寝待月",
-      "moonSign": "乙女座",
-      "moonSignEn": "Virgo"
+      "moonSign": "蠍座",
+      "moonSignEn": "scorpio"
     },
     {
       "date": "2026-02-10",
       "sunSign": "水瓶座",
-      "sunSignEn": "Aquarius",
-      "moonAge": 21.8,
-      "moonPhase": "寝待月",
-      "moonSign": "天秤座",
-      "moonSignEn": "Libra"
+      "sunSignEn": "aquarius",
+      "moonAge": 22.3,
+      "moonPhase": "下弦",
+      "moonSign": "蠍座",
+      "moonSignEn": "scorpio"
     },
     {
       "date": "2026-02-11",
       "sunSign": "水瓶座",
-      "sunSignEn": "Aquarius",
-      "moonAge": 22.8,
-      "moonPhase": "下弦",
-      "moonSign": "天秤座",
-      "moonSignEn": "Libra"
+      "sunSignEn": "aquarius",
+      "moonAge": 23.3,
+      "moonPhase": "有明月",
+      "moonSign": "射手座",
+      "moonSignEn": "sagittarius"
     },
     {
       "date": "2026-02-12",
       "sunSign": "水瓶座",
-      "sunSignEn": "Aquarius",
-      "moonAge": 23.8,
+      "sunSignEn": "aquarius",
+      "moonAge": 24.3,
       "moonPhase": "有明月",
-      "moonSign": "蠍座",
-      "moonSignEn": "Scorpio"
+      "moonSign": "射手座",
+      "moonSignEn": "sagittarius"
     },
     {
       "date": "2026-02-13",
       "sunSign": "水瓶座",
-      "sunSignEn": "Aquarius",
-      "moonAge": 24.8,
+      "sunSignEn": "aquarius",
+      "moonAge": 25.3,
       "moonPhase": "有明月",
-      "moonSign": "蠍座",
-      "moonSignEn": "Scorpio"
+      "moonSign": "山羊座",
+      "moonSignEn": "capricorn"
     },
     {
       "date": "2026-02-14",
       "sunSign": "水瓶座",
-      "sunSignEn": "Aquarius",
-      "moonAge": 25.8,
+      "sunSignEn": "aquarius",
+      "moonAge": 26.3,
       "moonPhase": "有明月",
-      "moonSign": "蠍座",
-      "moonSignEn": "Scorpio"
+      "moonSign": "山羊座",
+      "moonSignEn": "capricorn"
     },
     {
       "date": "2026-02-15",
       "sunSign": "水瓶座",
-      "sunSignEn": "Aquarius",
-      "moonAge": 26.8,
+      "sunSignEn": "aquarius",
+      "moonAge": 27.3,
       "moonPhase": "有明月",
-      "moonSign": "射手座",
-      "moonSignEn": "Sagittarius"
+      "moonSign": "山羊座",
+      "moonSignEn": "capricorn"
     },
     {
       "date": "2026-02-16",
       "sunSign": "水瓶座",
-      "sunSignEn": "Aquarius",
-      "moonAge": 27.8,
+      "sunSignEn": "aquarius",
+      "moonAge": 28.3,
       "moonPhase": "有明月",
-      "moonSign": "射手座",
-      "moonSignEn": "Sagittarius"
+      "moonSign": "水瓶座",
+      "moonSignEn": "aquarius"
     },
     {
       "date": "2026-02-17",
       "sunSign": "水瓶座",
-      "sunSignEn": "Aquarius",
-      "moonAge": 28.8,
-      "moonPhase": "有明月",
-      "moonSign": "山羊座",
-      "moonSignEn": "Capricorn"
+      "sunSignEn": "aquarius",
+      "moonAge": 29.3,
+      "moonPhase": "新月",
+      "moonSign": "水瓶座",
+      "moonSignEn": "aquarius"
     },
     {
       "date": "2026-02-18",
       "sunSign": "水瓶座",
-      "sunSignEn": "Aquarius",
-      "moonAge": 0.2,
+      "sunSignEn": "aquarius",
+      "moonAge": 0.6,
       "moonPhase": "新月",
-      "moonSign": "山羊座",
-      "moonSignEn": "Capricorn"
+      "moonSign": "魚座",
+      "moonSignEn": "pisces"
     },
     {
       "date": "2026-02-19",
       "sunSign": "魚座",
-      "sunSignEn": "Pisces",
-      "moonAge": 1.2,
+      "sunSignEn": "pisces",
+      "moonAge": 1.6,
       "moonPhase": "三日月",
-      "moonSign": "山羊座",
-      "moonSignEn": "Capricorn"
+      "moonSign": "魚座",
+      "moonSignEn": "pisces"
     },
     {
       "date": "2026-02-20",
       "sunSign": "魚座",
-      "sunSignEn": "Pisces",
-      "moonAge": 2.2,
+      "sunSignEn": "pisces",
+      "moonAge": 2.6,
       "moonPhase": "三日月",
-      "moonSign": "水瓶座",
-      "moonSignEn": "Aquarius"
+      "moonSign": "牡羊座",
+      "moonSignEn": "aries"
     },
     {
       "date": "2026-02-21",
       "sunSign": "魚座",
-      "sunSignEn": "Pisces",
-      "moonAge": 3.2,
+      "sunSignEn": "pisces",
+      "moonAge": 3.6,
       "moonPhase": "三日月",
-      "moonSign": "水瓶座",
-      "moonSignEn": "Aquarius"
+      "moonSign": "牡羊座",
+      "moonSignEn": "aries"
     },
     {
       "date": "2026-02-22",
       "sunSign": "魚座",
-      "sunSignEn": "Pisces",
-      "moonAge": 4.2,
+      "sunSignEn": "pisces",
+      "moonAge": 4.6,
       "moonPhase": "三日月",
-      "moonSign": "魚座",
-      "moonSignEn": "Pisces"
+      "moonSign": "牡牛座",
+      "moonSignEn": "taurus"
     },
     {
       "date": "2026-02-23",
       "sunSign": "魚座",
-      "sunSignEn": "Pisces",
-      "moonAge": 5.2,
+      "sunSignEn": "pisces",
+      "moonAge": 5.6,
       "moonPhase": "三日月",
-      "moonSign": "魚座",
-      "moonSignEn": "Pisces"
+      "moonSign": "牡牛座",
+      "moonSignEn": "taurus"
     },
     {
       "date": "2026-02-24",
       "sunSign": "魚座",
-      "sunSignEn": "Pisces",
-      "moonAge": 6.2,
+      "sunSignEn": "pisces",
+      "moonAge": 6.6,
       "moonPhase": "三日月",
-      "moonSign": "魚座",
-      "moonSignEn": "Pisces"
+      "moonSign": "牡牛座",
+      "moonSignEn": "taurus"
     },
     {
       "date": "2026-02-25",
       "sunSign": "魚座",
-      "sunSignEn": "Pisces",
-      "moonAge": 7.2,
+      "sunSignEn": "pisces",
+      "moonAge": 7.6,
       "moonPhase": "上弦",
-      "moonSign": "牡羊座",
-      "moonSignEn": "Aries"
+      "moonSign": "双子座",
+      "moonSignEn": "gemini"
     },
     {
       "date": "2026-02-26",
       "sunSign": "魚座",
-      "sunSignEn": "Pisces",
-      "moonAge": 8.2,
+      "sunSignEn": "pisces",
+      "moonAge": 8.6,
       "moonPhase": "十三夜月",
-      "moonSign": "牡羊座",
-      "moonSignEn": "Aries"
+      "moonSign": "双子座",
+      "moonSignEn": "gemini"
     },
     {
       "date": "2026-02-27",
       "sunSign": "魚座",
-      "sunSignEn": "Pisces",
-      "moonAge": 9.2,
+      "sunSignEn": "pisces",
+      "moonAge": 9.6,
       "moonPhase": "十三夜月",
-      "moonSign": "牡牛座",
-      "moonSignEn": "Taurus"
+      "moonSign": "蟹座",
+      "moonSignEn": "cancer"
     },
     {
       "date": "2026-02-28",
       "sunSign": "魚座",
-      "sunSignEn": "Pisces",
-      "moonAge": 10.2,
+      "sunSignEn": "pisces",
+      "moonAge": 10.6,
       "moonPhase": "十三夜月",
-      "moonSign": "牡牛座",
-      "moonSignEn": "Taurus"
+      "moonSign": "蟹座",
+      "moonSignEn": "cancer"
     },
     {
       "date": "2026-03-01",
       "sunSign": "魚座",
-      "sunSignEn": "Pisces",
-      "moonAge": 11.2,
+      "sunSignEn": "pisces",
+      "moonAge": 11.6,
       "moonPhase": "十三夜月",
-      "moonSign": "牡牛座",
-      "moonSignEn": "Taurus"
+      "moonSign": "獅子座",
+      "moonSignEn": "leo"
     },
     {
       "date": "2026-03-02",
       "sunSign": "魚座",
-      "sunSignEn": "Pisces",
-      "moonAge": 12.2,
+      "sunSignEn": "pisces",
+      "moonAge": 12.6,
       "moonPhase": "十三夜月",
-      "moonSign": "双子座",
-      "moonSignEn": "Gemini"
+      "moonSign": "獅子座",
+      "moonSignEn": "leo"
     },
     {
       "date": "2026-03-03",
       "sunSign": "魚座",
-      "sunSignEn": "Pisces",
-      "moonAge": 13.2,
-      "moonPhase": "十三夜月",
-      "moonSign": "双子座",
-      "moonSignEn": "Gemini"
+      "sunSignEn": "pisces",
+      "moonAge": 13.6,
+      "moonPhase": "満月",
+      "moonSign": "乙女座",
+      "moonSignEn": "virgo"
     },
     {
       "date": "2026-03-04",
       "sunSign": "魚座",
-      "sunSignEn": "Pisces",
-      "moonAge": 14.2,
+      "sunSignEn": "pisces",
+      "moonAge": 14.6,
       "moonPhase": "満月",
-      "moonSign": "蟹座",
-      "moonSignEn": "Cancer"
+      "moonSign": "乙女座",
+      "moonSignEn": "virgo"
     },
     {
       "date": "2026-03-05",
       "sunSign": "魚座",
-      "sunSignEn": "Pisces",
-      "moonAge": 15.2,
+      "sunSignEn": "pisces",
+      "moonAge": 15.6,
       "moonPhase": "満月",
-      "moonSign": "蟹座",
-      "moonSignEn": "Cancer"
+      "moonSign": "天秤座",
+      "moonSignEn": "libra"
     },
     {
       "date": "2026-03-06",
       "sunSign": "魚座",
-      "sunSignEn": "Pisces",
-      "moonAge": 16.2,
+      "sunSignEn": "pisces",
+      "moonAge": 16.6,
       "moonPhase": "寝待月",
-      "moonSign": "獅子座",
-      "moonSignEn": "Leo"
+      "moonSign": "天秤座",
+      "moonSignEn": "libra"
     },
     {
       "date": "2026-03-07",
       "sunSign": "魚座",
-      "sunSignEn": "Pisces",
-      "moonAge": 17.2,
+      "sunSignEn": "pisces",
+      "moonAge": 17.6,
       "moonPhase": "寝待月",
-      "moonSign": "獅子座",
-      "moonSignEn": "Leo"
+      "moonSign": "天秤座",
+      "moonSignEn": "libra"
     },
     {
       "date": "2026-03-08",
       "sunSign": "魚座",
-      "sunSignEn": "Pisces",
-      "moonAge": 18.2,
+      "sunSignEn": "pisces",
+      "moonAge": 18.6,
       "moonPhase": "寝待月",
-      "moonSign": "獅子座",
-      "moonSignEn": "Leo"
+      "moonSign": "蠍座",
+      "moonSignEn": "scorpio"
     },
     {
       "date": "2026-03-09",
       "sunSign": "魚座",
-      "sunSignEn": "Pisces",
-      "moonAge": 19.2,
+      "sunSignEn": "pisces",
+      "moonAge": 19.6,
       "moonPhase": "寝待月",
-      "moonSign": "乙女座",
-      "moonSignEn": "Virgo"
+      "moonSign": "蠍座",
+      "moonSignEn": "scorpio"
     },
     {
       "date": "2026-03-10",
       "sunSign": "魚座",
-      "sunSignEn": "Pisces",
-      "moonAge": 20.2,
+      "sunSignEn": "pisces",
+      "moonAge": 20.6,
       "moonPhase": "寝待月",
-      "moonSign": "乙女座",
-      "moonSignEn": "Virgo"
+      "moonSign": "射手座",
+      "moonSignEn": "sagittarius"
     },
     {
       "date": "2026-03-11",
       "sunSign": "魚座",
-      "sunSignEn": "Pisces",
-      "moonAge": 21.2,
+      "sunSignEn": "pisces",
+      "moonAge": 21.6,
       "moonPhase": "寝待月",
-      "moonSign": "天秤座",
-      "moonSignEn": "Libra"
+      "moonSign": "射手座",
+      "moonSignEn": "sagittarius"
     },
     {
       "date": "2026-03-12",
       "sunSign": "魚座",
-      "sunSignEn": "Pisces",
-      "moonAge": 22.2,
+      "sunSignEn": "pisces",
+      "moonAge": 22.6,
       "moonPhase": "下弦",
-      "moonSign": "天秤座",
-      "moonSignEn": "Libra"
+      "moonSign": "射手座",
+      "moonSignEn": "sagittarius"
     },
     {
       "date": "2026-03-13",
       "sunSign": "魚座",
-      "sunSignEn": "Pisces",
-      "moonAge": 23.2,
+      "sunSignEn": "pisces",
+      "moonAge": 23.6,
       "moonPhase": "有明月",
-      "moonSign": "天秤座",
-      "moonSignEn": "Libra"
+      "moonSign": "山羊座",
+      "moonSignEn": "capricorn"
     },
     {
       "date": "2026-03-14",
       "sunSign": "魚座",
-      "sunSignEn": "Pisces",
-      "moonAge": 24.2,
+      "sunSignEn": "pisces",
+      "moonAge": 24.6,
       "moonPhase": "有明月",
-      "moonSign": "蠍座",
-      "moonSignEn": "Scorpio"
+      "moonSign": "山羊座",
+      "moonSignEn": "capricorn"
     },
     {
       "date": "2026-03-15",
       "sunSign": "魚座",
-      "sunSignEn": "Pisces",
-      "moonAge": 25.2,
+      "sunSignEn": "pisces",
+      "moonAge": 25.6,
       "moonPhase": "有明月",
-      "moonSign": "蠍座",
-      "moonSignEn": "Scorpio"
+      "moonSign": "水瓶座",
+      "moonSignEn": "aquarius"
     },
     {
       "date": "2026-03-16",
       "sunSign": "魚座",
-      "sunSignEn": "Pisces",
-      "moonAge": 26.2,
+      "sunSignEn": "pisces",
+      "moonAge": 26.6,
       "moonPhase": "有明月",
-      "moonSign": "射手座",
-      "moonSignEn": "Sagittarius"
+      "moonSign": "水瓶座",
+      "moonSignEn": "aquarius"
     },
     {
       "date": "2026-03-17",
       "sunSign": "魚座",
-      "sunSignEn": "Pisces",
-      "moonAge": 27.2,
+      "sunSignEn": "pisces",
+      "moonAge": 27.6,
       "moonPhase": "有明月",
-      "moonSign": "射手座",
-      "moonSignEn": "Sagittarius"
+      "moonSign": "魚座",
+      "moonSignEn": "pisces"
     },
     {
       "date": "2026-03-18",
       "sunSign": "魚座",
-      "sunSignEn": "Pisces",
-      "moonAge": 28.2,
+      "sunSignEn": "pisces",
+      "moonAge": 28.6,
       "moonPhase": "有明月",
-      "moonSign": "射手座",
-      "moonSignEn": "Sagittarius"
+      "moonSign": "魚座",
+      "moonSignEn": "pisces"
     },
     {
       "date": "2026-03-19",
       "sunSign": "魚座",
-      "sunSignEn": "Pisces",
-      "moonAge": 29.2,
-      "moonPhase": "有明月",
-      "moonSign": "山羊座",
-      "moonSignEn": "Capricorn"
+      "sunSignEn": "pisces",
+      "moonAge": 0.1,
+      "moonPhase": "新月",
+      "moonSign": "魚座",
+      "moonSignEn": "pisces"
     },
     {
       "date": "2026-03-20",
       "sunSign": "魚座",
-      "sunSignEn": "Pisces",
-      "moonAge": 0.7,
-      "moonPhase": "新月",
-      "moonSign": "山羊座",
-      "moonSignEn": "Capricorn"
+      "sunSignEn": "pisces",
+      "moonAge": 1.1,
+      "moonPhase": "三日月",
+      "moonSign": "牡羊座",
+      "moonSignEn": "aries"
     },
     {
       "date": "2026-03-21",
       "sunSign": "牡羊座",
-      "sunSignEn": "Aries",
-      "moonAge": 1.7,
+      "sunSignEn": "aries",
+      "moonAge": 2.1,
       "moonPhase": "三日月",
-      "moonSign": "水瓶座",
-      "moonSignEn": "Aquarius"
+      "moonSign": "牡羊座",
+      "moonSignEn": "aries"
     },
     {
       "date": "2026-03-22",
       "sunSign": "牡羊座",
-      "sunSignEn": "Aries",
-      "moonAge": 2.7,
+      "sunSignEn": "aries",
+      "moonAge": 3.1,
       "moonPhase": "三日月",
-      "moonSign": "水瓶座",
-      "moonSignEn": "Aquarius"
+      "moonSign": "牡牛座",
+      "moonSignEn": "taurus"
     },
     {
       "date": "2026-03-23",
       "sunSign": "牡羊座",
-      "sunSignEn": "Aries",
-      "moonAge": 3.7,
+      "sunSignEn": "aries",
+      "moonAge": 4.1,
       "moonPhase": "三日月",
-      "moonSign": "水瓶座",
-      "moonSignEn": "Aquarius"
+      "moonSign": "牡牛座",
+      "moonSignEn": "taurus"
     },
     {
       "date": "2026-03-24",
       "sunSign": "牡羊座",
-      "sunSignEn": "Aries",
-      "moonAge": 4.7,
+      "sunSignEn": "aries",
+      "moonAge": 5.1,
       "moonPhase": "三日月",
-      "moonSign": "魚座",
-      "moonSignEn": "Pisces"
+      "moonSign": "双子座",
+      "moonSignEn": "gemini"
     },
     {
       "date": "2026-03-25",
       "sunSign": "牡羊座",
-      "sunSignEn": "Aries",
-      "moonAge": 5.7,
+      "sunSignEn": "aries",
+      "moonAge": 6.1,
       "moonPhase": "三日月",
-      "moonSign": "魚座",
-      "moonSignEn": "Pisces"
+      "moonSign": "双子座",
+      "moonSignEn": "gemini"
     },
     {
       "date": "2026-03-26",
       "sunSign": "牡羊座",
-      "sunSignEn": "Aries",
-      "moonAge": 6.7,
-      "moonPhase": "三日月",
-      "moonSign": "牡羊座",
-      "moonSignEn": "Aries"
+      "sunSignEn": "aries",
+      "moonAge": 7.1,
+      "moonPhase": "上弦",
+      "moonSign": "蟹座",
+      "moonSignEn": "cancer"
     },
     {
       "date": "2026-03-27",
       "sunSign": "牡羊座",
-      "sunSignEn": "Aries",
-      "moonAge": 7.7,
-      "moonPhase": "上弦",
-      "moonSign": "牡羊座",
-      "moonSignEn": "Aries"
+      "sunSignEn": "aries",
+      "moonAge": 8.1,
+      "moonPhase": "十三夜月",
+      "moonSign": "蟹座",
+      "moonSignEn": "cancer"
     },
     {
       "date": "2026-03-28",
       "sunSign": "牡羊座",
-      "sunSignEn": "Aries",
-      "moonAge": 8.7,
+      "sunSignEn": "aries",
+      "moonAge": 9.1,
       "moonPhase": "十三夜月",
-      "moonSign": "牡羊座",
-      "moonSignEn": "Aries"
+      "moonSign": "獅子座",
+      "moonSignEn": "leo"
     },
     {
       "date": "2026-03-29",
       "sunSign": "牡羊座",
-      "sunSignEn": "Aries",
-      "moonAge": 9.7,
+      "sunSignEn": "aries",
+      "moonAge": 10.1,
       "moonPhase": "十三夜月",
-      "moonSign": "牡牛座",
-      "moonSignEn": "Taurus"
+      "moonSign": "獅子座",
+      "moonSignEn": "leo"
     },
     {
       "date": "2026-03-30",
       "sunSign": "牡羊座",
-      "sunSignEn": "Aries",
-      "moonAge": 10.7,
+      "sunSignEn": "aries",
+      "moonAge": 11.1,
       "moonPhase": "十三夜月",
-      "moonSign": "牡牛座",
-      "moonSignEn": "Taurus"
+      "moonSign": "乙女座",
+      "moonSignEn": "virgo"
     },
     {
       "date": "2026-03-31",
       "sunSign": "牡羊座",
-      "sunSignEn": "Aries",
-      "moonAge": 11.7,
+      "sunSignEn": "aries",
+      "moonAge": 12.1,
       "moonPhase": "十三夜月",
-      "moonSign": "双子座",
-      "moonSignEn": "Gemini"
+      "moonSign": "乙女座",
+      "moonSignEn": "virgo"
     },
     {
       "date": "2026-04-01",
       "sunSign": "牡羊座",
-      "sunSignEn": "Aries",
-      "moonAge": 12.7,
+      "sunSignEn": "aries",
+      "moonAge": 13.1,
       "moonPhase": "十三夜月",
-      "moonSign": "双子座",
-      "moonSignEn": "Gemini"
+      "moonSign": "乙女座",
+      "moonSignEn": "virgo"
     },
     {
       "date": "2026-04-02",
       "sunSign": "牡羊座",
-      "sunSignEn": "Aries",
-      "moonAge": 13.7,
-      "moonPhase": "十三夜月",
-      "moonSign": "双子座",
-      "moonSignEn": "Gemini"
+      "sunSignEn": "aries",
+      "moonAge": 14.1,
+      "moonPhase": "満月",
+      "moonSign": "天秤座",
+      "moonSignEn": "libra"
     },
     {
       "date": "2026-04-03",
       "sunSign": "牡羊座",
-      "sunSignEn": "Aries",
-      "moonAge": 14.7,
+      "sunSignEn": "aries",
+      "moonAge": 15.1,
       "moonPhase": "満月",
-      "moonSign": "蟹座",
-      "moonSignEn": "Cancer"
+      "moonSign": "天秤座",
+      "moonSignEn": "libra"
     },
     {
       "date": "2026-04-04",
       "sunSign": "牡羊座",
-      "sunSignEn": "Aries",
-      "moonAge": 15.7,
-      "moonPhase": "満月",
-      "moonSign": "蟹座",
-      "moonSignEn": "Cancer"
+      "sunSignEn": "aries",
+      "moonAge": 16.1,
+      "moonPhase": "寝待月",
+      "moonSign": "蠍座",
+      "moonSignEn": "scorpio"
     },
     {
       "date": "2026-04-05",
       "sunSign": "牡羊座",
-      "sunSignEn": "Aries",
-      "moonAge": 16.7,
+      "sunSignEn": "aries",
+      "moonAge": 17.1,
       "moonPhase": "寝待月",
-      "moonSign": "獅子座",
-      "moonSignEn": "Leo"
+      "moonSign": "蠍座",
+      "moonSignEn": "scorpio"
     },
     {
       "date": "2026-04-06",
       "sunSign": "牡羊座",
-      "sunSignEn": "Aries",
-      "moonAge": 17.7,
+      "sunSignEn": "aries",
+      "moonAge": 18.1,
       "moonPhase": "寝待月",
-      "moonSign": "獅子座",
-      "moonSignEn": "Leo"
+      "moonSign": "射手座",
+      "moonSignEn": "sagittarius"
     },
     {
       "date": "2026-04-07",
       "sunSign": "牡羊座",
-      "sunSignEn": "Aries",
-      "moonAge": 18.7,
+      "sunSignEn": "aries",
+      "moonAge": 19.1,
       "moonPhase": "寝待月",
-      "moonSign": "乙女座",
-      "moonSignEn": "Virgo"
+      "moonSign": "射手座",
+      "moonSignEn": "sagittarius"
     },
     {
       "date": "2026-04-08",
       "sunSign": "牡羊座",
-      "sunSignEn": "Aries",
-      "moonAge": 19.7,
+      "sunSignEn": "aries",
+      "moonAge": 20.1,
       "moonPhase": "寝待月",
-      "moonSign": "乙女座",
-      "moonSignEn": "Virgo"
+      "moonSign": "射手座",
+      "moonSignEn": "sagittarius"
     },
     {
       "date": "2026-04-09",
       "sunSign": "牡羊座",
-      "sunSignEn": "Aries",
-      "moonAge": 20.7,
+      "sunSignEn": "aries",
+      "moonAge": 21.1,
       "moonPhase": "寝待月",
-      "moonSign": "乙女座",
-      "moonSignEn": "Virgo"
+      "moonSign": "山羊座",
+      "moonSignEn": "capricorn"
     },
     {
       "date": "2026-04-10",
       "sunSign": "牡羊座",
-      "sunSignEn": "Aries",
-      "moonAge": 21.7,
-      "moonPhase": "寝待月",
-      "moonSign": "天秤座",
-      "moonSignEn": "Libra"
+      "sunSignEn": "aries",
+      "moonAge": 22.1,
+      "moonPhase": "下弦",
+      "moonSign": "山羊座",
+      "moonSignEn": "capricorn"
     },
     {
       "date": "2026-04-11",
       "sunSign": "牡羊座",
-      "sunSignEn": "Aries",
-      "moonAge": 22.7,
-      "moonPhase": "下弦",
-      "moonSign": "天秤座",
-      "moonSignEn": "Libra"
+      "sunSignEn": "aries",
+      "moonAge": 23.1,
+      "moonPhase": "有明月",
+      "moonSign": "水瓶座",
+      "moonSignEn": "aquarius"
     },
     {
       "date": "2026-04-12",
       "sunSign": "牡羊座",
-      "sunSignEn": "Aries",
-      "moonAge": 23.7,
+      "sunSignEn": "aries",
+      "moonAge": 24.1,
       "moonPhase": "有明月",
-      "moonSign": "蠍座",
-      "moonSignEn": "Scorpio"
+      "moonSign": "水瓶座",
+      "moonSignEn": "aquarius"
     },
     {
       "date": "2026-04-13",
       "sunSign": "牡羊座",
-      "sunSignEn": "Aries",
-      "moonAge": 24.7,
+      "sunSignEn": "aries",
+      "moonAge": 25.1,
       "moonPhase": "有明月",
-      "moonSign": "蠍座",
-      "moonSignEn": "Scorpio"
+      "moonSign": "水瓶座",
+      "moonSignEn": "aquarius"
     },
     {
       "date": "2026-04-14",
       "sunSign": "牡羊座",
-      "sunSignEn": "Aries",
-      "moonAge": 25.7,
+      "sunSignEn": "aries",
+      "moonAge": 26.1,
       "moonPhase": "有明月",
-      "moonSign": "蠍座",
-      "moonSignEn": "Scorpio"
+      "moonSign": "魚座",
+      "moonSignEn": "pisces"
     },
     {
       "date": "2026-04-15",
       "sunSign": "牡羊座",
-      "sunSignEn": "Aries",
-      "moonAge": 26.7,
+      "sunSignEn": "aries",
+      "moonAge": 27.1,
       "moonPhase": "有明月",
-      "moonSign": "射手座",
-      "moonSignEn": "Sagittarius"
+      "moonSign": "魚座",
+      "moonSignEn": "pisces"
     },
     {
       "date": "2026-04-16",
       "sunSign": "牡羊座",
-      "sunSignEn": "Aries",
-      "moonAge": 27.7,
+      "sunSignEn": "aries",
+      "moonAge": 28.1,
       "moonPhase": "有明月",
-      "moonSign": "射手座",
-      "moonSignEn": "Sagittarius"
+      "moonSign": "牡羊座",
+      "moonSignEn": "aries"
     },
     {
       "date": "2026-04-17",
       "sunSign": "牡羊座",
-      "sunSignEn": "Aries",
-      "moonAge": 28.7,
-      "moonPhase": "有明月",
-      "moonSign": "山羊座",
-      "moonSignEn": "Capricorn"
+      "sunSignEn": "aries",
+      "moonAge": 29.1,
+      "moonPhase": "新月",
+      "moonSign": "牡羊座",
+      "moonSignEn": "aries"
     },
     {
       "date": "2026-04-18",
       "sunSign": "牡羊座",
-      "sunSignEn": "Aries",
-      "moonAge": 0.2,
+      "sunSignEn": "aries",
+      "moonAge": 0.6,
       "moonPhase": "新月",
-      "moonSign": "山羊座",
-      "moonSignEn": "Capricorn"
+      "moonSign": "牡牛座",
+      "moonSignEn": "taurus"
     },
     {
       "date": "2026-04-19",
       "sunSign": "牡羊座",
-      "sunSignEn": "Aries",
-      "moonAge": 1.2,
+      "sunSignEn": "aries",
+      "moonAge": 1.6,
       "moonPhase": "三日月",
-      "moonSign": "山羊座",
-      "moonSignEn": "Capricorn"
+      "moonSign": "牡牛座",
+      "moonSignEn": "taurus"
     },
     {
       "date": "2026-04-20",
-      "sunSign": "牡牛座",
-      "sunSignEn": "Taurus",
-      "moonAge": 2.2,
+      "sunSign": "牡羊座",
+      "sunSignEn": "aries",
+      "moonAge": 2.6,
       "moonPhase": "三日月",
-      "moonSign": "水瓶座",
-      "moonSignEn": "Aquarius"
+      "moonSign": "双子座",
+      "moonSignEn": "gemini"
     },
     {
       "date": "2026-04-21",
       "sunSign": "牡牛座",
-      "sunSignEn": "Taurus",
-      "moonAge": 3.2,
+      "sunSignEn": "taurus",
+      "moonAge": 3.6,
       "moonPhase": "三日月",
-      "moonSign": "水瓶座",
-      "moonSignEn": "Aquarius"
+      "moonSign": "双子座",
+      "moonSignEn": "gemini"
     },
     {
       "date": "2026-04-22",
       "sunSign": "牡牛座",
-      "sunSignEn": "Taurus",
-      "moonAge": 4.2,
+      "sunSignEn": "taurus",
+      "moonAge": 4.6,
       "moonPhase": "三日月",
-      "moonSign": "魚座",
-      "moonSignEn": "Pisces"
+      "moonSign": "蟹座",
+      "moonSignEn": "cancer"
     },
     {
       "date": "2026-04-23",
       "sunSign": "牡牛座",
-      "sunSignEn": "Taurus",
-      "moonAge": 5.2,
+      "sunSignEn": "taurus",
+      "moonAge": 5.6,
       "moonPhase": "三日月",
-      "moonSign": "魚座",
-      "moonSignEn": "Pisces"
+      "moonSign": "蟹座",
+      "moonSignEn": "cancer"
     },
     {
       "date": "2026-04-24",
       "sunSign": "牡牛座",
-      "sunSignEn": "Taurus",
-      "moonAge": 6.2,
+      "sunSignEn": "taurus",
+      "moonAge": 6.6,
       "moonPhase": "三日月",
-      "moonSign": "魚座",
-      "moonSignEn": "Pisces"
+      "moonSign": "獅子座",
+      "moonSignEn": "leo"
     },
     {
       "date": "2026-04-25",
       "sunSign": "牡牛座",
-      "sunSignEn": "Taurus",
-      "moonAge": 7.2,
+      "sunSignEn": "taurus",
+      "moonAge": 7.6,
       "moonPhase": "上弦",
-      "moonSign": "牡羊座",
-      "moonSignEn": "Aries"
+      "moonSign": "獅子座",
+      "moonSignEn": "leo"
     },
     {
       "date": "2026-04-26",
       "sunSign": "牡牛座",
-      "sunSignEn": "Taurus",
-      "moonAge": 8.2,
+      "sunSignEn": "taurus",
+      "moonAge": 8.6,
       "moonPhase": "十三夜月",
-      "moonSign": "牡羊座",
-      "moonSignEn": "Aries"
+      "moonSign": "乙女座",
+      "moonSignEn": "virgo"
     },
     {
       "date": "2026-04-27",
       "sunSign": "牡牛座",
-      "sunSignEn": "Taurus",
-      "moonAge": 9.2,
+      "sunSignEn": "taurus",
+      "moonAge": 9.6,
       "moonPhase": "十三夜月",
-      "moonSign": "牡牛座",
-      "moonSignEn": "Taurus"
+      "moonSign": "乙女座",
+      "moonSignEn": "virgo"
     },
     {
       "date": "2026-04-28",
       "sunSign": "牡牛座",
-      "sunSignEn": "Taurus",
-      "moonAge": 10.2,
+      "sunSignEn": "taurus",
+      "moonAge": 10.6,
       "moonPhase": "十三夜月",
-      "moonSign": "牡牛座",
-      "moonSignEn": "Taurus"
+      "moonSign": "乙女座",
+      "moonSignEn": "virgo"
     },
     {
       "date": "2026-04-29",
       "sunSign": "牡牛座",
-      "sunSignEn": "Taurus",
-      "moonAge": 11.2,
+      "sunSignEn": "taurus",
+      "moonAge": 11.6,
       "moonPhase": "十三夜月",
-      "moonSign": "牡牛座",
-      "moonSignEn": "Taurus"
+      "moonSign": "天秤座",
+      "moonSignEn": "libra"
     },
     {
       "date": "2026-04-30",
       "sunSign": "牡牛座",
-      "sunSignEn": "Taurus",
-      "moonAge": 12.2,
+      "sunSignEn": "taurus",
+      "moonAge": 12.6,
       "moonPhase": "十三夜月",
-      "moonSign": "双子座",
-      "moonSignEn": "Gemini"
+      "moonSign": "天秤座",
+      "moonSignEn": "libra"
     },
     {
       "date": "2026-05-01",
       "sunSign": "牡牛座",
-      "sunSignEn": "Taurus",
-      "moonAge": 13.2,
+      "sunSignEn": "taurus",
+      "moonAge": 13.6,
       "moonPhase": "十三夜月",
-      "moonSign": "双子座",
-      "moonSignEn": "Gemini"
+      "moonSign": "蠍座",
+      "moonSignEn": "scorpio"
     },
     {
       "date": "2026-05-02",
       "sunSign": "牡牛座",
-      "sunSignEn": "Taurus",
-      "moonAge": 14.2,
+      "sunSignEn": "taurus",
+      "moonAge": 14.6,
       "moonPhase": "満月",
-      "moonSign": "蟹座",
-      "moonSignEn": "Cancer"
+      "moonSign": "蠍座",
+      "moonSignEn": "scorpio"
     },
     {
       "date": "2026-05-03",
       "sunSign": "牡牛座",
-      "sunSignEn": "Taurus",
-      "moonAge": 15.2,
+      "sunSignEn": "taurus",
+      "moonAge": 15.6,
       "moonPhase": "満月",
-      "moonSign": "蟹座",
-      "moonSignEn": "Cancer"
+      "moonSign": "蠍座",
+      "moonSignEn": "scorpio"
     },
     {
       "date": "2026-05-04",
       "sunSign": "牡牛座",
-      "sunSignEn": "Taurus",
-      "moonAge": 16.2,
+      "sunSignEn": "taurus",
+      "moonAge": 16.6,
       "moonPhase": "寝待月",
-      "moonSign": "獅子座",
-      "moonSignEn": "Leo"
+      "moonSign": "射手座",
+      "moonSignEn": "sagittarius"
     },
     {
       "date": "2026-05-05",
       "sunSign": "牡牛座",
-      "sunSignEn": "Taurus",
-      "moonAge": 17.2,
+      "sunSignEn": "taurus",
+      "moonAge": 17.6,
       "moonPhase": "寝待月",
-      "moonSign": "獅子座",
-      "moonSignEn": "Leo"
+      "moonSign": "射手座",
+      "moonSignEn": "sagittarius"
     },
     {
       "date": "2026-05-06",
       "sunSign": "牡牛座",
-      "sunSignEn": "Taurus",
-      "moonAge": 18.2,
+      "sunSignEn": "taurus",
+      "moonAge": 18.6,
       "moonPhase": "寝待月",
-      "moonSign": "獅子座",
-      "moonSignEn": "Leo"
+      "moonSign": "山羊座",
+      "moonSignEn": "capricorn"
     },
     {
       "date": "2026-05-07",
       "sunSign": "牡牛座",
-      "sunSignEn": "Taurus",
-      "moonAge": 19.2,
+      "sunSignEn": "taurus",
+      "moonAge": 19.6,
       "moonPhase": "寝待月",
-      "moonSign": "乙女座",
-      "moonSignEn": "Virgo"
+      "moonSign": "山羊座",
+      "moonSignEn": "capricorn"
     },
     {
       "date": "2026-05-08",
       "sunSign": "牡牛座",
-      "sunSignEn": "Taurus",
-      "moonAge": 20.2,
+      "sunSignEn": "taurus",
+      "moonAge": 20.6,
       "moonPhase": "寝待月",
-      "moonSign": "乙女座",
-      "moonSignEn": "Virgo"
+      "moonSign": "山羊座",
+      "moonSignEn": "capricorn"
     },
     {
       "date": "2026-05-09",
       "sunSign": "牡牛座",
-      "sunSignEn": "Taurus",
-      "moonAge": 21.2,
+      "sunSignEn": "taurus",
+      "moonAge": 21.6,
       "moonPhase": "寝待月",
-      "moonSign": "天秤座",
-      "moonSignEn": "Libra"
+      "moonSign": "水瓶座",
+      "moonSignEn": "aquarius"
     },
     {
       "date": "2026-05-10",
       "sunSign": "牡牛座",
-      "sunSignEn": "Taurus",
-      "moonAge": 22.2,
+      "sunSignEn": "taurus",
+      "moonAge": 22.6,
       "moonPhase": "下弦",
-      "moonSign": "天秤座",
-      "moonSignEn": "Libra"
+      "moonSign": "水瓶座",
+      "moonSignEn": "aquarius"
     },
     {
       "date": "2026-05-11",
       "sunSign": "牡牛座",
-      "sunSignEn": "Taurus",
-      "moonAge": 23.2,
+      "sunSignEn": "taurus",
+      "moonAge": 23.6,
       "moonPhase": "有明月",
-      "moonSign": "天秤座",
-      "moonSignEn": "Libra"
+      "moonSign": "魚座",
+      "moonSignEn": "pisces"
     },
     {
       "date": "2026-05-12",
       "sunSign": "牡牛座",
-      "sunSignEn": "Taurus",
-      "moonAge": 24.2,
+      "sunSignEn": "taurus",
+      "moonAge": 24.6,
       "moonPhase": "有明月",
-      "moonSign": "蠍座",
-      "moonSignEn": "Scorpio"
+      "moonSign": "魚座",
+      "moonSignEn": "pisces"
     },
     {
       "date": "2026-05-13",
       "sunSign": "牡牛座",
-      "sunSignEn": "Taurus",
-      "moonAge": 25.2,
+      "sunSignEn": "taurus",
+      "moonAge": 25.6,
       "moonPhase": "有明月",
-      "moonSign": "蠍座",
-      "moonSignEn": "Scorpio"
+      "moonSign": "牡羊座",
+      "moonSignEn": "aries"
     },
     {
       "date": "2026-05-14",
       "sunSign": "牡牛座",
-      "sunSignEn": "Taurus",
-      "moonAge": 26.2,
+      "sunSignEn": "taurus",
+      "moonAge": 26.6,
       "moonPhase": "有明月",
-      "moonSign": "射手座",
-      "moonSignEn": "Sagittarius"
+      "moonSign": "牡羊座",
+      "moonSignEn": "aries"
     },
     {
       "date": "2026-05-15",
       "sunSign": "牡牛座",
-      "sunSignEn": "Taurus",
-      "moonAge": 27.2,
+      "sunSignEn": "taurus",
+      "moonAge": 27.6,
       "moonPhase": "有明月",
-      "moonSign": "射手座",
-      "moonSignEn": "Sagittarius"
+      "moonSign": "牡羊座",
+      "moonSignEn": "aries"
     },
     {
       "date": "2026-05-16",
       "sunSign": "牡牛座",
-      "sunSignEn": "Taurus",
-      "moonAge": 28.2,
+      "sunSignEn": "taurus",
+      "moonAge": 28.6,
       "moonPhase": "有明月",
-      "moonSign": "射手座",
-      "moonSignEn": "Sagittarius"
+      "moonSign": "牡牛座",
+      "moonSignEn": "taurus"
     },
     {
       "date": "2026-05-17",
       "sunSign": "牡牛座",
-      "sunSignEn": "Taurus",
-      "moonAge": 29.2,
-      "moonPhase": "有明月",
-      "moonSign": "山羊座",
-      "moonSignEn": "Capricorn"
+      "sunSignEn": "taurus",
+      "moonAge": 0.3,
+      "moonPhase": "新月",
+      "moonSign": "双子座",
+      "moonSignEn": "gemini"
     },
     {
       "date": "2026-05-18",
       "sunSign": "牡牛座",
-      "sunSignEn": "Taurus",
-      "moonAge": 0.7,
-      "moonPhase": "新月",
-      "moonSign": "山羊座",
-      "moonSignEn": "Capricorn"
+      "sunSignEn": "taurus",
+      "moonAge": 1.3,
+      "moonPhase": "三日月",
+      "moonSign": "双子座",
+      "moonSignEn": "gemini"
     },
     {
       "date": "2026-05-19",
       "sunSign": "牡牛座",
-      "sunSignEn": "Taurus",
-      "moonAge": 1.7,
+      "sunSignEn": "taurus",
+      "moonAge": 2.3,
       "moonPhase": "三日月",
-      "moonSign": "水瓶座",
-      "moonSignEn": "Aquarius"
+      "moonSign": "蟹座",
+      "moonSignEn": "cancer"
     },
     {
       "date": "2026-05-20",
       "sunSign": "牡牛座",
-      "sunSignEn": "Taurus",
-      "moonAge": 2.7,
+      "sunSignEn": "taurus",
+      "moonAge": 3.3,
       "moonPhase": "三日月",
-      "moonSign": "水瓶座",
-      "moonSignEn": "Aquarius"
+      "moonSign": "蟹座",
+      "moonSignEn": "cancer"
     },
     {
       "date": "2026-05-21",
-      "sunSign": "双子座",
-      "sunSignEn": "Gemini",
-      "moonAge": 3.7,
+      "sunSign": "牡牛座",
+      "sunSignEn": "taurus",
+      "moonAge": 4.3,
       "moonPhase": "三日月",
-      "moonSign": "水瓶座",
-      "moonSignEn": "Aquarius"
+      "moonSign": "蟹座",
+      "moonSignEn": "cancer"
     },
     {
       "date": "2026-05-22",
       "sunSign": "双子座",
-      "sunSignEn": "Gemini",
-      "moonAge": 4.7,
+      "sunSignEn": "gemini",
+      "moonAge": 5.3,
       "moonPhase": "三日月",
-      "moonSign": "魚座",
-      "moonSignEn": "Pisces"
+      "moonSign": "獅子座",
+      "moonSignEn": "leo"
     },
     {
       "date": "2026-05-23",
       "sunSign": "双子座",
-      "sunSignEn": "Gemini",
-      "moonAge": 5.7,
+      "sunSignEn": "gemini",
+      "moonAge": 6.3,
       "moonPhase": "三日月",
-      "moonSign": "魚座",
-      "moonSignEn": "Pisces"
+      "moonSign": "獅子座",
+      "moonSignEn": "leo"
     },
     {
       "date": "2026-05-24",
       "sunSign": "双子座",
-      "sunSignEn": "Gemini",
-      "moonAge": 6.7,
-      "moonPhase": "三日月",
-      "moonSign": "牡羊座",
-      "moonSignEn": "Aries"
+      "sunSignEn": "gemini",
+      "moonAge": 7.3,
+      "moonPhase": "上弦",
+      "moonSign": "乙女座",
+      "moonSignEn": "virgo"
     },
     {
       "date": "2026-05-25",
       "sunSign": "双子座",
-      "sunSignEn": "Gemini",
-      "moonAge": 7.7,
-      "moonPhase": "上弦",
-      "moonSign": "牡羊座",
-      "moonSignEn": "Aries"
+      "sunSignEn": "gemini",
+      "moonAge": 8.3,
+      "moonPhase": "十三夜月",
+      "moonSign": "乙女座",
+      "moonSignEn": "virgo"
     },
     {
       "date": "2026-05-26",
       "sunSign": "双子座",
-      "sunSignEn": "Gemini",
-      "moonAge": 8.7,
+      "sunSignEn": "gemini",
+      "moonAge": 9.3,
       "moonPhase": "十三夜月",
-      "moonSign": "牡羊座",
-      "moonSignEn": "Aries"
+      "moonSign": "天秤座",
+      "moonSignEn": "libra"
     },
     {
       "date": "2026-05-27",
       "sunSign": "双子座",
-      "sunSignEn": "Gemini",
-      "moonAge": 9.7,
+      "sunSignEn": "gemini",
+      "moonAge": 10.3,
       "moonPhase": "十三夜月",
-      "moonSign": "牡牛座",
-      "moonSignEn": "Taurus"
+      "moonSign": "天秤座",
+      "moonSignEn": "libra"
     },
     {
       "date": "2026-05-28",
       "sunSign": "双子座",
-      "sunSignEn": "Gemini",
-      "moonAge": 10.7,
+      "sunSignEn": "gemini",
+      "moonAge": 11.3,
       "moonPhase": "十三夜月",
-      "moonSign": "牡牛座",
-      "moonSignEn": "Taurus"
+      "moonSign": "蠍座",
+      "moonSignEn": "scorpio"
     },
     {
       "date": "2026-05-29",
       "sunSign": "双子座",
-      "sunSignEn": "Gemini",
-      "moonAge": 11.7,
+      "sunSignEn": "gemini",
+      "moonAge": 12.3,
       "moonPhase": "十三夜月",
-      "moonSign": "双子座",
-      "moonSignEn": "Gemini"
+      "moonSign": "蠍座",
+      "moonSignEn": "scorpio"
     },
     {
       "date": "2026-05-30",
       "sunSign": "双子座",
-      "sunSignEn": "Gemini",
-      "moonAge": 12.7,
+      "sunSignEn": "gemini",
+      "moonAge": 13.3,
       "moonPhase": "十三夜月",
-      "moonSign": "双子座",
-      "moonSignEn": "Gemini"
+      "moonSign": "蠍座",
+      "moonSignEn": "scorpio"
     },
     {
       "date": "2026-05-31",
       "sunSign": "双子座",
-      "sunSignEn": "Gemini",
-      "moonAge": 13.7,
-      "moonPhase": "十三夜月",
-      "moonSign": "双子座",
-      "moonSignEn": "Gemini"
+      "sunSignEn": "gemini",
+      "moonAge": 14.3,
+      "moonPhase": "満月",
+      "moonSign": "射手座",
+      "moonSignEn": "sagittarius"
     },
     {
       "date": "2026-06-01",
       "sunSign": "双子座",
-      "sunSignEn": "Gemini",
-      "moonAge": 14.7,
+      "sunSignEn": "gemini",
+      "moonAge": 15.3,
       "moonPhase": "満月",
-      "moonSign": "蟹座",
-      "moonSignEn": "Cancer"
+      "moonSign": "射手座",
+      "moonSignEn": "sagittarius"
     },
     {
       "date": "2026-06-02",
       "sunSign": "双子座",
-      "sunSignEn": "Gemini",
-      "moonAge": 15.7,
-      "moonPhase": "満月",
-      "moonSign": "蟹座",
-      "moonSignEn": "Cancer"
+      "sunSignEn": "gemini",
+      "moonAge": 16.3,
+      "moonPhase": "寝待月",
+      "moonSign": "山羊座",
+      "moonSignEn": "capricorn"
     },
     {
       "date": "2026-06-03",
       "sunSign": "双子座",
-      "sunSignEn": "Gemini",
-      "moonAge": 16.7,
+      "sunSignEn": "gemini",
+      "moonAge": 17.3,
       "moonPhase": "寝待月",
-      "moonSign": "獅子座",
-      "moonSignEn": "Leo"
+      "moonSign": "山羊座",
+      "moonSignEn": "capricorn"
     },
     {
       "date": "2026-06-04",
       "sunSign": "双子座",
-      "sunSignEn": "Gemini",
-      "moonAge": 17.7,
+      "sunSignEn": "gemini",
+      "moonAge": 18.3,
       "moonPhase": "寝待月",
-      "moonSign": "獅子座",
-      "moonSignEn": "Leo"
+      "moonSign": "山羊座",
+      "moonSignEn": "capricorn"
     },
     {
       "date": "2026-06-05",
       "sunSign": "双子座",
-      "sunSignEn": "Gemini",
-      "moonAge": 18.7,
+      "sunSignEn": "gemini",
+      "moonAge": 19.3,
       "moonPhase": "寝待月",
-      "moonSign": "乙女座",
-      "moonSignEn": "Virgo"
+      "moonSign": "水瓶座",
+      "moonSignEn": "aquarius"
     },
     {
       "date": "2026-06-06",
       "sunSign": "双子座",
-      "sunSignEn": "Gemini",
-      "moonAge": 19.7,
+      "sunSignEn": "gemini",
+      "moonAge": 20.3,
       "moonPhase": "寝待月",
-      "moonSign": "乙女座",
-      "moonSignEn": "Virgo"
+      "moonSign": "水瓶座",
+      "moonSignEn": "aquarius"
     },
     {
       "date": "2026-06-07",
       "sunSign": "双子座",
-      "sunSignEn": "Gemini",
-      "moonAge": 20.7,
+      "sunSignEn": "gemini",
+      "moonAge": 21.3,
       "moonPhase": "寝待月",
-      "moonSign": "乙女座",
-      "moonSignEn": "Virgo"
+      "moonSign": "魚座",
+      "moonSignEn": "pisces"
     },
     {
       "date": "2026-06-08",
       "sunSign": "双子座",
-      "sunSignEn": "Gemini",
-      "moonAge": 21.7,
-      "moonPhase": "寝待月",
-      "moonSign": "天秤座",
-      "moonSignEn": "Libra"
+      "sunSignEn": "gemini",
+      "moonAge": 22.3,
+      "moonPhase": "下弦",
+      "moonSign": "魚座",
+      "moonSignEn": "pisces"
     },
     {
       "date": "2026-06-09",
       "sunSign": "双子座",
-      "sunSignEn": "Gemini",
-      "moonAge": 22.7,
-      "moonPhase": "下弦",
-      "moonSign": "天秤座",
-      "moonSignEn": "Libra"
+      "sunSignEn": "gemini",
+      "moonAge": 23.3,
+      "moonPhase": "有明月",
+      "moonSign": "魚座",
+      "moonSignEn": "pisces"
     },
     {
       "date": "2026-06-10",
       "sunSign": "双子座",
-      "sunSignEn": "Gemini",
-      "moonAge": 23.7,
+      "sunSignEn": "gemini",
+      "moonAge": 24.3,
       "moonPhase": "有明月",
-      "moonSign": "蠍座",
-      "moonSignEn": "Scorpio"
+      "moonSign": "牡羊座",
+      "moonSignEn": "aries"
     },
     {
       "date": "2026-06-11",
       "sunSign": "双子座",
-      "sunSignEn": "Gemini",
-      "moonAge": 24.7,
+      "sunSignEn": "gemini",
+      "moonAge": 25.3,
       "moonPhase": "有明月",
-      "moonSign": "蠍座",
-      "moonSignEn": "Scorpio"
+      "moonSign": "牡羊座",
+      "moonSignEn": "aries"
     },
     {
       "date": "2026-06-12",
       "sunSign": "双子座",
-      "sunSignEn": "Gemini",
-      "moonAge": 25.7,
+      "sunSignEn": "gemini",
+      "moonAge": 26.3,
       "moonPhase": "有明月",
-      "moonSign": "蠍座",
-      "moonSignEn": "Scorpio"
+      "moonSign": "牡牛座",
+      "moonSignEn": "taurus"
     },
     {
       "date": "2026-06-13",
       "sunSign": "双子座",
-      "sunSignEn": "Gemini",
-      "moonAge": 26.7,
+      "sunSignEn": "gemini",
+      "moonAge": 27.3,
       "moonPhase": "有明月",
-      "moonSign": "射手座",
-      "moonSignEn": "Sagittarius"
+      "moonSign": "牡牛座",
+      "moonSignEn": "taurus"
     },
     {
       "date": "2026-06-14",
       "sunSign": "双子座",
-      "sunSignEn": "Gemini",
-      "moonAge": 27.7,
+      "sunSignEn": "gemini",
+      "moonAge": 28.3,
       "moonPhase": "有明月",
-      "moonSign": "射手座",
-      "moonSignEn": "Sagittarius"
+      "moonSign": "双子座",
+      "moonSignEn": "gemini"
     },
     {
       "date": "2026-06-15",
       "sunSign": "双子座",
-      "sunSignEn": "Gemini",
-      "moonAge": 28.7,
-      "moonPhase": "有明月",
-      "moonSign": "山羊座",
-      "moonSignEn": "Capricorn"
+      "sunSignEn": "gemini",
+      "moonAge": 0.0,
+      "moonPhase": "新月",
+      "moonSign": "双子座",
+      "moonSignEn": "gemini"
     },
     {
       "date": "2026-06-16",
       "sunSign": "双子座",
-      "sunSignEn": "Gemini",
-      "moonAge": 0.1,
-      "moonPhase": "新月",
-      "moonSign": "山羊座",
-      "moonSignEn": "Capricorn"
+      "sunSignEn": "gemini",
+      "moonAge": 1.0,
+      "moonPhase": "三日月",
+      "moonSign": "蟹座",
+      "moonSignEn": "cancer"
     },
     {
       "date": "2026-06-17",
       "sunSign": "双子座",
-      "sunSignEn": "Gemini",
-      "moonAge": 1.1,
+      "sunSignEn": "gemini",
+      "moonAge": 2.0,
       "moonPhase": "三日月",
-      "moonSign": "山羊座",
-      "moonSignEn": "Capricorn"
+      "moonSign": "蟹座",
+      "moonSignEn": "cancer"
     },
     {
       "date": "2026-06-18",
       "sunSign": "双子座",
-      "sunSignEn": "Gemini",
-      "moonAge": 2.1,
+      "sunSignEn": "gemini",
+      "moonAge": 3.0,
       "moonPhase": "三日月",
-      "moonSign": "水瓶座",
-      "moonSignEn": "Aquarius"
+      "moonSign": "獅子座",
+      "moonSignEn": "leo"
     },
     {
       "date": "2026-06-19",
       "sunSign": "双子座",
-      "sunSignEn": "Gemini",
-      "moonAge": 3.1,
+      "sunSignEn": "gemini",
+      "moonAge": 4.0,
       "moonPhase": "三日月",
-      "moonSign": "水瓶座",
-      "moonSignEn": "Aquarius"
+      "moonSign": "獅子座",
+      "moonSignEn": "leo"
     },
     {
       "date": "2026-06-20",
       "sunSign": "双子座",
-      "sunSignEn": "Gemini",
-      "moonAge": 4.1,
+      "sunSignEn": "gemini",
+      "moonAge": 5.0,
       "moonPhase": "三日月",
-      "moonSign": "魚座",
-      "moonSignEn": "Pisces"
+      "moonSign": "乙女座",
+      "moonSignEn": "virgo"
     },
     {
       "date": "2026-06-21",
       "sunSign": "双子座",
-      "sunSignEn": "Gemini",
-      "moonAge": 5.1,
+      "sunSignEn": "gemini",
+      "moonAge": 6.0,
       "moonPhase": "三日月",
-      "moonSign": "魚座",
-      "moonSignEn": "Pisces"
+      "moonSign": "乙女座",
+      "moonSignEn": "virgo"
     },
     {
       "date": "2026-06-22",
       "sunSign": "蟹座",
-      "sunSignEn": "Cancer",
-      "moonAge": 6.1,
-      "moonPhase": "三日月",
-      "moonSign": "魚座",
-      "moonSignEn": "Pisces"
+      "sunSignEn": "cancer",
+      "moonAge": 7.0,
+      "moonPhase": "上弦",
+      "moonSign": "天秤座",
+      "moonSignEn": "libra"
     },
     {
       "date": "2026-06-23",
       "sunSign": "蟹座",
-      "sunSignEn": "Cancer",
-      "moonAge": 7.1,
-      "moonPhase": "上弦",
-      "moonSign": "牡羊座",
-      "moonSignEn": "Aries"
+      "sunSignEn": "cancer",
+      "moonAge": 8.0,
+      "moonPhase": "十三夜月",
+      "moonSign": "天秤座",
+      "moonSignEn": "libra"
     },
     {
       "date": "2026-06-24",
       "sunSign": "蟹座",
-      "sunSignEn": "Cancer",
-      "moonAge": 8.1,
+      "sunSignEn": "cancer",
+      "moonAge": 9.0,
       "moonPhase": "十三夜月",
-      "moonSign": "牡羊座",
-      "moonSignEn": "Aries"
+      "moonSign": "天秤座",
+      "moonSignEn": "libra"
     },
     {
       "date": "2026-06-25",
       "sunSign": "蟹座",
-      "sunSignEn": "Cancer",
-      "moonAge": 9.1,
+      "sunSignEn": "cancer",
+      "moonAge": 10.0,
       "moonPhase": "十三夜月",
-      "moonSign": "牡牛座",
-      "moonSignEn": "Taurus"
+      "moonSign": "蠍座",
+      "moonSignEn": "scorpio"
     },
     {
       "date": "2026-06-26",
       "sunSign": "蟹座",
-      "sunSignEn": "Cancer",
-      "moonAge": 10.1,
+      "sunSignEn": "cancer",
+      "moonAge": 11.0,
       "moonPhase": "十三夜月",
-      "moonSign": "牡牛座",
-      "moonSignEn": "Taurus"
+      "moonSign": "蠍座",
+      "moonSignEn": "scorpio"
     },
     {
       "date": "2026-06-27",
       "sunSign": "蟹座",
-      "sunSignEn": "Cancer",
-      "moonAge": 11.1,
+      "sunSignEn": "cancer",
+      "moonAge": 12.0,
       "moonPhase": "十三夜月",
-      "moonSign": "牡牛座",
-      "moonSignEn": "Taurus"
+      "moonSign": "射手座",
+      "moonSignEn": "sagittarius"
     },
     {
       "date": "2026-06-28",
       "sunSign": "蟹座",
-      "sunSignEn": "Cancer",
-      "moonAge": 12.1,
+      "sunSignEn": "cancer",
+      "moonAge": 13.0,
       "moonPhase": "十三夜月",
-      "moonSign": "双子座",
-      "moonSignEn": "Gemini"
+      "moonSign": "射手座",
+      "moonSignEn": "sagittarius"
     },
     {
       "date": "2026-06-29",
       "sunSign": "蟹座",
-      "sunSignEn": "Cancer",
-      "moonAge": 13.1,
-      "moonPhase": "十三夜月",
-      "moonSign": "双子座",
-      "moonSignEn": "Gemini"
+      "sunSignEn": "cancer",
+      "moonAge": 14.0,
+      "moonPhase": "満月",
+      "moonSign": "射手座",
+      "moonSignEn": "sagittarius"
     },
     {
       "date": "2026-06-30",
       "sunSign": "蟹座",
-      "sunSignEn": "Cancer",
-      "moonAge": 14.1,
+      "sunSignEn": "cancer",
+      "moonAge": 15.0,
       "moonPhase": "満月",
-      "moonSign": "蟹座",
-      "moonSignEn": "Cancer"
+      "moonSign": "山羊座",
+      "moonSignEn": "capricorn"
     },
     {
       "date": "2026-07-01",
       "sunSign": "蟹座",
-      "sunSignEn": "Cancer",
-      "moonAge": 15.1,
-      "moonPhase": "満月",
-      "moonSign": "蟹座",
-      "moonSignEn": "Cancer"
+      "sunSignEn": "cancer",
+      "moonAge": 16.0,
+      "moonPhase": "寝待月",
+      "moonSign": "山羊座",
+      "moonSignEn": "capricorn"
     },
     {
       "date": "2026-07-02",
       "sunSign": "蟹座",
-      "sunSignEn": "Cancer",
-      "moonAge": 16.1,
+      "sunSignEn": "cancer",
+      "moonAge": 17.0,
       "moonPhase": "寝待月",
-      "moonSign": "蟹座",
-      "moonSignEn": "Cancer"
+      "moonSign": "水瓶座",
+      "moonSignEn": "aquarius"
     },
     {
       "date": "2026-07-03",
       "sunSign": "蟹座",
-      "sunSignEn": "Cancer",
-      "moonAge": 17.1,
+      "sunSignEn": "cancer",
+      "moonAge": 18.0,
       "moonPhase": "寝待月",
-      "moonSign": "獅子座",
-      "moonSignEn": "Leo"
+      "moonSign": "水瓶座",
+      "moonSignEn": "aquarius"
     },
     {
       "date": "2026-07-04",
       "sunSign": "蟹座",
-      "sunSignEn": "Cancer",
-      "moonAge": 18.1,
+      "sunSignEn": "cancer",
+      "moonAge": 19.0,
       "moonPhase": "寝待月",
-      "moonSign": "獅子座",
-      "moonSignEn": "Leo"
+      "moonSign": "水瓶座",
+      "moonSignEn": "aquarius"
     },
     {
       "date": "2026-07-05",
       "sunSign": "蟹座",
-      "sunSignEn": "Cancer",
-      "moonAge": 19.1,
+      "sunSignEn": "cancer",
+      "moonAge": 20.0,
       "moonPhase": "寝待月",
-      "moonSign": "乙女座",
-      "moonSignEn": "Virgo"
+      "moonSign": "魚座",
+      "moonSignEn": "pisces"
     },
     {
       "date": "2026-07-06",
       "sunSign": "蟹座",
-      "sunSignEn": "Cancer",
-      "moonAge": 20.1,
+      "sunSignEn": "cancer",
+      "moonAge": 21.0,
       "moonPhase": "寝待月",
-      "moonSign": "乙女座",
-      "moonSignEn": "Virgo"
+      "moonSign": "魚座",
+      "moonSignEn": "pisces"
     },
     {
       "date": "2026-07-07",
       "sunSign": "蟹座",
-      "sunSignEn": "Cancer",
-      "moonAge": 21.1,
-      "moonPhase": "寝待月",
-      "moonSign": "天秤座",
-      "moonSignEn": "Libra"
+      "sunSignEn": "cancer",
+      "moonAge": 22.0,
+      "moonPhase": "下弦",
+      "moonSign": "牡羊座",
+      "moonSignEn": "aries"
     },
     {
       "date": "2026-07-08",
       "sunSign": "蟹座",
-      "sunSignEn": "Cancer",
-      "moonAge": 22.1,
-      "moonPhase": "下弦",
-      "moonSign": "天秤座",
-      "moonSignEn": "Libra"
+      "sunSignEn": "cancer",
+      "moonAge": 23.0,
+      "moonPhase": "有明月",
+      "moonSign": "牡羊座",
+      "moonSignEn": "aries"
     },
     {
       "date": "2026-07-09",
       "sunSign": "蟹座",
-      "sunSignEn": "Cancer",
-      "moonAge": 23.1,
+      "sunSignEn": "cancer",
+      "moonAge": 24.0,
       "moonPhase": "有明月",
-      "moonSign": "天秤座",
-      "moonSignEn": "Libra"
+      "moonSign": "牡牛座",
+      "moonSignEn": "taurus"
     },
     {
       "date": "2026-07-10",
       "sunSign": "蟹座",
-      "sunSignEn": "Cancer",
-      "moonAge": 24.1,
+      "sunSignEn": "cancer",
+      "moonAge": 25.0,
       "moonPhase": "有明月",
-      "moonSign": "蠍座",
-      "moonSignEn": "Scorpio"
+      "moonSign": "牡牛座",
+      "moonSignEn": "taurus"
     },
     {
       "date": "2026-07-11",
       "sunSign": "蟹座",
-      "sunSignEn": "Cancer",
-      "moonAge": 25.1,
+      "sunSignEn": "cancer",
+      "moonAge": 26.0,
       "moonPhase": "有明月",
-      "moonSign": "蠍座",
-      "moonSignEn": "Scorpio"
+      "moonSign": "双子座",
+      "moonSignEn": "gemini"
     },
     {
       "date": "2026-07-12",
       "sunSign": "蟹座",
-      "sunSignEn": "Cancer",
-      "moonAge": 26.1,
+      "sunSignEn": "cancer",
+      "moonAge": 27.0,
       "moonPhase": "有明月",
-      "moonSign": "射手座",
-      "moonSignEn": "Sagittarius"
+      "moonSign": "双子座",
+      "moonSignEn": "gemini"
     },
     {
       "date": "2026-07-13",
       "sunSign": "蟹座",
-      "sunSignEn": "Cancer",
-      "moonAge": 27.1,
+      "sunSignEn": "cancer",
+      "moonAge": 28.0,
       "moonPhase": "有明月",
-      "moonSign": "射手座",
-      "moonSignEn": "Sagittarius"
+      "moonSign": "蟹座",
+      "moonSignEn": "cancer"
     },
     {
       "date": "2026-07-14",
       "sunSign": "蟹座",
-      "sunSignEn": "Cancer",
-      "moonAge": 28.1,
-      "moonPhase": "有明月",
-      "moonSign": "射手座",
-      "moonSignEn": "Sagittarius"
+      "sunSignEn": "cancer",
+      "moonAge": 29.0,
+      "moonPhase": "新月",
+      "moonSign": "蟹座",
+      "moonSignEn": "cancer"
     },
     {
       "date": "2026-07-15",
       "sunSign": "蟹座",
-      "sunSignEn": "Cancer",
-      "moonAge": 29.1,
-      "moonPhase": "有明月",
-      "moonSign": "山羊座",
-      "moonSignEn": "Capricorn"
+      "sunSignEn": "cancer",
+      "moonAge": 0.7,
+      "moonPhase": "新月",
+      "moonSign": "獅子座",
+      "moonSignEn": "leo"
     },
     {
       "date": "2026-07-16",
       "sunSign": "蟹座",
-      "sunSignEn": "Cancer",
-      "moonAge": 0.6,
-      "moonPhase": "新月",
-      "moonSign": "山羊座",
-      "moonSignEn": "Capricorn"
+      "sunSignEn": "cancer",
+      "moonAge": 1.7,
+      "moonPhase": "三日月",
+      "moonSign": "獅子座",
+      "moonSignEn": "leo"
     },
     {
       "date": "2026-07-17",
       "sunSign": "蟹座",
-      "sunSignEn": "Cancer",
-      "moonAge": 1.6,
+      "sunSignEn": "cancer",
+      "moonAge": 2.7,
       "moonPhase": "三日月",
-      "moonSign": "水瓶座",
-      "moonSignEn": "Aquarius"
+      "moonSign": "乙女座",
+      "moonSignEn": "virgo"
     },
     {
       "date": "2026-07-18",
       "sunSign": "蟹座",
-      "sunSignEn": "Cancer",
-      "moonAge": 2.6,
+      "sunSignEn": "cancer",
+      "moonAge": 3.7,
       "moonPhase": "三日月",
-      "moonSign": "水瓶座",
-      "moonSignEn": "Aquarius"
+      "moonSign": "乙女座",
+      "moonSignEn": "virgo"
     },
     {
       "date": "2026-07-19",
       "sunSign": "蟹座",
-      "sunSignEn": "Cancer",
-      "moonAge": 3.6,
+      "sunSignEn": "cancer",
+      "moonAge": 4.7,
       "moonPhase": "三日月",
-      "moonSign": "水瓶座",
-      "moonSignEn": "Aquarius"
+      "moonSign": "乙女座",
+      "moonSignEn": "virgo"
     },
     {
       "date": "2026-07-20",
       "sunSign": "蟹座",
-      "sunSignEn": "Cancer",
-      "moonAge": 4.6,
+      "sunSignEn": "cancer",
+      "moonAge": 5.7,
       "moonPhase": "三日月",
-      "moonSign": "魚座",
-      "moonSignEn": "Pisces"
+      "moonSign": "天秤座",
+      "moonSignEn": "libra"
     },
     {
       "date": "2026-07-21",
       "sunSign": "蟹座",
-      "sunSignEn": "Cancer",
-      "moonAge": 5.6,
+      "sunSignEn": "cancer",
+      "moonAge": 6.7,
       "moonPhase": "三日月",
-      "moonSign": "魚座",
-      "moonSignEn": "Pisces"
+      "moonSign": "天秤座",
+      "moonSignEn": "libra"
     },
     {
       "date": "2026-07-22",
       "sunSign": "蟹座",
-      "sunSignEn": "Cancer",
-      "moonAge": 6.6,
-      "moonPhase": "三日月",
-      "moonSign": "牡羊座",
-      "moonSignEn": "Aries"
+      "sunSignEn": "cancer",
+      "moonAge": 7.7,
+      "moonPhase": "上弦",
+      "moonSign": "蠍座",
+      "moonSignEn": "scorpio"
     },
     {
       "date": "2026-07-23",
-      "sunSign": "獅子座",
-      "sunSignEn": "Leo",
-      "moonAge": 7.6,
-      "moonPhase": "上弦",
-      "moonSign": "牡羊座",
-      "moonSignEn": "Aries"
+      "sunSign": "蟹座",
+      "sunSignEn": "cancer",
+      "moonAge": 8.7,
+      "moonPhase": "十三夜月",
+      "moonSign": "蠍座",
+      "moonSignEn": "scorpio"
     },
     {
       "date": "2026-07-24",
       "sunSign": "獅子座",
-      "sunSignEn": "Leo",
-      "moonAge": 8.6,
+      "sunSignEn": "leo",
+      "moonAge": 9.7,
       "moonPhase": "十三夜月",
-      "moonSign": "牡羊座",
-      "moonSignEn": "Aries"
+      "moonSign": "射手座",
+      "moonSignEn": "sagittarius"
     },
     {
       "date": "2026-07-25",
       "sunSign": "獅子座",
-      "sunSignEn": "Leo",
-      "moonAge": 9.6,
+      "sunSignEn": "leo",
+      "moonAge": 10.7,
       "moonPhase": "十三夜月",
-      "moonSign": "牡牛座",
-      "moonSignEn": "Taurus"
+      "moonSign": "射手座",
+      "moonSignEn": "sagittarius"
     },
     {
       "date": "2026-07-26",
       "sunSign": "獅子座",
-      "sunSignEn": "Leo",
-      "moonAge": 10.6,
+      "sunSignEn": "leo",
+      "moonAge": 11.7,
       "moonPhase": "十三夜月",
-      "moonSign": "牡牛座",
-      "moonSignEn": "Taurus"
+      "moonSign": "射手座",
+      "moonSignEn": "sagittarius"
     },
     {
       "date": "2026-07-27",
       "sunSign": "獅子座",
-      "sunSignEn": "Leo",
-      "moonAge": 11.6,
+      "sunSignEn": "leo",
+      "moonAge": 12.7,
       "moonPhase": "十三夜月",
-      "moonSign": "双子座",
-      "moonSignEn": "Gemini"
+      "moonSign": "山羊座",
+      "moonSignEn": "capricorn"
     },
     {
       "date": "2026-07-28",
       "sunSign": "獅子座",
-      "sunSignEn": "Leo",
-      "moonAge": 12.6,
+      "sunSignEn": "leo",
+      "moonAge": 13.7,
       "moonPhase": "十三夜月",
-      "moonSign": "双子座",
-      "moonSignEn": "Gemini"
+      "moonSign": "山羊座",
+      "moonSignEn": "capricorn"
     },
     {
       "date": "2026-07-29",
       "sunSign": "獅子座",
-      "sunSignEn": "Leo",
-      "moonAge": 13.6,
-      "moonPhase": "十三夜月",
-      "moonSign": "双子座",
-      "moonSignEn": "Gemini"
+      "sunSignEn": "leo",
+      "moonAge": 14.7,
+      "moonPhase": "満月",
+      "moonSign": "水瓶座",
+      "moonSignEn": "aquarius"
     },
     {
       "date": "2026-07-30",
       "sunSign": "獅子座",
-      "sunSignEn": "Leo",
-      "moonAge": 14.6,
+      "sunSignEn": "leo",
+      "moonAge": 15.7,
       "moonPhase": "満月",
-      "moonSign": "蟹座",
-      "moonSignEn": "Cancer"
+      "moonSign": "水瓶座",
+      "moonSignEn": "aquarius"
     },
     {
       "date": "2026-07-31",
       "sunSign": "獅子座",
-      "sunSignEn": "Leo",
-      "moonAge": 15.6,
-      "moonPhase": "満月",
-      "moonSign": "蟹座",
-      "moonSignEn": "Cancer"
+      "sunSignEn": "leo",
+      "moonAge": 16.7,
+      "moonPhase": "寝待月",
+      "moonSign": "水瓶座",
+      "moonSignEn": "aquarius"
     },
     {
       "date": "2026-08-01",
       "sunSign": "獅子座",
-      "sunSignEn": "Leo",
-      "moonAge": 16.6,
+      "sunSignEn": "leo",
+      "moonAge": 17.7,
       "moonPhase": "寝待月",
-      "moonSign": "獅子座",
-      "moonSignEn": "Leo"
+      "moonSign": "魚座",
+      "moonSignEn": "pisces"
     },
     {
       "date": "2026-08-02",
       "sunSign": "獅子座",
-      "sunSignEn": "Leo",
-      "moonAge": 17.6,
+      "sunSignEn": "leo",
+      "moonAge": 18.7,
       "moonPhase": "寝待月",
-      "moonSign": "獅子座",
-      "moonSignEn": "Leo"
+      "moonSign": "魚座",
+      "moonSignEn": "pisces"
     },
     {
       "date": "2026-08-03",
       "sunSign": "獅子座",
-      "sunSignEn": "Leo",
-      "moonAge": 18.6,
+      "sunSignEn": "leo",
+      "moonAge": 19.7,
       "moonPhase": "寝待月",
-      "moonSign": "獅子座",
-      "moonSignEn": "Leo"
+      "moonSign": "牡羊座",
+      "moonSignEn": "aries"
     },
     {
       "date": "2026-08-04",
       "sunSign": "獅子座",
-      "sunSignEn": "Leo",
-      "moonAge": 19.6,
+      "sunSignEn": "leo",
+      "moonAge": 20.7,
       "moonPhase": "寝待月",
-      "moonSign": "乙女座",
-      "moonSignEn": "Virgo"
+      "moonSign": "牡羊座",
+      "moonSignEn": "aries"
     },
     {
       "date": "2026-08-05",
       "sunSign": "獅子座",
-      "sunSignEn": "Leo",
-      "moonAge": 20.6,
+      "sunSignEn": "leo",
+      "moonAge": 21.7,
       "moonPhase": "寝待月",
-      "moonSign": "乙女座",
-      "moonSignEn": "Virgo"
+      "moonSign": "牡羊座",
+      "moonSignEn": "aries"
     },
     {
       "date": "2026-08-06",
       "sunSign": "獅子座",
-      "sunSignEn": "Leo",
-      "moonAge": 21.6,
-      "moonPhase": "寝待月",
-      "moonSign": "天秤座",
-      "moonSignEn": "Libra"
+      "sunSignEn": "leo",
+      "moonAge": 22.7,
+      "moonPhase": "下弦",
+      "moonSign": "牡牛座",
+      "moonSignEn": "taurus"
     },
     {
       "date": "2026-08-07",
       "sunSign": "獅子座",
-      "sunSignEn": "Leo",
-      "moonAge": 22.6,
-      "moonPhase": "下弦",
-      "moonSign": "天秤座",
-      "moonSignEn": "Libra"
+      "sunSignEn": "leo",
+      "moonAge": 23.7,
+      "moonPhase": "有明月",
+      "moonSign": "牡牛座",
+      "moonSignEn": "taurus"
     },
     {
       "date": "2026-08-08",
       "sunSign": "獅子座",
-      "sunSignEn": "Leo",
-      "moonAge": 23.6,
+      "sunSignEn": "leo",
+      "moonAge": 24.7,
       "moonPhase": "有明月",
-      "moonSign": "蠍座",
-      "moonSignEn": "Scorpio"
+      "moonSign": "双子座",
+      "moonSignEn": "gemini"
     },
     {
       "date": "2026-08-09",
       "sunSign": "獅子座",
-      "sunSignEn": "Leo",
-      "moonAge": 24.6,
+      "sunSignEn": "leo",
+      "moonAge": 25.7,
       "moonPhase": "有明月",
-      "moonSign": "蠍座",
-      "moonSignEn": "Scorpio"
+      "moonSign": "双子座",
+      "moonSignEn": "gemini"
     },
     {
       "date": "2026-08-10",
       "sunSign": "獅子座",
-      "sunSignEn": "Leo",
-      "moonAge": 25.6,
+      "sunSignEn": "leo",
+      "moonAge": 26.7,
       "moonPhase": "有明月",
-      "moonSign": "蠍座",
-      "moonSignEn": "Scorpio"
+      "moonSign": "蟹座",
+      "moonSignEn": "cancer"
     },
     {
       "date": "2026-08-11",
       "sunSign": "獅子座",
-      "sunSignEn": "Leo",
-      "moonAge": 26.6,
+      "sunSignEn": "leo",
+      "moonAge": 27.7,
       "moonPhase": "有明月",
-      "moonSign": "射手座",
-      "moonSignEn": "Sagittarius"
+      "moonSign": "蟹座",
+      "moonSignEn": "cancer"
     },
     {
       "date": "2026-08-12",
       "sunSign": "獅子座",
-      "sunSignEn": "Leo",
-      "moonAge": 27.6,
+      "sunSignEn": "leo",
+      "moonAge": 28.7,
       "moonPhase": "有明月",
-      "moonSign": "射手座",
-      "moonSignEn": "Sagittarius"
+      "moonSign": "獅子座",
+      "moonSignEn": "leo"
     },
     {
       "date": "2026-08-13",
       "sunSign": "獅子座",
-      "sunSignEn": "Leo",
-      "moonAge": 28.6,
-      "moonPhase": "有明月",
-      "moonSign": "山羊座",
-      "moonSignEn": "Capricorn"
+      "sunSignEn": "leo",
+      "moonAge": 0.4,
+      "moonPhase": "新月",
+      "moonSign": "獅子座",
+      "moonSignEn": "leo"
     },
     {
       "date": "2026-08-14",
       "sunSign": "獅子座",
-      "sunSignEn": "Leo",
-      "moonAge": 0.1,
-      "moonPhase": "新月",
-      "moonSign": "山羊座",
-      "moonSignEn": "Capricorn"
+      "sunSignEn": "leo",
+      "moonAge": 1.4,
+      "moonPhase": "三日月",
+      "moonSign": "乙女座",
+      "moonSignEn": "virgo"
     },
     {
       "date": "2026-08-15",
       "sunSign": "獅子座",
-      "sunSignEn": "Leo",
-      "moonAge": 1.1,
+      "sunSignEn": "leo",
+      "moonAge": 2.4,
       "moonPhase": "三日月",
-      "moonSign": "山羊座",
-      "moonSignEn": "Capricorn"
+      "moonSign": "乙女座",
+      "moonSignEn": "virgo"
     },
     {
       "date": "2026-08-16",
       "sunSign": "獅子座",
-      "sunSignEn": "Leo",
-      "moonAge": 2.1,
+      "sunSignEn": "leo",
+      "moonAge": 3.4,
       "moonPhase": "三日月",
-      "moonSign": "水瓶座",
-      "moonSignEn": "Aquarius"
+      "moonSign": "天秤座",
+      "moonSignEn": "libra"
     },
     {
       "date": "2026-08-17",
       "sunSign": "獅子座",
-      "sunSignEn": "Leo",
-      "moonAge": 3.1,
+      "sunSignEn": "leo",
+      "moonAge": 4.4,
       "moonPhase": "三日月",
-      "moonSign": "水瓶座",
-      "moonSignEn": "Aquarius"
+      "moonSign": "天秤座",
+      "moonSignEn": "libra"
     },
     {
       "date": "2026-08-18",
       "sunSign": "獅子座",
-      "sunSignEn": "Leo",
-      "moonAge": 4.1,
+      "sunSignEn": "leo",
+      "moonAge": 5.4,
       "moonPhase": "三日月",
-      "moonSign": "魚座",
-      "moonSignEn": "Pisces"
+      "moonSign": "蠍座",
+      "moonSignEn": "scorpio"
     },
     {
       "date": "2026-08-19",
       "sunSign": "獅子座",
-      "sunSignEn": "Leo",
-      "moonAge": 5.1,
+      "sunSignEn": "leo",
+      "moonAge": 6.4,
       "moonPhase": "三日月",
-      "moonSign": "魚座",
-      "moonSignEn": "Pisces"
+      "moonSign": "蠍座",
+      "moonSignEn": "scorpio"
     },
     {
       "date": "2026-08-20",
       "sunSign": "獅子座",
-      "sunSignEn": "Leo",
-      "moonAge": 6.1,
-      "moonPhase": "三日月",
-      "moonSign": "魚座",
-      "moonSignEn": "Pisces"
+      "sunSignEn": "leo",
+      "moonAge": 7.4,
+      "moonPhase": "上弦",
+      "moonSign": "蠍座",
+      "moonSignEn": "scorpio"
     },
     {
       "date": "2026-08-21",
       "sunSign": "獅子座",
-      "sunSignEn": "Leo",
-      "moonAge": 7.1,
-      "moonPhase": "上弦",
-      "moonSign": "牡羊座",
-      "moonSignEn": "Aries"
+      "sunSignEn": "leo",
+      "moonAge": 8.4,
+      "moonPhase": "十三夜月",
+      "moonSign": "射手座",
+      "moonSignEn": "sagittarius"
     },
     {
       "date": "2026-08-22",
       "sunSign": "獅子座",
-      "sunSignEn": "Leo",
-      "moonAge": 8.1,
+      "sunSignEn": "leo",
+      "moonAge": 9.4,
       "moonPhase": "十三夜月",
-      "moonSign": "牡羊座",
-      "moonSignEn": "Aries"
+      "moonSign": "射手座",
+      "moonSignEn": "sagittarius"
     },
     {
       "date": "2026-08-23",
-      "sunSign": "乙女座",
-      "sunSignEn": "Virgo",
-      "moonAge": 9.1,
+      "sunSign": "獅子座",
+      "sunSignEn": "leo",
+      "moonAge": 10.4,
       "moonPhase": "十三夜月",
-      "moonSign": "牡牛座",
-      "moonSignEn": "Taurus"
+      "moonSign": "山羊座",
+      "moonSignEn": "capricorn"
     },
     {
       "date": "2026-08-24",
       "sunSign": "乙女座",
-      "sunSignEn": "Virgo",
-      "moonAge": 10.1,
+      "sunSignEn": "virgo",
+      "moonAge": 11.4,
       "moonPhase": "十三夜月",
-      "moonSign": "牡牛座",
-      "moonSignEn": "Taurus"
+      "moonSign": "山羊座",
+      "moonSignEn": "capricorn"
     },
     {
       "date": "2026-08-25",
       "sunSign": "乙女座",
-      "sunSignEn": "Virgo",
-      "moonAge": 11.1,
+      "sunSignEn": "virgo",
+      "moonAge": 12.4,
       "moonPhase": "十三夜月",
-      "moonSign": "牡牛座",
-      "moonSignEn": "Taurus"
+      "moonSign": "山羊座",
+      "moonSignEn": "capricorn"
     },
     {
       "date": "2026-08-26",
       "sunSign": "乙女座",
-      "sunSignEn": "Virgo",
-      "moonAge": 12.1,
+      "sunSignEn": "virgo",
+      "moonAge": 13.4,
       "moonPhase": "十三夜月",
-      "moonSign": "双子座",
-      "moonSignEn": "Gemini"
+      "moonSign": "水瓶座",
+      "moonSignEn": "aquarius"
     },
     {
       "date": "2026-08-27",
       "sunSign": "乙女座",
-      "sunSignEn": "Virgo",
-      "moonAge": 13.1,
-      "moonPhase": "十三夜月",
-      "moonSign": "双子座",
-      "moonSignEn": "Gemini"
+      "sunSignEn": "virgo",
+      "moonAge": 14.4,
+      "moonPhase": "満月",
+      "moonSign": "水瓶座",
+      "moonSignEn": "aquarius"
     },
     {
       "date": "2026-08-28",
       "sunSign": "乙女座",
-      "sunSignEn": "Virgo",
-      "moonAge": 14.1,
+      "sunSignEn": "virgo",
+      "moonAge": 15.4,
       "moonPhase": "満月",
-      "moonSign": "蟹座",
-      "moonSignEn": "Cancer"
+      "moonSign": "魚座",
+      "moonSignEn": "pisces"
     },
     {
       "date": "2026-08-29",
       "sunSign": "乙女座",
-      "sunSignEn": "Virgo",
-      "moonAge": 15.1,
-      "moonPhase": "満月",
-      "moonSign": "蟹座",
-      "moonSignEn": "Cancer"
+      "sunSignEn": "virgo",
+      "moonAge": 16.4,
+      "moonPhase": "寝待月",
+      "moonSign": "魚座",
+      "moonSignEn": "pisces"
     },
     {
       "date": "2026-08-30",
       "sunSign": "乙女座",
-      "sunSignEn": "Virgo",
-      "moonAge": 16.1,
+      "sunSignEn": "virgo",
+      "moonAge": 17.4,
       "moonPhase": "寝待月",
-      "moonSign": "蟹座",
-      "moonSignEn": "Cancer"
+      "moonSign": "魚座",
+      "moonSignEn": "pisces"
     },
     {
       "date": "2026-08-31",
       "sunSign": "乙女座",
-      "sunSignEn": "Virgo",
-      "moonAge": 17.1,
+      "sunSignEn": "virgo",
+      "moonAge": 18.4,
       "moonPhase": "寝待月",
-      "moonSign": "獅子座",
-      "moonSignEn": "Leo"
+      "moonSign": "牡羊座",
+      "moonSignEn": "aries"
     },
     {
       "date": "2026-09-01",
       "sunSign": "乙女座",
-      "sunSignEn": "Virgo",
-      "moonAge": 18.1,
+      "sunSignEn": "virgo",
+      "moonAge": 19.4,
       "moonPhase": "寝待月",
-      "moonSign": "獅子座",
-      "moonSignEn": "Leo"
+      "moonSign": "牡羊座",
+      "moonSignEn": "aries"
     },
     {
       "date": "2026-09-02",
       "sunSign": "乙女座",
-      "sunSignEn": "Virgo",
-      "moonAge": 19.1,
+      "sunSignEn": "virgo",
+      "moonAge": 20.4,
       "moonPhase": "寝待月",
-      "moonSign": "乙女座",
-      "moonSignEn": "Virgo"
+      "moonSign": "牡牛座",
+      "moonSignEn": "taurus"
     },
     {
       "date": "2026-09-03",
       "sunSign": "乙女座",
-      "sunSignEn": "Virgo",
-      "moonAge": 20.1,
+      "sunSignEn": "virgo",
+      "moonAge": 21.4,
       "moonPhase": "寝待月",
-      "moonSign": "乙女座",
-      "moonSignEn": "Virgo"
+      "moonSign": "牡牛座",
+      "moonSignEn": "taurus"
     },
     {
       "date": "2026-09-04",
       "sunSign": "乙女座",
-      "sunSignEn": "Virgo",
-      "moonAge": 21.1,
-      "moonPhase": "寝待月",
-      "moonSign": "天秤座",
-      "moonSignEn": "Libra"
+      "sunSignEn": "virgo",
+      "moonAge": 22.4,
+      "moonPhase": "下弦",
+      "moonSign": "双子座",
+      "moonSignEn": "gemini"
     },
     {
       "date": "2026-09-05",
       "sunSign": "乙女座",
-      "sunSignEn": "Virgo",
-      "moonAge": 22.1,
-      "moonPhase": "下弦",
-      "moonSign": "天秤座",
-      "moonSignEn": "Libra"
+      "sunSignEn": "virgo",
+      "moonAge": 23.4,
+      "moonPhase": "有明月",
+      "moonSign": "双子座",
+      "moonSignEn": "gemini"
     },
     {
       "date": "2026-09-06",
       "sunSign": "乙女座",
-      "sunSignEn": "Virgo",
-      "moonAge": 23.1,
+      "sunSignEn": "virgo",
+      "moonAge": 24.4,
       "moonPhase": "有明月",
-      "moonSign": "天秤座",
-      "moonSignEn": "Libra"
+      "moonSign": "蟹座",
+      "moonSignEn": "cancer"
     },
     {
       "date": "2026-09-07",
       "sunSign": "乙女座",
-      "sunSignEn": "Virgo",
-      "moonAge": 24.1,
+      "sunSignEn": "virgo",
+      "moonAge": 25.4,
       "moonPhase": "有明月",
-      "moonSign": "蠍座",
-      "moonSignEn": "Scorpio"
+      "moonSign": "蟹座",
+      "moonSignEn": "cancer"
     },
     {
       "date": "2026-09-08",
       "sunSign": "乙女座",
-      "sunSignEn": "Virgo",
-      "moonAge": 25.1,
+      "sunSignEn": "virgo",
+      "moonAge": 26.4,
       "moonPhase": "有明月",
-      "moonSign": "蠍座",
-      "moonSignEn": "Scorpio"
+      "moonSign": "獅子座",
+      "moonSignEn": "leo"
     },
     {
       "date": "2026-09-09",
       "sunSign": "乙女座",
-      "sunSignEn": "Virgo",
-      "moonAge": 26.1,
+      "sunSignEn": "virgo",
+      "moonAge": 27.4,
       "moonPhase": "有明月",
-      "moonSign": "射手座",
-      "moonSignEn": "Sagittarius"
+      "moonSign": "獅子座",
+      "moonSignEn": "leo"
     },
     {
       "date": "2026-09-10",
       "sunSign": "乙女座",
-      "sunSignEn": "Virgo",
-      "moonAge": 27.1,
+      "sunSignEn": "virgo",
+      "moonAge": 28.4,
       "moonPhase": "有明月",
-      "moonSign": "射手座",
-      "moonSignEn": "Sagittarius"
+      "moonSign": "乙女座",
+      "moonSignEn": "virgo"
     },
     {
       "date": "2026-09-11",
       "sunSign": "乙女座",
-      "sunSignEn": "Virgo",
-      "moonAge": 28.1,
-      "moonPhase": "有明月",
-      "moonSign": "射手座",
-      "moonSignEn": "Sagittarius"
+      "sunSignEn": "virgo",
+      "moonAge": 29.4,
+      "moonPhase": "新月",
+      "moonSign": "乙女座",
+      "moonSignEn": "virgo"
     },
     {
       "date": "2026-09-12",
       "sunSign": "乙女座",
-      "sunSignEn": "Virgo",
-      "moonAge": 29.1,
-      "moonPhase": "有明月",
-      "moonSign": "山羊座",
-      "moonSignEn": "Capricorn"
+      "sunSignEn": "virgo",
+      "moonAge": 1.0,
+      "moonPhase": "新月",
+      "moonSign": "天秤座",
+      "moonSignEn": "libra"
     },
     {
       "date": "2026-09-13",
       "sunSign": "乙女座",
-      "sunSignEn": "Virgo",
-      "moonAge": 0.5,
-      "moonPhase": "新月",
-      "moonSign": "山羊座",
-      "moonSignEn": "Capricorn"
+      "sunSignEn": "virgo",
+      "moonAge": 2.0,
+      "moonPhase": "三日月",
+      "moonSign": "天秤座",
+      "moonSignEn": "libra"
     },
     {
       "date": "2026-09-14",
       "sunSign": "乙女座",
-      "sunSignEn": "Virgo",
-      "moonAge": 1.5,
+      "sunSignEn": "virgo",
+      "moonAge": 3.0,
       "moonPhase": "三日月",
-      "moonSign": "水瓶座",
-      "moonSignEn": "Aquarius"
+      "moonSign": "天秤座",
+      "moonSignEn": "libra"
     },
     {
       "date": "2026-09-15",
       "sunSign": "乙女座",
-      "sunSignEn": "Virgo",
-      "moonAge": 2.5,
+      "sunSignEn": "virgo",
+      "moonAge": 4.0,
       "moonPhase": "三日月",
-      "moonSign": "水瓶座",
-      "moonSignEn": "Aquarius"
+      "moonSign": "蠍座",
+      "moonSignEn": "scorpio"
     },
     {
       "date": "2026-09-16",
       "sunSign": "乙女座",
-      "sunSignEn": "Virgo",
-      "moonAge": 3.5,
+      "sunSignEn": "virgo",
+      "moonAge": 5.0,
       "moonPhase": "三日月",
-      "moonSign": "水瓶座",
-      "moonSignEn": "Aquarius"
+      "moonSign": "蠍座",
+      "moonSignEn": "scorpio"
     },
     {
       "date": "2026-09-17",
       "sunSign": "乙女座",
-      "sunSignEn": "Virgo",
-      "moonAge": 4.5,
+      "sunSignEn": "virgo",
+      "moonAge": 6.0,
       "moonPhase": "三日月",
-      "moonSign": "魚座",
-      "moonSignEn": "Pisces"
+      "moonSign": "射手座",
+      "moonSignEn": "sagittarius"
     },
     {
       "date": "2026-09-18",
       "sunSign": "乙女座",
-      "sunSignEn": "Virgo",
-      "moonAge": 5.5,
+      "sunSignEn": "virgo",
+      "moonAge": 7.0,
       "moonPhase": "三日月",
-      "moonSign": "魚座",
-      "moonSignEn": "Pisces"
+      "moonSign": "射手座",
+      "moonSignEn": "sagittarius"
     },
     {
       "date": "2026-09-19",
       "sunSign": "乙女座",
-      "sunSignEn": "Virgo",
-      "moonAge": 6.5,
-      "moonPhase": "三日月",
-      "moonSign": "牡羊座",
-      "moonSignEn": "Aries"
+      "sunSignEn": "virgo",
+      "moonAge": 8.0,
+      "moonPhase": "上弦",
+      "moonSign": "射手座",
+      "moonSignEn": "sagittarius"
     },
     {
       "date": "2026-09-20",
       "sunSign": "乙女座",
-      "sunSignEn": "Virgo",
-      "moonAge": 7.5,
-      "moonPhase": "上弦",
-      "moonSign": "牡羊座",
-      "moonSignEn": "Aries"
+      "sunSignEn": "virgo",
+      "moonAge": 9.0,
+      "moonPhase": "十三夜月",
+      "moonSign": "山羊座",
+      "moonSignEn": "capricorn"
     },
     {
       "date": "2026-09-21",
       "sunSign": "乙女座",
-      "sunSignEn": "Virgo",
-      "moonAge": 8.5,
+      "sunSignEn": "virgo",
+      "moonAge": 10.0,
       "moonPhase": "十三夜月",
-      "moonSign": "牡羊座",
-      "moonSignEn": "Aries"
+      "moonSign": "山羊座",
+      "moonSignEn": "capricorn"
     },
     {
       "date": "2026-09-22",
       "sunSign": "乙女座",
-      "sunSignEn": "Virgo",
-      "moonAge": 9.5,
+      "sunSignEn": "virgo",
+      "moonAge": 11.0,
       "moonPhase": "十三夜月",
-      "moonSign": "牡牛座",
-      "moonSignEn": "Taurus"
+      "moonSign": "水瓶座",
+      "moonSignEn": "aquarius"
     },
     {
       "date": "2026-09-23",
-      "sunSign": "天秤座",
-      "sunSignEn": "Libra",
-      "moonAge": 10.5,
+      "sunSign": "乙女座",
+      "sunSignEn": "virgo",
+      "moonAge": 12.0,
       "moonPhase": "十三夜月",
-      "moonSign": "牡牛座",
-      "moonSignEn": "Taurus"
+      "moonSign": "水瓶座",
+      "moonSignEn": "aquarius"
     },
     {
       "date": "2026-09-24",
       "sunSign": "天秤座",
-      "sunSignEn": "Libra",
-      "moonAge": 11.5,
+      "sunSignEn": "libra",
+      "moonAge": 13.0,
       "moonPhase": "十三夜月",
-      "moonSign": "双子座",
-      "moonSignEn": "Gemini"
+      "moonSign": "水瓶座",
+      "moonSignEn": "aquarius"
     },
     {
       "date": "2026-09-25",
       "sunSign": "天秤座",
-      "sunSignEn": "Libra",
-      "moonAge": 12.5,
+      "sunSignEn": "libra",
+      "moonAge": 14.0,
       "moonPhase": "十三夜月",
-      "moonSign": "双子座",
-      "moonSignEn": "Gemini"
+      "moonSign": "魚座",
+      "moonSignEn": "pisces"
     },
     {
       "date": "2026-09-26",
       "sunSign": "天秤座",
-      "sunSignEn": "Libra",
-      "moonAge": 13.5,
-      "moonPhase": "十三夜月",
-      "moonSign": "双子座",
-      "moonSignEn": "Gemini"
+      "sunSignEn": "libra",
+      "moonAge": 15.0,
+      "moonPhase": "満月",
+      "moonSign": "魚座",
+      "moonSignEn": "pisces"
     },
     {
       "date": "2026-09-27",
       "sunSign": "天秤座",
-      "sunSignEn": "Libra",
-      "moonAge": 14.5,
+      "sunSignEn": "libra",
+      "moonAge": 16.0,
       "moonPhase": "満月",
-      "moonSign": "蟹座",
-      "moonSignEn": "Cancer"
+      "moonSign": "牡羊座",
+      "moonSignEn": "aries"
     },
     {
       "date": "2026-09-28",
       "sunSign": "天秤座",
-      "sunSignEn": "Libra",
-      "moonAge": 15.5,
-      "moonPhase": "満月",
-      "moonSign": "蟹座",
-      "moonSignEn": "Cancer"
+      "sunSignEn": "libra",
+      "moonAge": 17.0,
+      "moonPhase": "寝待月",
+      "moonSign": "牡羊座",
+      "moonSignEn": "aries"
     },
     {
       "date": "2026-09-29",
       "sunSign": "天秤座",
-      "sunSignEn": "Libra",
-      "moonAge": 16.5,
+      "sunSignEn": "libra",
+      "moonAge": 18.0,
       "moonPhase": "寝待月",
-      "moonSign": "獅子座",
-      "moonSignEn": "Leo"
+      "moonSign": "牡牛座",
+      "moonSignEn": "taurus"
     },
     {
       "date": "2026-09-30",
       "sunSign": "天秤座",
-      "sunSignEn": "Libra",
-      "moonAge": 17.5,
+      "sunSignEn": "libra",
+      "moonAge": 19.0,
       "moonPhase": "寝待月",
-      "moonSign": "獅子座",
-      "moonSignEn": "Leo"
+      "moonSign": "牡牛座",
+      "moonSignEn": "taurus"
     },
     {
       "date": "2026-10-01",
       "sunSign": "天秤座",
-      "sunSignEn": "Libra",
-      "moonAge": 18.5,
+      "sunSignEn": "libra",
+      "moonAge": 20.0,
       "moonPhase": "寝待月",
-      "moonSign": "獅子座",
-      "moonSignEn": "Leo"
+      "moonSign": "双子座",
+      "moonSignEn": "gemini"
     },
     {
       "date": "2026-10-02",
       "sunSign": "天秤座",
-      "sunSignEn": "Libra",
-      "moonAge": 19.5,
+      "sunSignEn": "libra",
+      "moonAge": 21.0,
       "moonPhase": "寝待月",
-      "moonSign": "乙女座",
-      "moonSignEn": "Virgo"
+      "moonSign": "双子座",
+      "moonSignEn": "gemini"
     },
     {
       "date": "2026-10-03",
       "sunSign": "天秤座",
-      "sunSignEn": "Libra",
-      "moonAge": 20.5,
+      "sunSignEn": "libra",
+      "moonAge": 22.0,
       "moonPhase": "寝待月",
-      "moonSign": "乙女座",
-      "moonSignEn": "Virgo"
+      "moonSign": "蟹座",
+      "moonSignEn": "cancer"
     },
     {
       "date": "2026-10-04",
       "sunSign": "天秤座",
-      "sunSignEn": "Libra",
-      "moonAge": 21.5,
-      "moonPhase": "寝待月",
-      "moonSign": "天秤座",
-      "moonSignEn": "Libra"
+      "sunSignEn": "libra",
+      "moonAge": 23.0,
+      "moonPhase": "下弦",
+      "moonSign": "蟹座",
+      "moonSignEn": "cancer"
     },
     {
       "date": "2026-10-05",
       "sunSign": "天秤座",
-      "sunSignEn": "Libra",
-      "moonAge": 22.5,
-      "moonPhase": "下弦",
-      "moonSign": "天秤座",
-      "moonSignEn": "Libra"
+      "sunSignEn": "libra",
+      "moonAge": 24.0,
+      "moonPhase": "有明月",
+      "moonSign": "獅子座",
+      "moonSignEn": "leo"
     },
     {
       "date": "2026-10-06",
       "sunSign": "天秤座",
-      "sunSignEn": "Libra",
-      "moonAge": 23.5,
+      "sunSignEn": "libra",
+      "moonAge": 25.0,
       "moonPhase": "有明月",
-      "moonSign": "蠍座",
-      "moonSignEn": "Scorpio"
+      "moonSign": "獅子座",
+      "moonSignEn": "leo"
     },
     {
       "date": "2026-10-07",
       "sunSign": "天秤座",
-      "sunSignEn": "Libra",
-      "moonAge": 24.5,
+      "sunSignEn": "libra",
+      "moonAge": 26.0,
       "moonPhase": "有明月",
-      "moonSign": "蠍座",
-      "moonSignEn": "Scorpio"
+      "moonSign": "獅子座",
+      "moonSignEn": "leo"
     },
     {
       "date": "2026-10-08",
       "sunSign": "天秤座",
-      "sunSignEn": "Libra",
-      "moonAge": 25.5,
+      "sunSignEn": "libra",
+      "moonAge": 27.0,
       "moonPhase": "有明月",
-      "moonSign": "蠍座",
-      "moonSignEn": "Scorpio"
+      "moonSign": "乙女座",
+      "moonSignEn": "virgo"
     },
     {
       "date": "2026-10-09",
       "sunSign": "天秤座",
-      "sunSignEn": "Libra",
-      "moonAge": 26.5,
+      "sunSignEn": "libra",
+      "moonAge": 28.0,
       "moonPhase": "有明月",
-      "moonSign": "射手座",
-      "moonSignEn": "Sagittarius"
+      "moonSign": "乙女座",
+      "moonSignEn": "virgo"
     },
     {
       "date": "2026-10-10",
       "sunSign": "天秤座",
-      "sunSignEn": "Libra",
-      "moonAge": 27.5,
+      "sunSignEn": "libra",
+      "moonAge": 29.0,
       "moonPhase": "有明月",
-      "moonSign": "射手座",
-      "moonSignEn": "Sagittarius"
+      "moonSign": "天秤座",
+      "moonSignEn": "libra"
     },
     {
       "date": "2026-10-11",
       "sunSign": "天秤座",
-      "sunSignEn": "Libra",
-      "moonAge": 28.5,
-      "moonPhase": "有明月",
-      "moonSign": "山羊座",
-      "moonSignEn": "Capricorn"
+      "sunSignEn": "libra",
+      "moonAge": 0.5,
+      "moonPhase": "新月",
+      "moonSign": "天秤座",
+      "moonSignEn": "libra"
     },
     {
       "date": "2026-10-12",
       "sunSign": "天秤座",
-      "sunSignEn": "Libra",
-      "moonAge": 0,
-      "moonPhase": "新月",
-      "moonSign": "山羊座",
-      "moonSignEn": "Capricorn"
+      "sunSignEn": "libra",
+      "moonAge": 1.5,
+      "moonPhase": "三日月",
+      "moonSign": "蠍座",
+      "moonSignEn": "scorpio"
     },
     {
       "date": "2026-10-13",
       "sunSign": "天秤座",
-      "sunSignEn": "Libra",
-      "moonAge": 1,
+      "sunSignEn": "libra",
+      "moonAge": 2.5,
       "moonPhase": "三日月",
-      "moonSign": "山羊座",
-      "moonSignEn": "Capricorn"
+      "moonSign": "蠍座",
+      "moonSignEn": "scorpio"
     },
     {
       "date": "2026-10-14",
       "sunSign": "天秤座",
-      "sunSignEn": "Libra",
-      "moonAge": 2,
+      "sunSignEn": "libra",
+      "moonAge": 3.5,
       "moonPhase": "三日月",
-      "moonSign": "水瓶座",
-      "moonSignEn": "Aquarius"
+      "moonSign": "射手座",
+      "moonSignEn": "sagittarius"
     },
     {
       "date": "2026-10-15",
       "sunSign": "天秤座",
-      "sunSignEn": "Libra",
-      "moonAge": 3,
+      "sunSignEn": "libra",
+      "moonAge": 4.5,
       "moonPhase": "三日月",
-      "moonSign": "水瓶座",
-      "moonSignEn": "Aquarius"
+      "moonSign": "射手座",
+      "moonSignEn": "sagittarius"
     },
     {
       "date": "2026-10-16",
       "sunSign": "天秤座",
-      "sunSignEn": "Libra",
-      "moonAge": 4,
+      "sunSignEn": "libra",
+      "moonAge": 5.5,
       "moonPhase": "三日月",
-      "moonSign": "魚座",
-      "moonSignEn": "Pisces"
+      "moonSign": "射手座",
+      "moonSignEn": "sagittarius"
     },
     {
       "date": "2026-10-17",
       "sunSign": "天秤座",
-      "sunSignEn": "Libra",
-      "moonAge": 5,
+      "sunSignEn": "libra",
+      "moonAge": 6.5,
       "moonPhase": "三日月",
-      "moonSign": "魚座",
-      "moonSignEn": "Pisces"
+      "moonSign": "山羊座",
+      "moonSignEn": "capricorn"
     },
     {
       "date": "2026-10-18",
       "sunSign": "天秤座",
-      "sunSignEn": "Libra",
-      "moonAge": 6,
-      "moonPhase": "三日月",
-      "moonSign": "魚座",
-      "moonSignEn": "Pisces"
+      "sunSignEn": "libra",
+      "moonAge": 7.5,
+      "moonPhase": "上弦",
+      "moonSign": "山羊座",
+      "moonSignEn": "capricorn"
     },
     {
       "date": "2026-10-19",
       "sunSign": "天秤座",
-      "sunSignEn": "Libra",
-      "moonAge": 7,
-      "moonPhase": "上弦",
-      "moonSign": "牡羊座",
-      "moonSignEn": "Aries"
+      "sunSignEn": "libra",
+      "moonAge": 8.5,
+      "moonPhase": "十三夜月",
+      "moonSign": "水瓶座",
+      "moonSignEn": "aquarius"
     },
     {
       "date": "2026-10-20",
       "sunSign": "天秤座",
-      "sunSignEn": "Libra",
-      "moonAge": 8,
+      "sunSignEn": "libra",
+      "moonAge": 9.5,
       "moonPhase": "十三夜月",
-      "moonSign": "牡羊座",
-      "moonSignEn": "Aries"
+      "moonSign": "水瓶座",
+      "moonSignEn": "aquarius"
     },
     {
       "date": "2026-10-21",
       "sunSign": "天秤座",
-      "sunSignEn": "Libra",
-      "moonAge": 9,
+      "sunSignEn": "libra",
+      "moonAge": 10.5,
       "moonPhase": "十三夜月",
-      "moonSign": "牡牛座",
-      "moonSignEn": "Taurus"
+      "moonSign": "水瓶座",
+      "moonSignEn": "aquarius"
     },
     {
       "date": "2026-10-22",
       "sunSign": "天秤座",
-      "sunSignEn": "Libra",
-      "moonAge": 10,
+      "sunSignEn": "libra",
+      "moonAge": 11.5,
       "moonPhase": "十三夜月",
-      "moonSign": "牡牛座",
-      "moonSignEn": "Taurus"
+      "moonSign": "魚座",
+      "moonSignEn": "pisces"
     },
     {
       "date": "2026-10-23",
       "sunSign": "天秤座",
-      "sunSignEn": "Libra",
-      "moonAge": 11,
+      "sunSignEn": "libra",
+      "moonAge": 12.5,
       "moonPhase": "十三夜月",
-      "moonSign": "牡牛座",
-      "moonSignEn": "Taurus"
+      "moonSign": "魚座",
+      "moonSignEn": "pisces"
     },
     {
       "date": "2026-10-24",
       "sunSign": "蠍座",
-      "sunSignEn": "Scorpio",
-      "moonAge": 12,
+      "sunSignEn": "scorpio",
+      "moonAge": 13.5,
       "moonPhase": "十三夜月",
-      "moonSign": "双子座",
-      "moonSignEn": "Gemini"
+      "moonSign": "牡羊座",
+      "moonSignEn": "aries"
     },
     {
       "date": "2026-10-25",
       "sunSign": "蠍座",
-      "sunSignEn": "Scorpio",
-      "moonAge": 13,
-      "moonPhase": "十三夜月",
-      "moonSign": "双子座",
-      "moonSignEn": "Gemini"
+      "sunSignEn": "scorpio",
+      "moonAge": 14.5,
+      "moonPhase": "満月",
+      "moonSign": "牡羊座",
+      "moonSignEn": "aries"
     },
     {
       "date": "2026-10-26",
       "sunSign": "蠍座",
-      "sunSignEn": "Scorpio",
-      "moonAge": 14,
+      "sunSignEn": "scorpio",
+      "moonAge": 15.5,
       "moonPhase": "満月",
-      "moonSign": "蟹座",
-      "moonSignEn": "Cancer"
+      "moonSign": "牡牛座",
+      "moonSignEn": "taurus"
     },
     {
       "date": "2026-10-27",
       "sunSign": "蠍座",
-      "sunSignEn": "Scorpio",
-      "moonAge": 15,
-      "moonPhase": "満月",
-      "moonSign": "蟹座",
-      "moonSignEn": "Cancer"
+      "sunSignEn": "scorpio",
+      "moonAge": 16.5,
+      "moonPhase": "寝待月",
+      "moonSign": "牡牛座",
+      "moonSignEn": "taurus"
     },
     {
       "date": "2026-10-28",
       "sunSign": "蠍座",
-      "sunSignEn": "Scorpio",
-      "moonAge": 16,
+      "sunSignEn": "scorpio",
+      "moonAge": 17.5,
       "moonPhase": "寝待月",
-      "moonSign": "蟹座",
-      "moonSignEn": "Cancer"
+      "moonSign": "双子座",
+      "moonSignEn": "gemini"
     },
     {
       "date": "2026-10-29",
       "sunSign": "蠍座",
-      "sunSignEn": "Scorpio",
-      "moonAge": 17,
+      "sunSignEn": "scorpio",
+      "moonAge": 18.5,
       "moonPhase": "寝待月",
-      "moonSign": "獅子座",
-      "moonSignEn": "Leo"
+      "moonSign": "双子座",
+      "moonSignEn": "gemini"
     },
     {
       "date": "2026-10-30",
       "sunSign": "蠍座",
-      "sunSignEn": "Scorpio",
-      "moonAge": 18,
+      "sunSignEn": "scorpio",
+      "moonAge": 19.5,
       "moonPhase": "寝待月",
-      "moonSign": "獅子座",
-      "moonSignEn": "Leo"
+      "moonSign": "蟹座",
+      "moonSignEn": "cancer"
     },
     {
       "date": "2026-10-31",
       "sunSign": "蠍座",
-      "sunSignEn": "Scorpio",
-      "moonAge": 19,
+      "sunSignEn": "scorpio",
+      "moonAge": 20.5,
       "moonPhase": "寝待月",
-      "moonSign": "乙女座",
-      "moonSignEn": "Virgo"
+      "moonSign": "蟹座",
+      "moonSignEn": "cancer"
     },
     {
       "date": "2026-11-01",
       "sunSign": "蠍座",
-      "sunSignEn": "Scorpio",
-      "moonAge": 20,
+      "sunSignEn": "scorpio",
+      "moonAge": 21.5,
       "moonPhase": "寝待月",
-      "moonSign": "乙女座",
-      "moonSignEn": "Virgo"
+      "moonSign": "蟹座",
+      "moonSignEn": "cancer"
     },
     {
       "date": "2026-11-02",
       "sunSign": "蠍座",
-      "sunSignEn": "Scorpio",
-      "moonAge": 21,
-      "moonPhase": "寝待月",
-      "moonSign": "乙女座",
-      "moonSignEn": "Virgo"
+      "sunSignEn": "scorpio",
+      "moonAge": 22.5,
+      "moonPhase": "下弦",
+      "moonSign": "獅子座",
+      "moonSignEn": "leo"
     },
     {
       "date": "2026-11-03",
       "sunSign": "蠍座",
-      "sunSignEn": "Scorpio",
-      "moonAge": 22,
-      "moonPhase": "下弦",
-      "moonSign": "天秤座",
-      "moonSignEn": "Libra"
+      "sunSignEn": "scorpio",
+      "moonAge": 23.5,
+      "moonPhase": "有明月",
+      "moonSign": "獅子座",
+      "moonSignEn": "leo"
     },
     {
       "date": "2026-11-04",
       "sunSign": "蠍座",
-      "sunSignEn": "Scorpio",
-      "moonAge": 23,
+      "sunSignEn": "scorpio",
+      "moonAge": 24.5,
       "moonPhase": "有明月",
-      "moonSign": "天秤座",
-      "moonSignEn": "Libra"
+      "moonSign": "乙女座",
+      "moonSignEn": "virgo"
     },
     {
       "date": "2026-11-05",
       "sunSign": "蠍座",
-      "sunSignEn": "Scorpio",
-      "moonAge": 24,
+      "sunSignEn": "scorpio",
+      "moonAge": 25.5,
       "moonPhase": "有明月",
-      "moonSign": "蠍座",
-      "moonSignEn": "Scorpio"
+      "moonSign": "乙女座",
+      "moonSignEn": "virgo"
     },
     {
       "date": "2026-11-06",
       "sunSign": "蠍座",
-      "sunSignEn": "Scorpio",
-      "moonAge": 25,
+      "sunSignEn": "scorpio",
+      "moonAge": 26.5,
       "moonPhase": "有明月",
-      "moonSign": "蠍座",
-      "moonSignEn": "Scorpio"
+      "moonSign": "天秤座",
+      "moonSignEn": "libra"
     },
     {
       "date": "2026-11-07",
       "sunSign": "蠍座",
-      "sunSignEn": "Scorpio",
-      "moonAge": 26,
+      "sunSignEn": "scorpio",
+      "moonAge": 27.5,
       "moonPhase": "有明月",
-      "moonSign": "射手座",
-      "moonSignEn": "Sagittarius"
+      "moonSign": "天秤座",
+      "moonSignEn": "libra"
     },
     {
       "date": "2026-11-08",
       "sunSign": "蠍座",
-      "sunSignEn": "Scorpio",
-      "moonAge": 27,
+      "sunSignEn": "scorpio",
+      "moonAge": 28.5,
       "moonPhase": "有明月",
-      "moonSign": "射手座",
-      "moonSignEn": "Sagittarius"
+      "moonSign": "蠍座",
+      "moonSignEn": "scorpio"
     },
     {
       "date": "2026-11-09",
       "sunSign": "蠍座",
-      "sunSignEn": "Scorpio",
-      "moonAge": 28,
-      "moonPhase": "有明月",
-      "moonSign": "射手座",
-      "moonSignEn": "Sagittarius"
+      "sunSignEn": "scorpio",
+      "moonAge": 29.5,
+      "moonPhase": "新月",
+      "moonSign": "蠍座",
+      "moonSignEn": "scorpio"
     },
     {
       "date": "2026-11-10",
       "sunSign": "蠍座",
-      "sunSignEn": "Scorpio",
-      "moonAge": 29,
-      "moonPhase": "有明月",
-      "moonSign": "山羊座",
-      "moonSignEn": "Capricorn"
+      "sunSignEn": "scorpio",
+      "moonAge": 0.8,
+      "moonPhase": "新月",
+      "moonSign": "蠍座",
+      "moonSignEn": "scorpio"
     },
     {
       "date": "2026-11-11",
       "sunSign": "蠍座",
-      "sunSignEn": "Scorpio",
-      "moonAge": 0.5,
-      "moonPhase": "新月",
-      "moonSign": "山羊座",
-      "moonSignEn": "Capricorn"
+      "sunSignEn": "scorpio",
+      "moonAge": 1.8,
+      "moonPhase": "三日月",
+      "moonSign": "射手座",
+      "moonSignEn": "sagittarius"
     },
     {
       "date": "2026-11-12",
       "sunSign": "蠍座",
-      "sunSignEn": "Scorpio",
-      "moonAge": 1.5,
+      "sunSignEn": "scorpio",
+      "moonAge": 2.8,
       "moonPhase": "三日月",
-      "moonSign": "水瓶座",
-      "moonSignEn": "Aquarius"
+      "moonSign": "射手座",
+      "moonSignEn": "sagittarius"
     },
     {
       "date": "2026-11-13",
       "sunSign": "蠍座",
-      "sunSignEn": "Scorpio",
-      "moonAge": 2.5,
+      "sunSignEn": "scorpio",
+      "moonAge": 3.8,
       "moonPhase": "三日月",
-      "moonSign": "水瓶座",
-      "moonSignEn": "Aquarius"
+      "moonSign": "山羊座",
+      "moonSignEn": "capricorn"
     },
     {
       "date": "2026-11-14",
       "sunSign": "蠍座",
-      "sunSignEn": "Scorpio",
-      "moonAge": 3.5,
+      "sunSignEn": "scorpio",
+      "moonAge": 4.8,
       "moonPhase": "三日月",
-      "moonSign": "水瓶座",
-      "moonSignEn": "Aquarius"
+      "moonSign": "山羊座",
+      "moonSignEn": "capricorn"
     },
     {
       "date": "2026-11-15",
       "sunSign": "蠍座",
-      "sunSignEn": "Scorpio",
-      "moonAge": 4.5,
+      "sunSignEn": "scorpio",
+      "moonAge": 5.8,
       "moonPhase": "三日月",
-      "moonSign": "魚座",
-      "moonSignEn": "Pisces"
+      "moonSign": "山羊座",
+      "moonSignEn": "capricorn"
     },
     {
       "date": "2026-11-16",
       "sunSign": "蠍座",
-      "sunSignEn": "Scorpio",
-      "moonAge": 5.5,
+      "sunSignEn": "scorpio",
+      "moonAge": 6.8,
       "moonPhase": "三日月",
-      "moonSign": "魚座",
-      "moonSignEn": "Pisces"
+      "moonSign": "水瓶座",
+      "moonSignEn": "aquarius"
     },
     {
       "date": "2026-11-17",
       "sunSign": "蠍座",
-      "sunSignEn": "Scorpio",
-      "moonAge": 6.5,
-      "moonPhase": "三日月",
-      "moonSign": "牡羊座",
-      "moonSignEn": "Aries"
+      "sunSignEn": "scorpio",
+      "moonAge": 7.8,
+      "moonPhase": "上弦",
+      "moonSign": "水瓶座",
+      "moonSignEn": "aquarius"
     },
     {
       "date": "2026-11-18",
       "sunSign": "蠍座",
-      "sunSignEn": "Scorpio",
-      "moonAge": 7.5,
-      "moonPhase": "上弦",
-      "moonSign": "牡羊座",
-      "moonSignEn": "Aries"
+      "sunSignEn": "scorpio",
+      "moonAge": 8.8,
+      "moonPhase": "十三夜月",
+      "moonSign": "魚座",
+      "moonSignEn": "pisces"
     },
     {
       "date": "2026-11-19",
       "sunSign": "蠍座",
-      "sunSignEn": "Scorpio",
-      "moonAge": 8.5,
+      "sunSignEn": "scorpio",
+      "moonAge": 9.8,
       "moonPhase": "十三夜月",
-      "moonSign": "牡羊座",
-      "moonSignEn": "Aries"
+      "moonSign": "魚座",
+      "moonSignEn": "pisces"
     },
     {
       "date": "2026-11-20",
       "sunSign": "蠍座",
-      "sunSignEn": "Scorpio",
-      "moonAge": 9.5,
+      "sunSignEn": "scorpio",
+      "moonAge": 10.8,
       "moonPhase": "十三夜月",
-      "moonSign": "牡牛座",
-      "moonSignEn": "Taurus"
+      "moonSign": "魚座",
+      "moonSignEn": "pisces"
     },
     {
       "date": "2026-11-21",
       "sunSign": "蠍座",
-      "sunSignEn": "Scorpio",
-      "moonAge": 10.5,
+      "sunSignEn": "scorpio",
+      "moonAge": 11.8,
       "moonPhase": "十三夜月",
-      "moonSign": "牡牛座",
-      "moonSignEn": "Taurus"
+      "moonSign": "牡羊座",
+      "moonSignEn": "aries"
     },
     {
       "date": "2026-11-22",
       "sunSign": "蠍座",
-      "sunSignEn": "Scorpio",
-      "moonAge": 11.5,
+      "sunSignEn": "scorpio",
+      "moonAge": 12.8,
       "moonPhase": "十三夜月",
-      "moonSign": "双子座",
-      "moonSignEn": "Gemini"
+      "moonSign": "牡羊座",
+      "moonSignEn": "aries"
     },
     {
       "date": "2026-11-23",
       "sunSign": "射手座",
-      "sunSignEn": "Sagittarius",
-      "moonAge": 12.5,
+      "sunSignEn": "sagittarius",
+      "moonAge": 13.8,
       "moonPhase": "十三夜月",
-      "moonSign": "双子座",
-      "moonSignEn": "Gemini"
+      "moonSign": "牡牛座",
+      "moonSignEn": "taurus"
     },
     {
       "date": "2026-11-24",
       "sunSign": "射手座",
-      "sunSignEn": "Sagittarius",
-      "moonAge": 13.5,
-      "moonPhase": "十三夜月",
-      "moonSign": "双子座",
-      "moonSignEn": "Gemini"
+      "sunSignEn": "sagittarius",
+      "moonAge": 14.8,
+      "moonPhase": "満月",
+      "moonSign": "牡牛座",
+      "moonSignEn": "taurus"
     },
     {
       "date": "2026-11-25",
       "sunSign": "射手座",
-      "sunSignEn": "Sagittarius",
-      "moonAge": 14.5,
+      "sunSignEn": "sagittarius",
+      "moonAge": 15.8,
       "moonPhase": "満月",
-      "moonSign": "蟹座",
-      "moonSignEn": "Cancer"
+      "moonSign": "双子座",
+      "moonSignEn": "gemini"
     },
     {
       "date": "2026-11-26",
       "sunSign": "射手座",
-      "sunSignEn": "Sagittarius",
-      "moonAge": 15.5,
-      "moonPhase": "満月",
-      "moonSign": "蟹座",
-      "moonSignEn": "Cancer"
+      "sunSignEn": "sagittarius",
+      "moonAge": 16.8,
+      "moonPhase": "寝待月",
+      "moonSign": "双子座",
+      "moonSignEn": "gemini"
     },
     {
       "date": "2026-11-27",
       "sunSign": "射手座",
-      "sunSignEn": "Sagittarius",
-      "moonAge": 16.5,
+      "sunSignEn": "sagittarius",
+      "moonAge": 17.8,
       "moonPhase": "寝待月",
-      "moonSign": "獅子座",
-      "moonSignEn": "Leo"
+      "moonSign": "蟹座",
+      "moonSignEn": "cancer"
     },
     {
       "date": "2026-11-28",
       "sunSign": "射手座",
-      "sunSignEn": "Sagittarius",
-      "moonAge": 17.5,
+      "sunSignEn": "sagittarius",
+      "moonAge": 18.8,
       "moonPhase": "寝待月",
-      "moonSign": "獅子座",
-      "moonSignEn": "Leo"
+      "moonSign": "蟹座",
+      "moonSignEn": "cancer"
     },
     {
       "date": "2026-11-29",
       "sunSign": "射手座",
-      "sunSignEn": "Sagittarius",
-      "moonAge": 18.5,
+      "sunSignEn": "sagittarius",
+      "moonAge": 19.8,
       "moonPhase": "寝待月",
       "moonSign": "獅子座",
-      "moonSignEn": "Leo"
+      "moonSignEn": "leo"
     },
     {
       "date": "2026-11-30",
       "sunSign": "射手座",
-      "sunSignEn": "Sagittarius",
-      "moonAge": 19.5,
+      "sunSignEn": "sagittarius",
+      "moonAge": 20.8,
       "moonPhase": "寝待月",
-      "moonSign": "乙女座",
-      "moonSignEn": "Virgo"
+      "moonSign": "獅子座",
+      "moonSignEn": "leo"
     },
     {
       "date": "2026-12-01",
       "sunSign": "射手座",
-      "sunSignEn": "Sagittarius",
-      "moonAge": 20.5,
+      "sunSignEn": "sagittarius",
+      "moonAge": 21.8,
       "moonPhase": "寝待月",
       "moonSign": "乙女座",
-      "moonSignEn": "Virgo"
+      "moonSignEn": "virgo"
     },
     {
       "date": "2026-12-02",
       "sunSign": "射手座",
-      "sunSignEn": "Sagittarius",
-      "moonAge": 21.5,
-      "moonPhase": "寝待月",
-      "moonSign": "天秤座",
-      "moonSignEn": "Libra"
+      "sunSignEn": "sagittarius",
+      "moonAge": 22.8,
+      "moonPhase": "下弦",
+      "moonSign": "乙女座",
+      "moonSignEn": "virgo"
     },
     {
       "date": "2026-12-03",
       "sunSign": "射手座",
-      "sunSignEn": "Sagittarius",
-      "moonAge": 22.5,
-      "moonPhase": "下弦",
+      "sunSignEn": "sagittarius",
+      "moonAge": 23.8,
+      "moonPhase": "有明月",
       "moonSign": "天秤座",
-      "moonSignEn": "Libra"
+      "moonSignEn": "libra"
     },
     {
       "date": "2026-12-04",
       "sunSign": "射手座",
-      "sunSignEn": "Sagittarius",
-      "moonAge": 23.5,
+      "sunSignEn": "sagittarius",
+      "moonAge": 24.8,
       "moonPhase": "有明月",
       "moonSign": "天秤座",
-      "moonSignEn": "Libra"
+      "moonSignEn": "libra"
     },
     {
       "date": "2026-12-05",
       "sunSign": "射手座",
-      "sunSignEn": "Sagittarius",
-      "moonAge": 24.5,
+      "sunSignEn": "sagittarius",
+      "moonAge": 25.8,
       "moonPhase": "有明月",
-      "moonSign": "蠍座",
-      "moonSignEn": "Scorpio"
+      "moonSign": "天秤座",
+      "moonSignEn": "libra"
     },
     {
       "date": "2026-12-06",
       "sunSign": "射手座",
-      "sunSignEn": "Sagittarius",
-      "moonAge": 25.5,
+      "sunSignEn": "sagittarius",
+      "moonAge": 26.8,
       "moonPhase": "有明月",
       "moonSign": "蠍座",
-      "moonSignEn": "Scorpio"
+      "moonSignEn": "scorpio"
     },
     {
       "date": "2026-12-07",
       "sunSign": "射手座",
-      "sunSignEn": "Sagittarius",
-      "moonAge": 26.5,
+      "sunSignEn": "sagittarius",
+      "moonAge": 27.8,
       "moonPhase": "有明月",
-      "moonSign": "射手座",
-      "moonSignEn": "Sagittarius"
+      "moonSign": "蠍座",
+      "moonSignEn": "scorpio"
     },
     {
       "date": "2026-12-08",
       "sunSign": "射手座",
-      "sunSignEn": "Sagittarius",
-      "moonAge": 27.5,
+      "sunSignEn": "sagittarius",
+      "moonAge": 28.8,
       "moonPhase": "有明月",
       "moonSign": "射手座",
-      "moonSignEn": "Sagittarius"
+      "moonSignEn": "sagittarius"
     },
     {
       "date": "2026-12-09",
       "sunSign": "射手座",
-      "sunSignEn": "Sagittarius",
-      "moonAge": 28.5,
-      "moonPhase": "有明月",
-      "moonSign": "山羊座",
-      "moonSignEn": "Capricorn"
+      "sunSignEn": "sagittarius",
+      "moonAge": 0.1,
+      "moonPhase": "新月",
+      "moonSign": "射手座",
+      "moonSignEn": "sagittarius"
     },
     {
       "date": "2026-12-10",
       "sunSign": "射手座",
-      "sunSignEn": "Sagittarius",
-      "moonAge": 29.5,
-      "moonPhase": "有明月",
-      "moonSign": "山羊座",
-      "moonSignEn": "Capricorn"
+      "sunSignEn": "sagittarius",
+      "moonAge": 1.1,
+      "moonPhase": "三日月",
+      "moonSign": "射手座",
+      "moonSignEn": "sagittarius"
     },
     {
       "date": "2026-12-11",
       "sunSign": "射手座",
-      "sunSignEn": "Sagittarius",
-      "moonAge": 0.9,
-      "moonPhase": "新月",
+      "sunSignEn": "sagittarius",
+      "moonAge": 2.1,
+      "moonPhase": "三日月",
       "moonSign": "山羊座",
-      "moonSignEn": "Capricorn"
+      "moonSignEn": "capricorn"
     },
     {
       "date": "2026-12-12",
       "sunSign": "射手座",
-      "sunSignEn": "Sagittarius",
-      "moonAge": 1.9,
+      "sunSignEn": "sagittarius",
+      "moonAge": 3.1,
       "moonPhase": "三日月",
-      "moonSign": "水瓶座",
-      "moonSignEn": "Aquarius"
+      "moonSign": "山羊座",
+      "moonSignEn": "capricorn"
     },
     {
       "date": "2026-12-13",
       "sunSign": "射手座",
-      "sunSignEn": "Sagittarius",
-      "moonAge": 2.9,
+      "sunSignEn": "sagittarius",
+      "moonAge": 4.1,
       "moonPhase": "三日月",
       "moonSign": "水瓶座",
-      "moonSignEn": "Aquarius"
+      "moonSignEn": "aquarius"
     },
     {
       "date": "2026-12-14",
       "sunSign": "射手座",
-      "sunSignEn": "Sagittarius",
-      "moonAge": 3.9,
+      "sunSignEn": "sagittarius",
+      "moonAge": 5.1,
       "moonPhase": "三日月",
-      "moonSign": "魚座",
-      "moonSignEn": "Pisces"
+      "moonSign": "水瓶座",
+      "moonSignEn": "aquarius"
     },
     {
       "date": "2026-12-15",
       "sunSign": "射手座",
-      "sunSignEn": "Sagittarius",
-      "moonAge": 4.9,
+      "sunSignEn": "sagittarius",
+      "moonAge": 6.1,
       "moonPhase": "三日月",
-      "moonSign": "魚座",
-      "moonSignEn": "Pisces"
+      "moonSign": "水瓶座",
+      "moonSignEn": "aquarius"
     },
     {
       "date": "2026-12-16",
       "sunSign": "射手座",
-      "sunSignEn": "Sagittarius",
-      "moonAge": 5.9,
-      "moonPhase": "三日月",
+      "sunSignEn": "sagittarius",
+      "moonAge": 7.1,
+      "moonPhase": "上弦",
       "moonSign": "魚座",
-      "moonSignEn": "Pisces"
+      "moonSignEn": "pisces"
     },
     {
       "date": "2026-12-17",
       "sunSign": "射手座",
-      "sunSignEn": "Sagittarius",
-      "moonAge": 6.9,
-      "moonPhase": "三日月",
-      "moonSign": "牡羊座",
-      "moonSignEn": "Aries"
+      "sunSignEn": "sagittarius",
+      "moonAge": 8.1,
+      "moonPhase": "十三夜月",
+      "moonSign": "魚座",
+      "moonSignEn": "pisces"
     },
     {
       "date": "2026-12-18",
       "sunSign": "射手座",
-      "sunSignEn": "Sagittarius",
-      "moonAge": 7.9,
-      "moonPhase": "上弦",
+      "sunSignEn": "sagittarius",
+      "moonAge": 9.1,
+      "moonPhase": "十三夜月",
       "moonSign": "牡羊座",
-      "moonSignEn": "Aries"
+      "moonSignEn": "aries"
     },
     {
       "date": "2026-12-19",
       "sunSign": "射手座",
-      "sunSignEn": "Sagittarius",
-      "moonAge": 8.9,
+      "sunSignEn": "sagittarius",
+      "moonAge": 10.1,
       "moonPhase": "十三夜月",
-      "moonSign": "牡牛座",
-      "moonSignEn": "Taurus"
+      "moonSign": "牡羊座",
+      "moonSignEn": "aries"
     },
     {
       "date": "2026-12-20",
       "sunSign": "射手座",
-      "sunSignEn": "Sagittarius",
-      "moonAge": 9.9,
+      "sunSignEn": "sagittarius",
+      "moonAge": 11.1,
       "moonPhase": "十三夜月",
       "moonSign": "牡牛座",
-      "moonSignEn": "Taurus"
+      "moonSignEn": "taurus"
     },
     {
       "date": "2026-12-21",
       "sunSign": "射手座",
-      "sunSignEn": "Sagittarius",
-      "moonAge": 10.9,
+      "sunSignEn": "sagittarius",
+      "moonAge": 12.1,
       "moonPhase": "十三夜月",
       "moonSign": "牡牛座",
-      "moonSignEn": "Taurus"
+      "moonSignEn": "taurus"
     },
     {
       "date": "2026-12-22",
-      "sunSign": "山羊座",
-      "sunSignEn": "Capricorn",
-      "moonAge": 11.9,
+      "sunSign": "射手座",
+      "sunSignEn": "sagittarius",
+      "moonAge": 13.1,
       "moonPhase": "十三夜月",
       "moonSign": "双子座",
-      "moonSignEn": "Gemini"
+      "moonSignEn": "gemini"
     },
     {
       "date": "2026-12-23",
       "sunSign": "山羊座",
-      "sunSignEn": "Capricorn",
-      "moonAge": 12.9,
-      "moonPhase": "十三夜月",
+      "sunSignEn": "capricorn",
+      "moonAge": 14.1,
+      "moonPhase": "満月",
       "moonSign": "双子座",
-      "moonSignEn": "Gemini"
+      "moonSignEn": "gemini"
     },
     {
       "date": "2026-12-24",
       "sunSign": "山羊座",
-      "sunSignEn": "Capricorn",
-      "moonAge": 13.9,
-      "moonPhase": "十三夜月",
+      "sunSignEn": "capricorn",
+      "moonAge": 15.1,
+      "moonPhase": "満月",
       "moonSign": "蟹座",
-      "moonSignEn": "Cancer"
+      "moonSignEn": "cancer"
     },
     {
       "date": "2026-12-25",
       "sunSign": "山羊座",
-      "sunSignEn": "Capricorn",
-      "moonAge": 14.9,
-      "moonPhase": "満月",
+      "sunSignEn": "capricorn",
+      "moonAge": 16.1,
+      "moonPhase": "寝待月",
       "moonSign": "蟹座",
-      "moonSignEn": "Cancer"
+      "moonSignEn": "cancer"
     },
     {
       "date": "2026-12-26",
       "sunSign": "山羊座",
-      "sunSignEn": "Capricorn",
-      "moonAge": 15.9,
-      "moonPhase": "満月",
-      "moonSign": "蟹座",
-      "moonSignEn": "Cancer"
+      "sunSignEn": "capricorn",
+      "moonAge": 17.1,
+      "moonPhase": "寝待月",
+      "moonSign": "獅子座",
+      "moonSignEn": "leo"
     },
     {
       "date": "2026-12-27",
       "sunSign": "山羊座",
-      "sunSignEn": "Capricorn",
-      "moonAge": 16.9,
+      "sunSignEn": "capricorn",
+      "moonAge": 18.1,
       "moonPhase": "寝待月",
       "moonSign": "獅子座",
-      "moonSignEn": "Leo"
+      "moonSignEn": "leo"
     },
     {
       "date": "2026-12-28",
       "sunSign": "山羊座",
-      "sunSignEn": "Capricorn",
-      "moonAge": 17.9,
+      "sunSignEn": "capricorn",
+      "moonAge": 19.1,
       "moonPhase": "寝待月",
-      "moonSign": "獅子座",
-      "moonSignEn": "Leo"
+      "moonSign": "乙女座",
+      "moonSignEn": "virgo"
     },
     {
       "date": "2026-12-29",
       "sunSign": "山羊座",
-      "sunSignEn": "Capricorn",
-      "moonAge": 18.9,
+      "sunSignEn": "capricorn",
+      "moonAge": 20.1,
       "moonPhase": "寝待月",
       "moonSign": "乙女座",
-      "moonSignEn": "Virgo"
+      "moonSignEn": "virgo"
     },
     {
       "date": "2026-12-30",
       "sunSign": "山羊座",
-      "sunSignEn": "Capricorn",
-      "moonAge": 19.9,
+      "sunSignEn": "capricorn",
+      "moonAge": 21.1,
       "moonPhase": "寝待月",
       "moonSign": "乙女座",
-      "moonSignEn": "Virgo"
+      "moonSignEn": "virgo"
     },
     {
       "date": "2026-12-31",
       "sunSign": "山羊座",
-      "sunSignEn": "Capricorn",
-      "moonAge": 20.9,
-      "moonPhase": "寝待月",
-      "moonSign": "乙女座",
-      "moonSignEn": "Virgo"
+      "sunSignEn": "capricorn",
+      "moonAge": 22.1,
+      "moonPhase": "下弦",
+      "moonSign": "天秤座",
+      "moonSignEn": "libra"
     }
   ]
 }
