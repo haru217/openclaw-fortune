@@ -153,33 +153,61 @@ ${astroText}
 ---
 
 上記の情報に基づいて、5ページ分の鑑定文を生成してください。
+
+### 重要なフォーマットルール（厳守）
+- Markdown記法（**太字**等）は使わない。太字にしたい場合は <strong>タグ</strong> を使う
+- 呼び名には必ず「さん」を付ける（例: ハルさん）。呼び捨てにしない
+- p5_lucky の action は3〜5文字の短い単語にする（例: 朝の散歩、深呼吸、日記）
+- 各フィールドの文字数制限を厳守すること。超過するとPDFのレイアウトが崩れる
+- 段落区切りは \\n を使う。空行は入れない
+
+### 各フィールドの文字数目安（超過するとレイアウトが崩れるため厳守）
+- p1_star_placement: 200〜250文字（2〜3段落）
+- p2_answer_actions の各 body: 120〜150文字
+- p2_answer_actions の各 title: 25文字以内
+- p2_tarot_interpretation: 150〜180文字
+- p3_astrology: 250〜300文字（3段落）
+- p3_numerology_lp: 120〜150文字
+- p3_numerology_py: 120〜150文字
+- p3_connection: 60〜80文字
+- p4_timeline の各 body: 40〜50文字
+- p4_calendar の各 body: 30〜40文字
+- p4_calendar: 7項目
+- p4_calendar_note: 80〜100文字
+- p5_lucky_text: 50〜70文字
+- p5_allies の各 body: 20〜30文字
+- p5_allies: 3項目
+- p5_questions の各 text: 50〜70文字
+- p5_questions: 3項目
+- p5_closing: 120〜150文字
+
 各ページの内容を JSON で返してください:
 
 {
-  "p1_star_placement": "（P1: 星の配置セクションの本文。HTMLの<p class='b'>タグで使う。段落は\\nで区切る）",
+  "p1_star_placement": "（2段落以内、150文字以内。段落は\\nで区切る）",
   "p2_answer_actions": [
-    { "title": "①のタイトル", "body": "①の本文" },
+    { "title": "①のタイトル（25文字以内）", "body": "①の本文（100文字以内）" },
     { "title": "②のタイトル", "body": "②の本文" },
     { "title": "③のタイトル", "body": "③の本文" }
   ],
-  "p2_tarot_interpretation": "（タロット解釈の本文）",
-  "p3_astrology": "（西洋占星術セクションの本文。段落は\\nで区切る）",
-  "p3_numerology_lp": "（ライフパスナンバーの解釈）",
-  "p3_numerology_py": "（個人年数の解釈）",
-  "p3_connection": "（占星術と数秘術の接続文）",
+  "p2_tarot_interpretation": "（120文字以内）",
+  "p3_astrology": "（3段落以内、200文字以内。段落は\\nで区切る）",
+  "p3_numerology_lp": "（100文字以内）",
+  "p3_numerology_py": "（100文字以内）",
+  "p3_connection": "（80文字以内）",
   "p4_timeline": [
-    { "month": "4月", "theme": "テーマ", "body": "本文" },
+    { "month": "4月", "theme": "テーマ（5文字）", "body": "本文（40文字以内）" },
     { "month": "5月", "theme": "テーマ", "body": "本文" },
     { "month": "6月", "theme": "テーマ", "body": "本文" }
   ],
   "p4_calendar": [
-    { "date": "4月2日", "mark": "◎", "title": "天秤座満月", "body": "説明" }
+    { "date": "4月2日", "mark": "◎", "title": "天秤座満月", "body": "説明（30文字以内）" }
   ],
-  "p4_calendar_note": "カレンダーの使い方ガイド",
+  "p4_calendar_note": "（80文字以内）",
   "p5_lucky": { "color": "色", "number": "数字", "direction": "方角", "action": "アクション" },
-  "p5_lucky_text": "ラッキーポイントの説明文",
+  "p5_lucky_text": "（50文字以内）",
   "p5_allies": [
-    { "sign": "♐ 射手座", "reason": "根拠", "body": "説明" }
+    { "sign": "♐ 射手座", "reason": "根拠（10文字）", "body": "説明（20文字以内）" }
   ],
   "p5_questions": [
     { "text": "問い1の全文" },
@@ -292,6 +320,10 @@ ${astroText}
     questionsHtml += `<div class="ci"><div class="cd" style="width:20px; color:#c9a84c;">${i + 1}</div><div class="cx">${q.text}</div></div>\n`;
   }
   html = html.replace('{{p5_questions}}', questionsHtml);
+
+  // 後処理: Markdown→HTML変換、空段落削除
+  html = html.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+  html = html.replace(/<p class="b"><\/p>(<div class="sp"><\/div>)?\n?/g, '');
 
   // HTML を一時ファイルに保存
   const htmlPath = path.join(OUTPUT_DIR, `${request.id}.html`);
