@@ -88,7 +88,7 @@ export function buildCategorySelect() {
     contents: [
       { type: 'text', text: 'どのテーマを鑑定しますか？', weight: 'bold', color: COLOR_GOLD, size: 'lg', margin: 'md' },
       goldButton('恋愛のこと', '恋愛を選ぶ'),
-      goldButton('人間関係のこと', '人間関係を選ぶ'),
+      goldButton('家族・友人のこと', '家族・友人を選ぶ'),
       goldButton('仕事のこと', '仕事を選ぶ'),
     ],
   };
@@ -132,35 +132,21 @@ export function buildQ1(question) {
 }
 
 export function buildQ2(question) {
+  const buttons = question.q2.options.map((opt, i) =>
+    goldButton(opt, `q2回答:${i}`)
+  );
+
   const body = {
     type: 'box',
     layout: 'vertical',
-    spacing: 'sm',
+    spacing: 'none',
     contents: [
-      { type: 'text', text: question.q2.label, weight: 'bold', color: COLOR_GOLD, size: 'md', wrap: true },
-      {
-        type: 'text',
-        text: '番号をカンマ区切りで送ってください（例: 1,3,5）',
-        color: COLOR_MUTED,
-        size: 'xs',
-        wrap: true,
-      },
-      { type: 'separator', color: '#333344', margin: 'sm' },
-      ...question.q2.options.map((opt, i) => ({
-        type: 'text',
-        text: `${i + 1}. ${opt}`,
-        color: COLOR_LIGHT,
-        size: 'sm',
-        margin: 'sm',
-      })),
+      { type: 'text', text: question.q2.label, weight: 'bold', color: COLOR_GOLD, size: 'md', wrap: true, margin: 'md' },
+      ...buttons,
+      goldButton('← 戻る', '戻る'),
     ],
   };
-  const footer = {
-    type: 'box',
-    layout: 'vertical',
-    contents: [goldButton('← 戻る', '戻る')],
-  };
-  return makeBubble({ body, footer });
+  return makeBubble({ body });
 }
 
 export function buildQ3(question) {
@@ -171,7 +157,7 @@ export function buildQ3(question) {
     contents: [
       {
         type: 'text',
-        text: '今の気持ちや状況をもう少し聞かせてください',
+        text: 'いま困っていることを自由に書いてください',
         weight: 'bold',
         color: COLOR_GOLD,
         size: 'md',
@@ -179,7 +165,7 @@ export function buildQ3(question) {
       },
       {
         type: 'text',
-        text: question.q3.placeholder,
+        text: `書き方のヒント：${question.q3.hint}`,
         color: COLOR_MUTED,
         size: 'xs',
         wrap: true,

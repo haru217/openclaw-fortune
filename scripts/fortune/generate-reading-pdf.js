@@ -118,14 +118,13 @@ async function generateReadingPdf(request) {
   // カテゴリからモジュールを決定
   // サブカテゴリ固有のモジュールがあればそちらを優先
   const subModuleMap = {
-    'career:restart': '復職・新しい働き方モジュール',
+    'work:restart': '復職・新しい働き方モジュール',
+    'work:people': '人間関係モジュール',
   };
   const moduleMap = {
     love: '恋愛・不倫モジュール',
-    relationship: '人間関係モジュール',
-    career: '転職・キャリアモジュール',
-    general: '将来不安・方向性モジュール',
-    destiny: '将来不安・方向性モジュール',
+    relation: '人間関係モジュール',
+    work: '転職・キャリアモジュール',
   };
 
   const prompt = `

@@ -28,8 +28,8 @@ import { saveReadingRequest } from './reading-request.js';
 // ② ボタンテキスト→IDのマッピング（英語を見せない）
 const CATEGORY_MAP = {
   '恋愛を選ぶ': 'love',
-  '人間関係を選ぶ': 'relationship',
-  '仕事を選ぶ': 'career',
+  '家族・友人を選ぶ': 'relation',
+  '仕事を選ぶ': 'work',
 };
 
 function buildSubcategoryMap(categoryId) {
@@ -221,23 +221,28 @@ async function handleReadingFlow(kv, baseUrl, userId, user, text, state) {
         contents: buildQ1(question),
       }];
     }
+    const match = text.match(/^q2回答:(\d+)$/);
     const question = getQuestion(state.category, state.subcategory);
-    const nums = text.split(/[,、\s]+/).map(s => parseInt(s, 10) - 1).filter(n => !isNaN(n));
-    const answers = nums
-      .map(n => question.q2.options[n])
-      .filter(Boolean);
-
-    if (answers.length === 0) {
+    if (!match || !question) {
       return [{
         type: 'flex',
-        altText: '番号で選んでください',
+        altText: '選択してください',
         contents: buildQ2(question),
       }];
     }
-    await setReadingState(kv, userId, { step: 'awaiting_q3', q2: answers });
+    const idx = parseInt(match[1], 10);
+    const answer = question.q2.options[idx];
+    if (!answer) {
+      return [{
+        type: 'flex',
+        altText: '選択してください',
+        contents: buildQ2(question),
+      }];
+    }
+    await setReadingState(kv, userId, { step: 'awaiting_q3', q2: answer });
     return [{
       type: 'flex',
-      altText: '詳しく教えてください',
+      altText: 'いま困っていることを教えてください',
       contents: buildQ3(question),
     }];
   }
