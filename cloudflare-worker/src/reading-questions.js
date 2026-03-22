@@ -1,21 +1,27 @@
-// Task 1: 構造化質問データ（全12サブメニュー）
+// 構造化質問データ（3カテゴリ10サブメニュー）
 
 export const CATEGORIES = [
-  { id: 'love', label: '恋愛・人間関係' },
-  { id: 'career', label: '仕事・キャリア' },
+  { id: 'love', label: '恋愛のこと' },
+  { id: 'relationship', label: '人間関係のこと' },
+  { id: 'career', label: '仕事のこと' },
 ];
 
 export const SUBCATEGORIES = {
   love: [
     { id: 'crush', label: '片思い・出会い' },
-    { id: 'partner', label: 'パートナーとの関係' },
+    { id: 'partner', label: 'パートナー・夫婦' },
     { id: 'marriage', label: '結婚・婚活' },
     { id: 'breakup', label: '復縁・別れ' },
+  ],
+  relationship: [
+    { id: 'workplace', label: '職場の人' },
+    { id: 'friends', label: '友人・知人' },
+    { id: 'family', label: '家族・パートナー' },
   ],
   career: [
     { id: 'change', label: '転職・適職' },
     { id: 'current', label: '今の仕事の行方' },
-    { id: 'people', label: '人間関係（職場）' },
+    { id: 'restart', label: '復職・新しい働き方' },
   ],
 };
 
@@ -68,6 +74,42 @@ export const QUESTIONS = {
     },
     q3: { placeholder: '例: 半年前に別れたけど、まだ忘れられない' },
   },
+  'relationship:workplace': {
+    q1: {
+      label: '現在の状況を教えてください',
+      options: ['上司との関係', '同僚との関係', '部下との関係', 'チーム全体の雰囲気'],
+    },
+    q2: {
+      label: '知りたいことは？（複数OK）',
+      options: ['改善のヒント', '味方になる人', '距離の取り方', 'コミュニケーション方法', '転機の時期', 'その他'],
+      multi: true,
+    },
+    q3: { placeholder: '例: 新しい上司と合わなくて、毎日がストレス' },
+  },
+  'relationship:friends': {
+    q1: {
+      label: '現在の状況を教えてください',
+      options: ['特定の友人と距離を感じる', '人付き合いが苦手', 'グループ内の関係', '疎遠になった人がいる'],
+    },
+    q2: {
+      label: '知りたいことは？（複数OK）',
+      options: ['距離の取り方', '関係の修復', '新しい出会い', '自分の在り方', 'その他'],
+      multi: true,
+    },
+    q3: { placeholder: '例: 長年の友人と価値観が合わなくなってきた' },
+  },
+  'relationship:family': {
+    q1: {
+      label: '現在の状況を教えてください',
+      options: ['親との関係', '兄弟姉妹との関係', 'パートナーの家族', '家庭内の雰囲気'],
+    },
+    q2: {
+      label: '知りたいことは？（複数OK）',
+      options: ['距離感の取り方', '関係改善のヒント', '自分の気持ちの整理', '今後の展望', 'その他'],
+      multi: true,
+    },
+    q3: { placeholder: '例: 母との距離感がうまく取れず、会うたびに疲れる' },
+  },
   'career:change': {
     q1: {
       label: '現在の状況を教えてください',
@@ -92,17 +134,17 @@ export const QUESTIONS = {
     },
     q3: { placeholder: '例: 3年目だけど成長を感じられない。このまま続けるべきか' },
   },
-  'career:people': {
+  'career:restart': {
     q1: {
       label: '現在の状況を教えてください',
-      options: ['上司との関係', '同僚との関係', '部下との関係', 'チーム全体の雰囲気'],
+      options: ['休職中', '離職中で復帰を考えている', '働き方を変えたい', '副業・独立を検討中'],
     },
     q2: {
       label: '知りたいことは？（複数OK）',
-      options: ['改善のヒント', '味方になる人', '距離を置くべき人', 'コミュニケーション方法', '転機の時期', 'その他'],
+      options: ['復帰のタイミング', '向いている働き方', '不安の解消', '周囲との関係', '注意すべきこと', 'その他'],
       multi: true,
     },
-    q3: { placeholder: '例: 新しい上司と合わなくて、毎日がストレス' },
+    q3: { placeholder: '例: 育休明けで復帰するけど、前と同じように働ける自信がない' },
   },
 };
 

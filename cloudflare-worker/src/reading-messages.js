@@ -87,8 +87,9 @@ export function buildCategorySelect() {
     spacing: 'none',
     contents: [
       { type: 'text', text: 'どのテーマを鑑定しますか？', weight: 'bold', color: COLOR_GOLD, size: 'lg', margin: 'md' },
-      goldButton('恋愛・人間関係', '恋愛を選ぶ'),
-      goldButton('仕事・キャリア', '仕事を選ぶ'),
+      goldButton('恋愛のこと', '恋愛を選ぶ'),
+      goldButton('人間関係のこと', '人間関係を選ぶ'),
+      goldButton('仕事のこと', '仕事を選ぶ'),
     ],
   };
   return makeBubble({ body });
@@ -106,6 +107,7 @@ export function buildSubcategorySelect(categoryLabel, subcategories) {
     contents: [
       { type: 'text', text: 'もう少し絞りましょう', weight: 'bold', color: COLOR_GOLD, size: 'lg', margin: 'md' },
       ...buttons,
+      goldButton('← テーマ選びに戻る', 'テーマに戻る'),
     ],
   };
   return makeBubble({ body });
@@ -123,6 +125,7 @@ export function buildQ1(question) {
     contents: [
       { type: 'text', text: question.q1.label, weight: 'bold', color: COLOR_GOLD, size: 'md', wrap: true, margin: 'md' },
       ...buttons,
+      goldButton('← 戻る', '戻る'),
     ],
   };
   return makeBubble({ body });
@@ -152,7 +155,12 @@ export function buildQ2(question) {
       })),
     ],
   };
-  return makeBubble({ body });
+  const footer = {
+    type: 'box',
+    layout: 'vertical',
+    contents: [goldButton('← 戻る', '戻る')],
+  };
+  return makeBubble({ body, footer });
 }
 
 export function buildQ3(question) {
@@ -190,7 +198,10 @@ export function buildQ3(question) {
   const footer = {
     type: 'box',
     layout: 'vertical',
-    contents: [goldButton('このまま鑑定する', 'このまま鑑定する')],
+    contents: [
+      goldButton('このまま鑑定する', 'このまま鑑定する'),
+      goldButton('← 戻る', '戻る'),
+    ],
   };
 
   return makeBubble({ body, footer });
@@ -207,7 +218,7 @@ export function buildReadingComplete(name, categoryLabel, subcategoryLabel) {
       { type: 'separator', color: COLOR_GOLD, margin: 'sm' },
       { type: 'text', text: `${name}さん`, color: COLOR_LIGHT, size: 'md', margin: 'md' },
       { type: 'text', text: `${categoryLabel} — ${subcategoryLabel}`, color: COLOR_MUTED, size: 'sm' },
-      { type: 'separator', color: 'rgba(201,168,76,0.2)', margin: 'md' },
+      { type: 'separator', color: '#3d3a2e', margin: 'md' },
       {
         type: 'text',
         text: 'カイが星を読み、カードを引き、数字を紐解いています。鑑定が終わり次第お届けします。',

@@ -27,15 +27,30 @@ async function updateStatus(requestId, status) {
   });
 }
 
-async function sendPdfToLine(userId, pdfPath, name) {
-  // LINE Push Message でファイルを送るには、まず画像/動画/音声のみ対応。
-  // PDF はそのまま送れないので、テキストメッセージ + リッチメニューで案内するか、
-  // 一旦画像に変換するか、外部URLで配信する。
-  // ここでは Workers にアップロードして URL を送る方式。
+async function uploadPdfToWorkers(requestId, pdfPath) {
+  const pdfData = fs.readFileSync(pdfPath);
+  console.log(`[deliver] Uploading PDF to Workers KV (${(pdfData.length / 1024).toFixed(0)} KB)...`);
 
-  // PDF を Workers KV に保存してダウンロードURLを生成する代わりに、
-  // シンプルにテキストメッセージで完了を通知する（PDF配信は後日実装）
-  console.log(`[deliver] Sending notification to ${userId}...`);
+  const res = await fetch(`${WORKER_URL}/api/pdf/upload?id=${requestId}`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/pdf',
+      'X-Api-Key': API_KEY,
+    },
+    body: pdfData,
+  });
+
+  if (!res.ok) {
+    const text = await res.text();
+    throw new Error(`PDF upload failed: ${res.status} ${text}`);
+  }
+
+  const data = await res.json();
+  return data.url;
+}
+
+async function sendPdfToLine(userId, downloadUrl, name) {
+  console.log(`[deliver] Sending PDF link to ${userId}...`);
 
   const res = await fetch('https://api.line.me/v2/bot/message/push', {
     method: 'POST',
@@ -47,8 +62,32 @@ async function sendPdfToLine(userId, pdfPath, name) {
       to: userId,
       messages: [
         {
-          type: 'text',
-          text: `${name}さん、鑑定が完了しました✨\n\n鑑定書をお送りしますので少々お待ちください。`,
+          type: 'flex',
+          altText: `${name}さんの鑑定書が届きました`,
+          contents: {
+            type: 'bubble',
+            size: 'mega',
+            body: {
+              type: 'box',
+              layout: 'vertical',
+              backgroundColor: '#141428',
+              paddingAll: '24px',
+              contents: [
+                { type: 'text', text: '個 別 鑑 定 書', size: 'lg', weight: 'bold', color: '#c9a84c', align: 'center' },
+                { type: 'text', text: `${name}さんへ`, size: 'sm', color: '#888888', align: 'center', margin: 'md' },
+                { type: 'separator', margin: 'xl', color: '#2a2a4a' },
+                { type: 'text', text: `${name}さん、お待たせしました。`, size: 'sm', color: '#d0d0d0', wrap: true, margin: 'xl' },
+                { type: 'text', text: `星とカードと数字をじっくり読み込んで、${name}さんだけの鑑定書を書き上げました。`, size: 'sm', color: '#d0d0d0', wrap: true, margin: 'md' },
+                { type: 'text', text: '今のあなたに必要な言葉を5ページに込めています。静かな時間に、ゆっくり読んでみてください。', size: 'sm', color: '#d0d0d0', wrap: true, margin: 'md' },
+                { type: 'separator', margin: 'xl', color: '#2a2a4a' },
+                { type: 'text', text: 'PDFを開いた後、保存や共有もできます。', size: 'xs', color: '#666666', wrap: true, margin: 'xl' },
+                { type: 'text', text: '※リンクの有効期限は30日間です。', size: 'xs', color: '#666666', wrap: true, margin: 'sm' },
+                { type: 'box', layout: 'vertical', margin: 'xl', contents: [
+                  { type: 'text', text: '鑑定書を開く >', size: 'md', weight: 'bold', color: '#c9a84c', align: 'center', action: { type: 'uri', label: '鑑定書を開く', uri: downloadUrl } },
+                ]},
+              ],
+            },
+          },
         },
       ],
     }),
@@ -60,7 +99,17 @@ async function sendPdfToLine(userId, pdfPath, name) {
   }
 }
 
+function isDeliveryHour() {
+  const jstHour = new Date(Date.now() + 9 * 60 * 60 * 1000).getUTCHours();
+  return jstHour >= 7 && jstHour < 24;
+}
+
 async function main() {
+  if (!isDeliveryHour()) {
+    console.log('[deliver] Outside delivery hours (7:00-24:00 JST). Skipping.');
+    return;
+  }
+
   console.log('[deliver] Checking pending requests...');
   const requests = await fetchPendingRequests();
   const now = Date.now();
@@ -75,8 +124,12 @@ async function main() {
       // PDF生成
       const pdfPath = await generateReadingPdf(req);
 
-      // LINE通知
-      await sendPdfToLine(req.user_id, pdfPath, req.name);
+      // Workers KVにアップロード
+      const downloadUrl = await uploadPdfToWorkers(req.id, pdfPath);
+      console.log(`[deliver] PDF URL: ${downloadUrl}`);
+
+      // LINEにダウンロードリンク送信
+      await sendPdfToLine(req.user_id, downloadUrl, req.name);
 
       // ステータス更新
       await updateStatus(req.id, 'delivered');

@@ -28,6 +28,7 @@ import { saveReadingRequest } from './reading-request.js';
 // ② ボタンテキスト→IDのマッピング（英語を見せない）
 const CATEGORY_MAP = {
   '恋愛を選ぶ': 'love',
+  '人間関係を選ぶ': 'relationship',
   '仕事を選ぶ': 'career',
 };
 
@@ -139,6 +140,14 @@ async function handleReadingFlow(kv, baseUrl, userId, user, text, state) {
 
   // awaiting_subcategory
   if (step === 'awaiting_subcategory') {
+    if (text === 'テーマに戻る') {
+      await setReadingState(kv, userId, { step: 'awaiting_category', name: state.name });
+      return [{
+        type: 'flex',
+        altText: 'どのテーマを鑑定しますか？',
+        contents: buildCategorySelect(),
+      }];
+    }
     const subMap = buildSubcategoryMap(state.category);
     const sub = subMap[text];
     if (!sub) {
@@ -165,6 +174,16 @@ async function handleReadingFlow(kv, baseUrl, userId, user, text, state) {
 
   // awaiting_q1
   if (step === 'awaiting_q1') {
+    if (text === '戻る') {
+      const category = CATEGORIES.find(c => c.id === state.category);
+      const subs = SUBCATEGORIES[state.category];
+      await setReadingState(kv, userId, { step: 'awaiting_subcategory', name: state.name, category: state.category, categoryLabel: state.categoryLabel });
+      return [{
+        type: 'flex',
+        altText: 'もう少し絞りましょう',
+        contents: buildSubcategorySelect(category.label, subs),
+      }];
+    }
     const match = text.match(/^回答:(\d+)$/);
     const question = getQuestion(state.category, state.subcategory);
     if (!match || !question) {
@@ -193,6 +212,15 @@ async function handleReadingFlow(kv, baseUrl, userId, user, text, state) {
 
   // awaiting_q2
   if (step === 'awaiting_q2') {
+    if (text === '戻る') {
+      const question = getQuestion(state.category, state.subcategory);
+      await setReadingState(kv, userId, { step: 'awaiting_q1', subcategory: state.subcategory, subcategoryLabel: state.subcategoryLabel });
+      return [{
+        type: 'flex',
+        altText: question.q1.label,
+        contents: buildQ1(question),
+      }];
+    }
     const question = getQuestion(state.category, state.subcategory);
     const nums = text.split(/[,、\s]+/).map(s => parseInt(s, 10) - 1).filter(n => !isNaN(n));
     const answers = nums
@@ -216,6 +244,15 @@ async function handleReadingFlow(kv, baseUrl, userId, user, text, state) {
 
   // awaiting_q3
   if (step === 'awaiting_q3') {
+    if (text === '戻る') {
+      const question = getQuestion(state.category, state.subcategory);
+      await setReadingState(kv, userId, { step: 'awaiting_q2', q1: state.q1 });
+      return [{
+        type: 'flex',
+        altText: question.q2.label,
+        contents: buildQ2(question),
+      }];
+    }
     const q3 = text === 'このまま鑑定する' ? '' : text;
     await clearReadingState(kv, userId);
 

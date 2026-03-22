@@ -27,6 +27,17 @@ export default {
       return handleUpdateReadingStatus(request, env);
     }
 
+    // PDF アップロード（API key認証）
+    if (url.pathname === '/api/pdf/upload' && request.method === 'POST') {
+      return handlePdfUpload(request, env);
+    }
+
+    // PDF ダウンロード（認証なし、推測不能IDで保護）
+    const pdfMatch = url.pathname.match(/^\/pdf\/([a-zA-Z0-9_-]+)$/);
+    if (pdfMatch && request.method === 'GET') {
+      return handlePdfDownload(pdfMatch[1], env);
+    }
+
     return new Response('Not Found', { status: 404 });
   },
 };
@@ -96,6 +107,44 @@ async function handleListReadings(request, env) {
 
   const pending = await listPendingRequests(env.FORTUNE_KV);
   return Response.json({ ok: true, requests: pending });
+}
+
+async function handlePdfUpload(request, env) {
+  const apiKey = request.headers.get('x-api-key') || '';
+  if (!apiKey || apiKey !== env.API_KEY) {
+    return new Response('Unauthorized', { status: 401 });
+  }
+
+  const id = new URL(request.url).searchParams.get('id');
+  if (!id) {
+    return Response.json({ error: 'id query param required' }, { status: 400 });
+  }
+
+  const pdf = await request.arrayBuffer();
+  if (!pdf || pdf.byteLength === 0) {
+    return Response.json({ error: 'empty body' }, { status: 400 });
+  }
+
+  // 30日TTL
+  await env.FORTUNE_KV.put(`pdf:${id}`, pdf, { expirationTtl: 30 * 24 * 60 * 60 });
+
+  const downloadUrl = `${new URL(request.url).origin}/pdf/${id}`;
+  return Response.json({ ok: true, url: downloadUrl });
+}
+
+async function handlePdfDownload(id, env) {
+  const pdf = await env.FORTUNE_KV.get(`pdf:${id}`, { type: 'arrayBuffer' });
+  if (!pdf) {
+    return new Response('鑑定書の有効期限が切れました。', { status: 404 });
+  }
+
+  return new Response(pdf, {
+    headers: {
+      'Content-Type': 'application/pdf',
+      'Content-Disposition': `inline; filename="reading-${id}.pdf"`,
+      'Cache-Control': 'private, max-age=3600',
+    },
+  });
 }
 
 async function handleUpdateReadingStatus(request, env) {

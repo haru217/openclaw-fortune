@@ -6,7 +6,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { lifePathNumber, personalYear, personalMonth } = require('../../lib/numerology');
 const { ZODIAC_SIGNS } = require('../../lib/zodiac');
-const { execSync } = require('node:child_process');
+const { execSync, spawnSync } = require('node:child_process');
 const os = require('node:os');
 
 const TEMPLATE_PATH = path.join(__dirname, '..', '..', 'data', 'templates', 'reading-template.html');
@@ -116,8 +116,13 @@ async function generateReadingPdf(request) {
   const promptOs = fs.readFileSync(promptOsPath, 'utf8');
 
   // カテゴリからモジュールを決定
+  // サブカテゴリ固有のモジュールがあればそちらを優先
+  const subModuleMap = {
+    'career:restart': '復職・新しい働き方モジュール',
+  };
   const moduleMap = {
     love: '恋愛・不倫モジュール',
+    relationship: '人間関係モジュール',
     career: '転職・キャリアモジュール',
     general: '将来不安・方向性モジュール',
     destiny: '将来不安・方向性モジュール',
@@ -128,7 +133,7 @@ ${promptOs}
 
 ---
 
-### 今回使用するモジュール: ${moduleMap[request.category] || '将来不安・方向性モジュール'}
+### 今回使用するモジュール: ${subModuleMap[`${request.category}:${request.subcategory}`] || moduleMap[request.category] || '将来不安・方向性モジュール'}
 
 ### 相談者情報
 - 呼び名: ${request.name}
@@ -156,122 +161,102 @@ ${astroText}
 
 ### 重要なフォーマットルール（厳守）
 - Markdown記法（**太字**等）は使わない。太字にしたい場合は <strong>タグ</strong> を使う
-- 呼び名には必ず「さん」を付ける（例: ハルさん）。呼び捨てにしない
-- p5_lucky の action は3〜5文字の短い単語にする（例: 朝の散歩、深呼吸、日記）
-- 段落区切りは \\n を使う。空行は入れない
+- 呼び名には「さん」を1回だけ付ける（例: ハルさん）。「○○さんさん」と重複させない。呼び捨てにしない
+- 配列の各要素は独立した段落。\\nは使わない
 
-### 最重要ルール: 具体性と痛点を最優先する
-
-一般的なアドバイス（ビジネス書やセルフヘルプに書いてある内容）は禁止。全ての提案・解釈に占い固有の根拠（天文日付・星座特性・数秘の数字）を紐づけること。「試してみてください」のような曖昧な表現ではなく、「何を・いつまでに・なぜその星の配置だから」を書く。
-
-「かもしれません」を連発しない。星座や数秘の特性は断言する（「〇〇な方です」）。推測や逃げの表現は占い師として信頼を失う。
+### 文体ルール（必須）
+- 比喩は1ページ1つまで。使ったら残りは平易な言葉で書く
+- 抽象語の直後に平易な言い換えを添える
+- 星の説明は1ページ3行まで。星は根拠であって主役ではない
+- 中学生が初見で意味が通じる文章を書く
+- 「かもしれません」は1ページ1回まで
+- 「最強」「絶対」「必ず」等の煽り表現は使わない
+- 一人称でカイを名乗らない（「カイが思うに」等は禁止）
 
 ### 痛点ルール（必須）
+P2で、相談者の星座×数秘の「無意識に繰り返すパターン」を断定的に提示する。
+「〜ではなかったでしょうか」のような弱い問いかけではなく、「これが○○さんのパターンです」と言い切る。
 
-全てのテーマで、相談者の星座×数秘の「無意識に繰り返すパターン（弱点・癖）」を必ず1箇所以上含める。受容の後に、問いかけの形で提示する。
+### カレンダーのルール
+- 5〜7日を選ぶ。◎（好機）と△（注意）を混ぜる。全部◎にしない
+- 満月系は△にしやすい（「感情が強く出やすい」「即断を避ける」）
+- 注意日には回避アクションを必ず書く
 
-例:
-- 獅子座×ライフパス5 → 「才能はあるのに、評価される前に次へ移ってしまう癖はないか」
-- 蠍座×ライフパス1 → 「相手の中に自分の居場所を探す癖」
-- 天秤座×ライフパス7 → 「嫌われたくないあまり本音を後回しにする傾向」
+### アクションのトーンルール
+- 「宿題」ではなく「体験」として提案する
+- ビジネス用語は使わない（棚卸し、数値付きで整理 → NG）
+- タイトルは3種類のアンカーを混ぜる（日付・行動・人物）。3つとも日付始まりにしない
 
-これがないと「きれいだけど刺さらない」PDFになり、2000円の価値を感じてもらえない。
-
-### フォールバックルール（相談内容が薄い場合）
-
-Q3（自由記述）が空で、Q1の回答も「なんとなく」系の場合、テーマが定まらない。その場合は以下の手順で軸を作る:
-1. 個人年数と個人月数の組み合わせから「今この時期に最も重要なテーマ」を特定する
-2. 相談者の星座×ライフパスの組み合わせから「この人が今つまずきやすいポイント」を特定する
-3. その2つを軸にして全セクションを組み立てる
-
-例: 個人年数8（達成）×個人月数11（直感）→「直感で感じているものを現実の成果に変える時期。特に仕事や役割の選び方において」を軸にする。
-
-### 各セクションに必ず含める要素
-
-p2_answer_actions:
-- ①には必ず天文イベントの具体的日付を含め、「いつまでに何をするか」を明示する
-- ②には必ず数秘（ライフパスor個人年数）との紐づけを含め、「この人の数字だからこそ○○が武器になる」を書く
-- ③には必ず星座の相性を含め、「○○座の人を味方にする」等の具体的な対人指示を書く
-- 各アクションのbodyは120〜150文字
-
-p2_tarot_interpretation:
-- カードの一般的な意味だけでなく、相談内容に直接結びつけた解釈をする
-- 行動比率や具体的な指針を含める（例: 「慎重さ6割、積極性4割」）
-- 150〜180文字
-
-p5_questions:
-- 相談者の星座や数秘の「弱点パターン」を突く問いにする
-- 「はい/いいえ」で答えられない、自分と向き合う問いにする
-- 各50〜70文字
-
-p5_closing:
-- 呼び名を含め、星・カード・数字の結論を1文で要約してから、温かく締める
-- 120〜150文字
-
-### 各フィールドの文字数目安
-- p1_star_placement: 200〜250文字（2〜3段落）
-- p3_astrology: 250〜300文字（3段落）
-- p3_numerology_lp: 120〜150文字
-- p3_numerology_py: 120〜150文字
-- p3_connection: 60〜80文字
-- p4_timeline の各 body: 40〜50文字
-- p4_calendar の各 body: 30〜40文字
-- p4_calendar: 7項目
-- p4_calendar_note: 80〜100文字
-- p5_lucky_text: 50〜70文字
-- p5_allies の各 body: 20〜30文字
+### 各フィールドの文字数目安（超過するとページからはみ出す）
+- p1_portrait: 各段落60〜80文字、2段落
+- p1_preview: 30〜50文字
+- p2_pattern: 各段落50〜80文字、3段落
+- p2_actions の各 body: 80〜100文字
+- p3_guide の各 body: 80〜100文字
+- p3_guide の各 avoid: 30〜50文字
+- p4_timeline の各 body: 30〜40文字
+- p4_calendar の各 body: 20〜30文字
+- p4_calendar_note: 50〜70文字
+- p4_daily_action: 50〜80文字
+- p5_questions の各 text: 20〜30文字（短いほど刺さる。補足説明は不要）
+- p5_closing: 各行30〜50文字、2〜3行
 
 各ページの内容を JSON で返してください:
 
 {
-  "p1_star_placement": "（2段落以内、150文字以内。段落は\\nで区切る）",
-  "p2_answer_actions": [
-    { "title": "①のタイトル（25文字以内）", "body": "①の本文（100文字以内）" },
+  "p1_portrait": ["1段落目（性格描写）", "2段落目（今年の運勢）"],
+  "p1_preview": "核心の予告（1文）",
+  "p2_pattern": ["1段落目（パターンの指摘）", "2段落目（具体的な描写）", "3段落目（今年のチャンス）"],
+  "p2_actions": [
+    { "title": "①のタイトル", "body": "①の本文（80〜100文字）" },
     { "title": "②のタイトル", "body": "②の本文" },
     { "title": "③のタイトル", "body": "③の本文" }
   ],
-  "p2_tarot_interpretation": "（120文字以内）",
-  "p3_astrology": "（3段落以内、200文字以内。段落は\\nで区切る）",
-  "p3_numerology_lp": "（100文字以内）",
-  "p3_numerology_py": "（100文字以内）",
-  "p3_connection": "（80文字以内）",
+  "p3_guide": [
+    { "num": 1, "title": "ヶ月目のタイトル", "month_label": "4月", "body": "やること", "avoid": "避けること" },
+    { "num": 2, "title": "ヶ月目のタイトル", "month_label": "5月", "body": "やること", "avoid": "避けること" },
+    { "num": 3, "title": "ヶ月目のタイトル", "month_label": "6月", "body": "やること", "avoid": "避けること" }
+  ],
   "p4_timeline": [
     { "month": "4月", "theme": "テーマ（5文字）", "body": "本文（40文字以内）" },
     { "month": "5月", "theme": "テーマ", "body": "本文" },
     { "month": "6月", "theme": "テーマ", "body": "本文" }
   ],
   "p4_calendar": [
-    { "date": "4月2日", "mark": "◎", "title": "天秤座満月", "body": "説明（30文字以内）" }
+    { "date": "4月2日", "mark": "△", "title": "天秤座満月", "body": "説明（30文字以内）" }
   ],
-  "p4_calendar_note": "（80文字以内）",
-  "p5_lucky": { "color": "色", "number": "数字", "direction": "方角", "action": "アクション" },
-  "p5_lucky_text": "（50文字以内）",
-  "p5_allies": [
-    { "sign": "♐ 射手座", "reason": "根拠（10文字）", "body": "説明（20文字以内）" }
-  ],
+  "p4_calendar_note": "使い方の一言（70文字以内）",
+  "p4_daily_action": "毎日続けること（80文字以内）",
   "p5_questions": [
-    { "text": "問い1の全文" },
-    { "text": "問い2の全文" },
-    { "text": "問い3の全文" }
+    { "text": "問い1" },
+    { "text": "問い2" },
+    { "text": "問い3" }
   ],
-  "p5_closing": "最後のメッセージ"
+  "p5_closing": ["1行目（受け止め）", "2行目（未来を示す）"]
 }
 `;
 
   // klaw に投げて鑑定文を生成
   console.log(`[reading] Generating content for ${request.name}...`);
-  const tmpFile = path.join(os.tmpdir(), `reading-prompt-${request.id}.txt`);
-  fs.writeFileSync(tmpFile, prompt, 'utf8');
+
+  // spawnSync で node → openclaw.mjs を直接呼び出す（MSYSシェルの引数上限を回避）
+  const openclawMjs = path.join(process.env.APPDATA, 'npm', 'node_modules', 'openclaw', 'openclaw.mjs');
 
   let contentJson;
   try {
-    const stdout = execSync(
-      `openclaw agent --message "$(cat '${tmpFile.replace(/\\/g, '/')}')" --session-id reading-gen --json`,
-      { timeout: 180_000, encoding: 'utf8', maxBuffer: 2 * 1024 * 1024, shell: 'bash' },
-    );
+    const result = spawnSync(process.execPath, [
+      openclawMjs, 'agent',
+      '--message', prompt,
+      '--session-id', `reading-gen-${Date.now()}`,
+      '--json',
+    ], { timeout: 180_000, encoding: 'utf8', maxBuffer: 2 * 1024 * 1024 });
 
+    if (result.error) throw result.error;
+    if (result.status !== 0) throw new Error(result.stderr || `exit code ${result.status}`);
+
+    const stdout = result.stdout;
     const data = JSON.parse(stdout);
-    const text = data.result?.payloads?.[0]?.text || stdout.trim();
+    const text = data.result?.payloads?.[0]?.text || data.payloads?.[0]?.text || stdout.trim();
 
     // JSON 部分を抽出
     const jsonMatch = text.match(/\{[\s\S]*\}/);
@@ -280,8 +265,6 @@ p5_closing:
   } catch (err) {
     console.error(`[reading] klaw error: ${err.message}`);
     throw err;
-  } finally {
-    try { fs.unlinkSync(tmpFile); } catch {}
   }
 
   // HTML テンプレートに変数を挿入
@@ -299,41 +282,41 @@ p5_closing:
     '{{sign_symbol}}': signSymbol,
     '{{sign_name}}': signName,
     '{{birthday_formatted}}': formatDate(request.birthday),
-    '{{life_path}}': String(lp),
-    '{{personal_year}}': String(py),
-    '{{personal_month}}': String(pm),
-    '{{month_label}}': `${now.getMonth() + 1}月の個人月`,
     '{{category_label}}': request.category_label,
     '{{subcategory_label}}': request.subcategory_label,
     '{{consultation_text}}': request.q3 || `${request.q1}。${Array.isArray(request.q2) ? request.q2.join('、') : request.q2}について知りたい。`,
     '{{tarot_card_name}}': cardName,
     '{{tarot_position}}': cardPosition,
     '{{tarot_image_path}}': cardImagePath.replace(/\\/g, '/'),
-    '{{p1_star_placement}}': (contentJson.p1_star_placement || '').split('\n').map(p => `<p class="b">${p}</p><div class="sp"></div>`).join('\n'),
-    '{{p2_tarot_interpretation}}': contentJson.p2_tarot_interpretation || '',
-    '{{p3_astrology}}': (contentJson.p3_astrology || '').split('\n').map(p => `<p class="b">${p}</p><div class="sp"></div>`).join('\n'),
-    '{{p3_connection}}': contentJson.p3_connection || '',
-    '{{p3_numerology_lp}}': contentJson.p3_numerology_lp || '',
-    '{{p3_numerology_py}}': contentJson.p3_numerology_py || '',
+    '{{p1_portrait}}': (contentJson.p1_portrait || []).map(p => `<p class="b">${p}</p><div class="sp-s"></div>`).join('\n'),
+    '{{p1_preview}}': contentJson.p1_preview || '',
     '{{p4_calendar_note}}': contentJson.p4_calendar_note || '',
-    '{{p5_lucky_color}}': contentJson.p5_lucky?.color || '',
-    '{{p5_lucky_number}}': contentJson.p5_lucky?.number || '',
-    '{{p5_lucky_direction}}': contentJson.p5_lucky?.direction || '',
-    '{{p5_lucky_action}}': contentJson.p5_lucky?.action || '',
-    '{{p5_lucky_text}}': contentJson.p5_lucky_text || '',
-    '{{p5_closing}}': contentJson.p5_closing || '',
+    '{{p4_daily_action}}': contentJson.p4_daily_action || '',
+    '{{p5_closing_html}}': (contentJson.p5_closing || []).map(p => `<p>${p}</p><div class="sp-s"></div>`).join('\n'),
   };
 
   for (const [key, value] of Object.entries(vars)) {
     html = html.replaceAll(key, value);
   }
 
-  // 動的セクション: アクション、タイムライン、カレンダー、味方星座、問い
+  // 動的セクション: パターン、アクション、月別ガイド、タイムライン、カレンダー、問い
+  let patternHtml = '';
+  for (const p of (contentJson.p2_pattern || [])) {
+    patternHtml += `<p>${p}</p><div class="sp"></div>\n`;
+  }
+  html = html.replace('{{p2_pattern}}', patternHtml);
+
   let actionsHtml = '';
-  for (const action of (contentJson.p2_answer_actions || [])) {
+  for (const action of (contentJson.p2_actions || [])) {
     actionsHtml += `<div class="act"><div class="an">${action.title}</div><p>${action.body}</p></div>\n`;
   }
   html = html.replace('{{p2_actions}}', actionsHtml);
+
+  let guideHtml = '';
+  for (const g of (contentJson.p3_guide || [])) {
+    guideHtml += `<div class="mg z"><div class="mg-h"><div class="mg-num">${g.num}</div><div class="mg-title">${g.title}</div><div class="mg-sub">${g.month_label}</div></div><p>${g.body}</p><p class="mg-warn">避けること: ${g.avoid}</p></div>\n`;
+  }
+  html = html.replace('{{p3_monthly_guide}}', guideHtml);
 
   let timelineHtml = '';
   for (const tl of (contentJson.p4_timeline || [])) {
@@ -348,16 +331,9 @@ p5_closing:
   }
   html = html.replace('{{p4_calendar}}', calendarHtml);
 
-  let alliesHtml = '';
-  for (const ally of (contentJson.p5_allies || [])) {
-    alliesHtml += `<div class="ci2"><div class="cs">${ally.sign}</div><div class="cw2">${ally.reason}</div><p>${ally.body}</p></div>\n`;
-  }
-  html = html.replace('{{p5_allies}}', alliesHtml);
-
   let questionsHtml = '';
-  for (let i = 0; i < (contentJson.p5_questions || []).length; i++) {
-    const q = contentJson.p5_questions[i];
-    questionsHtml += `<div class="ci"><div class="cd" style="width:20px; color:#c9a84c;">${i + 1}</div><div class="cx">${q.text}</div></div>\n`;
+  for (const q of (contentJson.p5_questions || [])) {
+    questionsHtml += `<div class="qi"><p><strong>${q.text}</strong></p></div>\n`;
   }
   html = html.replace('{{p5_questions}}', questionsHtml);
 
@@ -384,7 +360,7 @@ with sync_playwright() as p:
     page.pdf(path="${pdfPath.replace(/\\/g, '/')}", width='595px', height='842px', print_background=True, margin={'top':'0','right':'0','bottom':'0','left':'0'})
     browser.close()
 `;
-  execSync(`python3 -c "${pyScript.replace(/"/g, '\\"')}"`, { timeout: 30_000 });
+  execSync(`python3 -c "${pyScript.replace(/"/g, '\\"')}"`, { timeout: 30_000, shell: 'bash' });
 
   console.log(`[reading] PDF saved: ${pdfPath}`);
   return pdfPath;

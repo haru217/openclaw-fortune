@@ -8,10 +8,12 @@ function generateId() {
 }
 
 function randomDelay() {
-  // 2〜4時間のランダム遅延（ミリ秒）
-  const minMs = 2 * 60 * 60 * 1000;
-  const maxMs = 4 * 60 * 60 * 1000;
-  return minMs + Math.random() * (maxMs - minMs);
+  // MVP: 即時配信（cronの間隔で届く）
+  // 本番時はコメントを外して 2〜4時間に戻す
+  return 0;
+  // const minMs = 2 * 60 * 60 * 1000;
+  // const maxMs = 4 * 60 * 60 * 1000;
+  // return minMs + Math.random() * (maxMs - minMs);
 }
 
 export async function saveReadingRequest(kv, data) {
