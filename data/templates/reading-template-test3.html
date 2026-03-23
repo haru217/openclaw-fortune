@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>個別鑑定 — {{name}}さん</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  @page { size: 595px 842px; margin: 0; }
+  html { background: #141428; }
+
+  body {
+    background: #141428;
+    font-family: 'Noto Serif JP', serif;
+    color: #e0e0e0;
+    margin: 0; padding: 0;
+  }
+  @media screen {
+    body { background: #111; display: flex; flex-direction: column; align-items: center; gap: 30px; padding: 40px; }
+    .section { width: 595px; }
+  }
+
+  /* === 共通 === */
+  .section {
+    padding: 34px 46px 40px;
+    page-break-before: always;
+    position: relative;
+    background: #141428;
+  }
+  .section:first-child { page-break-before: auto; }
+  .z { position: relative; z-index: 1; }
+  .sp { height: 14px; }
+  .sp-s { height: 8px; }
+  strong { color: #e8d5a3; font-weight: 700; }
+  .st {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    margin-top: 10px;
+    margin-bottom: 14px;
+    background: linear-gradient(135deg, #d4af37 0%, #f5e6a3 40%, #c9a84c 60%, #f5e6a3 80%, #d4af37 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 0 8px rgba(201,168,76,0.4));
+  }
+  .st-sub { color: #c9a84c; font-size: 13px; font-weight: 700; letter-spacing: 1px; margin: 10px 0 8px; }
+  .cal-section.caution .st-sub { color: #b45050; }
+  p.b { font-size: 14px; line-height: 1.8; color: #d0d0d0; }
+  .content-block { page-break-inside: avoid; margin-bottom: 6px; }
+  /* 好機日・注意日サマリーカード */
+  .dates-summary {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 18px;
+  }
+  .dates-summary-card {
+    flex: 1;
+    background: linear-gradient(135deg, rgba(201,168,76,0.06), rgba(201,168,76,0.02));
+    border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 10px;
+    padding: 12px 16px;
+    position: relative;
+    overflow: hidden;
+  }
+  .dates-summary-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #c9a84c, transparent);
+  }
+  .dates-summary-card.caution {
+    background: linear-gradient(135deg, rgba(180,80,80,0.06), rgba(180,80,80,0.02));
+    border-color: rgba(180,80,80,0.2);
+  }
+  .dates-summary-card.caution::before {
+    background: linear-gradient(90deg, transparent, #b45050, transparent);
+  }
+  .dates-summary-title {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .dates-summary-card:not(.caution) .dates-summary-title { color: #c9a84c; }
+  .dates-summary-card.caution .dates-summary-title { color: #b45050; }
+  .dates-summary-dates {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 14px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #e8d5a3;
+  }
+  .dates-summary-card.caution .dates-summary-dates { color: #d09090; }
+
+  /* カレンダー詳細 */
+  .cal-section { margin-bottom: 14px; }
+  .cal-section:last-child { margin-bottom: 0; }
+  .cal-entry:last-child { margin-bottom: 0; }
+  .cal-entry {
+    margin-bottom: 12px;
+    padding-left: 12px;
+    border-left: 2px solid rgba(201,168,76,0.15);
+  }
+  .cal-section.caution .cal-entry {
+    border-left-color: rgba(180,80,80,0.15);
+  }
+  .cal-head {
+    font-size: 13px;
+    color: #e0e0e0;
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+  }
+  .cal-head .cal-date {
+    font-weight: 700;
+    min-width: 34px;
+    color: #e8d5a3;
+    font-size: 14px;
+  }
+  .cal-section.caution .cal-head .cal-date { color: #d09090; }
+  .cal-head .mark { display: none; }
+  .cal-head .cal-label {
+    color: #bbb;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+  }
+  .cal-advice {
+    font-size: 12px;
+    color: #888;
+    margin-top: 3px;
+    line-height: 1.7;
+  }
+
+  /* P3: 星と数字 */
+  .star-block {
+    margin-bottom: 12px;
+  }
+  .star-block-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 6px;
+  }
+  .star-symbol {
+    font-size: 28px;
+    color: #c9a84c;
+    text-shadow: 0 0 10px rgba(201,168,76,0.3);
+    min-width: 36px;
+    text-align: center;
+  }
+  .star-label {
+    font-size: 14px;
+    font-weight: 700;
+    color: #e8d5a3;
+    letter-spacing: 1px;
+  }
+  .star-keyword {
+    font-size: 11px;
+    color: #999;
+    margin-left: 4px;
+    letter-spacing: 0.5px;
+  }
+  .star-block-body {
+    padding-left: 12px;
+    border-left: 2px solid rgba(201,168,76,0.12);
+  }
+  .star-block-body p {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #d0d0d0;
+  }
+
+  /* P2: イラスト */
+  .section-illust {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .section-illust img {
+    width: 240px;
+    height: auto;
+    border-radius: 8px;
+    opacity: 0.5;
+    mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%);
+  }
+
+  /* P2: プルクォート */
+  .pull-quote {
+    text-align: center;
+    padding: 10px 30px;
+    margin-bottom: 10px;
+    position: relative;
+  }
+  .pull-quote::before, .pull-quote::after {
+    content: '';
+    display: block;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 5%, rgba(201,168,76,0.4) 30%, #c9a84c 50%, rgba(201,168,76,0.4) 70%, transparent 95%);
+  }
+  .pull-quote::before { margin-bottom: 10px; }
+  .pull-quote::after { margin-top: 10px; }
+  .pull-quote p {
+    font-size: 16px;
+    line-height: 2;
+    color: #e8d5a3;
+    font-style: italic;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+
+  /* 最終ページ */
+  .closing-illust {
+    text-align: center;
+    margin-bottom: 4px;
+  }
+  .closing-illust img {
+    width: 260px;
+    height: auto;
+    border-radius: 8px;
+    opacity: 0.6;
+    mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 70%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 70%, transparent 100%);
+  }
+  .closing-heading {
+    text-align: center;
+    position: relative;
+    padding-bottom: 8px;
+  }
+  .closing-heading::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 1px;
+    background: #c9a84c;
+    margin: 10px auto 0;
+    opacity: 0.5;
+  }
+  .closing-card {
+    background: linear-gradient(135deg, rgba(201,168,76,0.06), rgba(201,168,76,0.015));
+    border: 1px solid rgba(201,168,76,0.18);
+    border-radius: 12px;
+    padding: 24px 26px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(201,168,76,0.04);
+  }
+  .closing-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #c9a84c, transparent);
+  }
+  .closing-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(201,168,76,0.3), transparent);
+  }
+  .closing-card p {
+    font-size: 14px;
+    line-height: 1.9;
+    color: #d0d0d0;
+    text-align: justify;
+  }
+  .closing-card p:last-child {
+    color: #e8d5a3;
+    font-style: italic;
+  }
+  .footer-line {
+    position: absolute;
+    bottom: 20px;
+    left: 46px;
+    right: 46px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(201,168,76,0.08);
+    display: flex; justify-content: space-between;
+    color: #444; font-size: 9px; letter-spacing: 1px;
+  }
+
+
+  /* ヘッダー装飾 */
+  .cover-hdr {
+    text-align: center;
+    padding: 6px 0 10px;
+  }
+  .cover-hdr h1 {
+    color: #c9a84c;
+    font-size: 24px;
+    letter-spacing: 8px;
+    text-shadow: 0 0 20px rgba(201,168,76,0.3);
+    margin-bottom: 8px;
+  }
+  .cover-hdr .meta { color: #777; font-size: 11px; }
+  .cover-hdr .ornament {
+    display: block;
+    color: #c9a84c;
+    font-size: 16px;
+    margin: 8px 0;
+    opacity: 0.5;
+  }
+
+  .gold-line {
+    height: 1px;
+    background: linear-gradient(90deg, transparent 5%, rgba(201,168,76,0.5) 30%, #c9a84c 50%, rgba(201,168,76,0.5) 70%, transparent 95%);
+    margin: 10px 0;
+  }
+
+  /* ユーザー情報 */
+  .cover-usr {
+    text-align: center;
+    margin: 8px 0 6px;
+  }
+  .cover-usr .name {
+    color: #c9a84c;
+    font-size: 26px;
+    font-weight: 700;
+    text-shadow: 0 0 16px rgba(201,168,76,0.2);
+    letter-spacing: 3px;
+  }
+  .cover-usr .info { color: #888; font-size: 13px; margin-top: 6px; }
+
+  /* サマリーカード */
+  .summary-grid {
+    display: flex;
+    gap: 10px;
+    margin: 6px 0;
+  }
+  .summary-card {
+    flex: 1;
+    background: linear-gradient(135deg, rgba(201,168,76,0.08), rgba(201,168,76,0.02));
+    border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 10px;
+    padding: 14px 10px 12px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .summary-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #c9a84c, transparent);
+  }
+  .summary-label {
+    font-size: 9px;
+    color: #999;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .summary-symbol {
+    font-size: 32px;
+    color: #c9a84c;
+    text-shadow: 0 0 12px rgba(201,168,76,0.3);
+    margin-bottom: 6px;
+    line-height: 1;
+  }
+  .summary-name {
+    font-size: 12px;
+    color: #ddd;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .summary-desc {
+    font-size: 9px;
+    color: #999;
+    line-height: 1.5;
+  }
+
+  /* タロットカード */
+  .tarot-section {
+    display: flex;
+    gap: 16px;
+    background: rgba(201,168,76,0.03);
+    border-radius: 8px;
+    padding: 14px;
+    margin: 6px 0;
+  }
+  .timg {
+    width: 80px; height: 120px;
+    border: 2px solid rgba(201,168,76,0.4);
+    border-radius: 6px;
+    overflow: hidden;
+    flex-shrink: 0;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.4), 0 0 8px rgba(201,168,76,0.1);
+  }
+  .timg img { width: 100%; height: 100%; object-fit: cover; }
+  .tarot-info { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+  .tarot-info .cat { color: #c9a84c; font-size: 13px; font-weight: 700; margin-bottom: 6px; }
+  .tarot-info .q { color: #ccc; font-size: 13px; line-height: 1.8; font-style: italic; }
+  .tarot-info .tn { color: #888; font-size: 11px; margin-top: 8px; }
+
+  /* P5: タロットリーディング */
+  .tarot-reading {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    margin-bottom: 14px;
+    background: linear-gradient(135deg, rgba(201,168,76,0.05), rgba(201,168,76,0.01));
+    border: 1px solid rgba(201,168,76,0.15);
+    border-radius: 10px;
+    padding: 12px 14px;
+    position: relative;
+    overflow: hidden;
+  }
+  .tarot-reading::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #c9a84c, transparent);
+  }
+  .tarot-reading-card {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .timg-lg {
+    width: 56px; height: 84px;
+    border: 2px solid rgba(201,168,76,0.4);
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.4), 0 0 8px rgba(201,168,76,0.1);
+  }
+  .timg-lg img { width: 100%; height: 100%; object-fit: cover; }
+  .tarot-card-label {
+    color: #c9a84c;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+  .tarot-card-pos {
+    color: #999;
+    font-size: 10px;
+    letter-spacing: 2px;
+    margin-top: 2px;
+  }
+  .tarot-reading-body {
+    flex: 1;
+    border-left: 1px solid rgba(201,168,76,0.15);
+    padding-left: 14px;
+  }
+  .tarot-reading-meaning {
+    color: #bbb;
+    font-size: 12px;
+    line-height: 1.7;
+    font-style: italic;
+  }
+
+  /* P5: 本文装飾 */
+  .tarot-text .content-block {
+    padding-left: 12px;
+    border-left: 2px solid rgba(201,168,76,0.12);
+    margin-bottom: 6px;
+  }
+
+  /* 3年タイムライン */
+  .timeline-title {
+    font-size: 12px;
+    color: #c9a84c;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    font-weight: 700;
+  }
+  .timeline-row {
+    display: flex;
+    gap: 8px;
+  }
+  .timeline-item {
+    flex: 1;
+    text-align: center;
+    padding: 0 2px;
+  }
+  .tl-year {
+    font-size: 10px;
+    color: #666;
+    margin-bottom: 6px;
+    letter-spacing: 1px;
+  }
+  .tl-card {
+    background: rgba(201,168,76,0.04);
+    border: 1px solid rgba(201,168,76,0.12);
+    border-radius: 8px;
+    padding: 12px 8px 10px;
+  }
+  .timeline-current .tl-card {
+    background: linear-gradient(135deg, rgba(201,168,76,0.12), rgba(201,168,76,0.04));
+    border-color: rgba(201,168,76,0.35);
+    box-shadow: 0 0 10px rgba(201,168,76,0.1);
+  }
+  .timeline-current .tl-year {
+    color: #c9a84c;
+    font-weight: 700;
+  }
+  .tl-theme-main {
+    font-size: 13px;
+    color: #c9a84c;
+    font-weight: 700;
+    margin-bottom: 4px;
+    line-height: 1.4;
+  }
+  .tl-theme-sub {
+    font-size: 9px;
+    color: #999;
+    line-height: 1.5;
+  }
+  .tl-py {
+    font-size: 8px;
+    color: #555;
+    margin-top: 6px;
+  }
+</style>
+</head>
+<body>
+
+<!-- P1: 表紙 + サマリー -->
+<div class="section cover">
+  <div class="cover-hdr z">
+    <h1>個 別 鑑 定 書</h1>
+    <div class="meta">{{date}} 鑑定</div>
+  </div>
+  <div class="gold-line"></div>
+  <div class="cover-usr z">
+    <div class="name">{{name}}さん</div>
+    <div class="info">{{sign_symbol}} {{sign_name}} — {{birthday_formatted}} 生まれ</div>
+  </div>
+  <div class="gold-line"></div>
+
+  <div class="summary-grid z">
+    <div class="summary-card">
+      <div class="summary-label">太陽星座</div>
+      <div class="summary-symbol">{{sign_symbol}}</div>
+      <div class="summary-name">{{sign_name}}</div>
+    </div>
+    <div class="summary-card">
+      <div class="summary-label">ライフパス</div>
+      <div class="summary-symbol">{{life_path}}</div>
+      <div class="summary-name">{{life_path_label}}</div>
+    </div>
+    <div class="summary-card">
+      <div class="summary-label">今年の数字</div>
+      <div class="summary-symbol">{{personal_year}}</div>
+      <div class="summary-name">{{personal_year_theme}}</div>
+    </div>
+  </div>
+
+  <div class="tarot-section z">
+    <div class="timg"><img src="{{tarot_image_path}}" alt="{{tarot_card_name}}"></div>
+    <div class="tarot-info">
+      <div class="cat">{{category_label}} — {{subcategory_label}}</div>
+      <div class="q">{{consultation_text}}</div>
+      <div class="tn">タロット: <strong>{{tarot_card_name}}（{{tarot_position}}）</strong></div>
+    </div>
+  </div>
+
+  <div class="gold-line"></div>
+
+  <div class="z">
+    <div class="timeline-title">これからの3年</div>
+    <div class="timeline-row">
+      <div class="timeline-item timeline-current">
+        <div class="tl-year">{{py1_year}}</div>
+        <div class="tl-card">
+          <div class="tl-theme-main">{{py1_theme_short}}</div>
+          <div class="tl-theme-sub">{{py1_theme_desc}}</div>
+          <div class="tl-py">個人年数 {{py1}}</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="tl-year">{{py2_year}}</div>
+        <div class="tl-card">
+          <div class="tl-theme-main">{{py2_theme_short}}</div>
+          <div class="tl-theme-sub">{{py2_theme_desc}}</div>
+          <div class="tl-py">個人年数 {{py2}}</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="tl-year">{{py3_year}}</div>
+        <div class="tl-card">
+          <div class="tl-theme-main">{{py3_theme_short}}</div>
+          <div class="tl-theme-sub">{{py3_theme_desc}}</div>
+          <div class="tl-py">個人年数 {{py3}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- 悩みの正体 -->
+<div class="section">
+  <div class="z">
+    <div class="st">悩みの正体</div>
+    <div class="section-illust"><img src="{{identity_image_path}}" alt=""></div>
+    <div class="pull-quote"><p>{{s1_quote}}</p></div>
+    {{s1_identity_top}}
+    <div class="sp"></div>
+    {{s1_identity_bottom}}
+  </div>
+</div>
+
+<!-- 星と数字が語るあなた -->
+<div class="section">
+  <div class="z">
+    <div class="st">星と数字が語る{{name}}さん</div>
+    <div class="section-illust"><img src="{{stars_image_path}}" alt=""></div>
+    <div class="gold-line"></div>
+    <div class="sp-s"></div>
+    <div class="star-block">
+      <div class="star-block-header">
+        <span class="star-symbol">{{sign_symbol}}</span>
+        <span class="star-label">{{sign_name}}</span>
+      </div>
+      <div class="star-block-body"><p>{{s2_sun_sign}}</p></div>
+    </div>
+    <div class="star-block">
+      <div class="star-block-header">
+        <span class="star-symbol">{{life_path}}</span>
+        <span class="star-label">ライフパス {{life_path}}</span>
+        <span class="star-keyword">— {{life_path_label}}</span>
+      </div>
+      <div class="star-block-body"><p>{{s2_life_path}}</p></div>
+    </div>
+    <div class="star-block">
+      <div class="star-block-header">
+        <span class="star-symbol">{{personal_year}}</span>
+        <span class="star-label">個人年数 {{personal_year}}</span>
+        <span class="star-keyword">— {{personal_year_theme}}</span>
+      </div>
+      <div class="star-block-body"><p>{{s2_personal_year}}</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- あなたのパターン -->
+<div class="section">
+  <div class="z">
+    <div class="st">あなたが持っている力</div>
+    <div class="section-illust"><img src="{{pattern_image_path}}" alt=""></div>
+    <div class="pull-quote"><p>{{s3_quote}}</p></div>
+    {{s3_pattern}}
+  </div>
+</div>
+
+<!-- タロットが示す道 -->
+<div class="section">
+  <div class="z">
+    <div class="st">タロットが示す道</div>
+    <div class="tarot-reading">
+      <div class="tarot-reading-card">
+        <div class="timg-lg"><img src="{{tarot_image_path}}" alt="{{tarot_card_name}}"></div>
+        <div>
+          <div class="tarot-card-label">{{tarot_card_name}}</div>
+          <div class="tarot-card-pos">{{tarot_position}}</div>
+        </div>
+      </div>
+      <div class="tarot-reading-body">
+        <div class="tarot-reading-meaning">{{tarot_meaning}}</div>
+      </div>
+    </div>
+    <div class="tarot-text">
+    {{s4_card}}
+    </div>
+  </div>
+</div>
+
+<!-- いつ動くか -->
+<div class="section">
+  <div class="z">
+    <div class="st">天運カレンダー</div>
+    {{s5_summary_html}}
+    {{s5_calendar_html}}
+  </div>
+</div>
+
+<!-- 締め -->
+<div class="section" style="min-height:842px;">
+  <div class="z">
+    <div class="st closing-heading">最後に{{name}}さんへ</div>
+    <div class="closing-illust"><img src="{{closing_image_path}}" alt=""></div>
+    <div class="gold-line"></div>
+    <div class="sp-s"></div>
+    <div class="closing-card">
+      {{s6_closing_html}}
+    </div>
+  </div>
+  <div class="footer-line"><span>Fortune by カイ — 西洋占星術 × 数秘術 × タロット</span><span></span></div>
+</div>
+
+</body>
+</html>
