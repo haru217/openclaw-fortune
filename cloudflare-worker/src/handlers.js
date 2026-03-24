@@ -25,7 +25,6 @@ import {
 } from './reading-messages.js';
 import { saveReadingRequest } from './reading-request.js';
 
-// ② ボタンテキスト→IDのマッピング（英語を見せない）
 const CATEGORY_MAP = {
   '恋愛を選ぶ': 'love',
   '家族・友人を選ぶ': 'relation',
@@ -41,7 +40,7 @@ function buildSubcategoryMap(categoryId) {
   return map;
 }
 
-async function handleEvent(event, env) {
+async function handleEvent(event, env, ctx) {
   const kv = env.FORTUNE_KV;
   const baseUrl = env.ASSETS_BASE_URL || '';
 
@@ -68,7 +67,7 @@ async function handleEvent(event, env) {
   // 鑑定フローの状態チェック
   const readingState = await getReadingState(kv, userId);
   if (readingState) {
-    return handleReadingFlow(kv, baseUrl, userId, user, text, readingState);
+    return handleReadingFlow(kv, baseUrl, userId, user, text, readingState, ctx);
   }
 
   if (text === '個別鑑定') {
@@ -98,7 +97,7 @@ async function handleEvent(event, env) {
   }];
 }
 
-async function handleReadingFlow(kv, baseUrl, userId, user, text, state) {
+async function handleReadingFlow(kv, baseUrl, userId, user, text, state, ctx) {
   const { step } = state;
 
   // awaiting_name
@@ -184,17 +183,8 @@ async function handleReadingFlow(kv, baseUrl, userId, user, text, state) {
         contents: buildSubcategorySelect(category.label, subs),
       }];
     }
-    const match = text.match(/^回答:(\d+)$/);
     const question = getQuestion(state.category, state.subcategory);
-    if (!match || !question) {
-      return [{
-        type: 'flex',
-        altText: '選択してください',
-        contents: buildQ1(question),
-      }];
-    }
-    const idx = parseInt(match[1], 10);
-    const answer = question.q1.options[idx];
+    const answer = question && question.q1.options.find(opt => opt === text);
     if (!answer) {
       return [{
         type: 'flex',
@@ -202,11 +192,12 @@ async function handleReadingFlow(kv, baseUrl, userId, user, text, state) {
         contents: buildQ1(question),
       }];
     }
+    const q2Data = question.q2[answer];
     await setReadingState(kv, userId, { step: 'awaiting_q2', q1: answer });
     return [{
       type: 'flex',
-      altText: question.q2.label,
-      contents: buildQ2(question),
+      altText: q2Data.label,
+      contents: buildQ2(q2Data),
     }];
   }
 
@@ -221,65 +212,114 @@ async function handleReadingFlow(kv, baseUrl, userId, user, text, state) {
         contents: buildQ1(question),
       }];
     }
-    const match = text.match(/^q2回答:(\d+)$/);
     const question = getQuestion(state.category, state.subcategory);
-    if (!match || !question) {
-      return [{
-        type: 'flex',
-        altText: '選択してください',
-        contents: buildQ2(question),
-      }];
-    }
-    const idx = parseInt(match[1], 10);
-    const answer = question.q2.options[idx];
+    const q2Data = question.q2[state.q1];
+    const answer = q2Data && q2Data.options.find(opt => opt === text);
     if (!answer) {
       return [{
         type: 'flex',
         altText: '選択してください',
-        contents: buildQ2(question),
+        contents: buildQ2(q2Data),
       }];
     }
+    // 独立・副業の特殊フロー: Q2→Q3(選択)→Q4(自由記述)
+    if (q2Data.next && q2Data.next[answer]) {
+      const q3Data = q2Data.next[answer];
+      await setReadingState(kv, userId, { step: 'awaiting_q3_select', q2: answer });
+      return [{
+        type: 'flex',
+        altText: q3Data.label,
+        contents: buildQ2(q3Data),
+      }];
+    }
+    // 通常フロー: Q2→Q3(自由記述)
+    const q3Hint = question.q3[state.q1];
     await setReadingState(kv, userId, { step: 'awaiting_q3', q2: answer });
     return [{
       type: 'flex',
       altText: 'いま困っていることを教えてください',
-      contents: buildQ3(question),
+      contents: buildQ3(q3Hint),
     }];
   }
 
-  // awaiting_q3
-  if (step === 'awaiting_q3') {
+  // awaiting_q3_select（独立・副業の追加ステップ: 選択式Q3）
+  if (step === 'awaiting_q3_select') {
     if (text === '戻る') {
       const question = getQuestion(state.category, state.subcategory);
+      const q2Data = question.q2[state.q1];
       await setReadingState(kv, userId, { step: 'awaiting_q2', q1: state.q1 });
       return [{
         type: 'flex',
-        altText: question.q2.label,
-        contents: buildQ2(question),
+        altText: q2Data.label,
+        contents: buildQ2(q2Data),
       }];
     }
-    const q3 = text === 'このまま鑑定する' ? '' : text;
-    await clearReadingState(kv, userId);
+    const question = getQuestion(state.category, state.subcategory);
+    const q2Data = question.q2[state.q1];
+    const q3Data = q2Data.next[state.q2];
+    const answer = q3Data && q3Data.options.find(opt => opt === text);
+    if (!answer) {
+      return [{
+        type: 'flex',
+        altText: '選択してください',
+        contents: buildQ2(q3Data),
+      }];
+    }
+    await setReadingState(kv, userId, { step: 'awaiting_q3', q2: `${state.q2} → ${answer}` });
+    return [{
+      type: 'flex',
+      altText: 'いま困っていることを教えてください',
+      contents: buildQ3({ hint: q3Data.hint }),
+    }];
+  }
 
+  // awaiting_q3（自由記述）
+  if (step === 'awaiting_q3') {
+    if (text === '戻る') {
+      const question = getQuestion(state.category, state.subcategory);
+      const q2Data = question.q2[state.q1];
+      // 独立・副業の場合はQ3選択に戻る
+      if (q2Data.next) {
+        const q2Answer = state.q2.split(' → ')[0];
+        const q3Data = q2Data.next[q2Answer];
+        await setReadingState(kv, userId, { step: 'awaiting_q3_select', q2: q2Answer });
+        return [{
+          type: 'flex',
+          altText: q3Data.label,
+          contents: buildQ2(q3Data),
+        }];
+      }
+      await setReadingState(kv, userId, { step: 'awaiting_q2', q1: state.q1 });
+      return [{
+        type: 'flex',
+        altText: q2Data.label,
+        contents: buildQ2(q2Data),
+      }];
+    }
+    const q3 = text;
     const cardId = Math.floor(Math.random() * 22);
     const reversed = Math.random() < 0.3;
 
-    const request = await saveReadingRequest(kv, {
-      userId,
-      name: state.name,
-      birthday: user.birthday,
-      sign: user.sign,
-      category: state.category,
-      subcategory: state.subcategory,
-      categoryLabel: state.categoryLabel,
-      subcategoryLabel: state.subcategoryLabel,
-      q1: state.q1,
-      q2: state.q2,
-      q3,
-      tarotCard: { id: cardId, reversed },
-    });
-
-    console.log('[reading] Request saved:', request.id);
+    if (ctx) {
+      ctx.waitUntil((async () => {
+        await clearReadingState(kv, userId);
+        const request = await saveReadingRequest(kv, {
+          userId,
+          name: state.name,
+          birthday: user.birthday,
+          sign: user.sign,
+          category: state.category,
+          subcategory: state.subcategory,
+          categoryLabel: state.categoryLabel,
+          subcategoryLabel: state.subcategoryLabel,
+          q1: state.q1,
+          q2: state.q2,
+          q3,
+          tarotCard: { id: cardId, reversed },
+        });
+        console.log('[reading] Request saved:', request.id);
+      })());
+    }
 
     return [{
       type: 'flex',

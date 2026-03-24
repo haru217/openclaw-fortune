@@ -1,4 +1,4 @@
-// Task 2: 鑑定フロー用 Flex Message
+// 鑑定フロー用 Flex Message（v5: Q1→Q2→Q3自由記述）
 
 const COLOR_BG = '#1a1a2e';
 const COLOR_GOLD = '#c9a84c';
@@ -28,7 +28,6 @@ function goldButton(label, text) {
   };
 }
 
-// ① 紹介カード: 改行修正
 export function buildReadingIntroCard(baseUrl) {
   const body = {
     type: 'box',
@@ -79,7 +78,6 @@ export function buildNamePrompt() {
   return makeBubble({ body });
 }
 
-// ②ボタンのテキストを日本語に（英語が見えない）
 export function buildCategorySelect() {
   const body = {
     type: 'box',
@@ -114,8 +112,8 @@ export function buildSubcategorySelect(categoryLabel, subcategories) {
 }
 
 export function buildQ1(question) {
-  const buttons = question.q1.options.map((opt, i) =>
-    goldButton(opt, `回答:${i}`)
+  const buttons = question.q1.options.map(opt =>
+    goldButton(opt, opt)
   );
 
   const body = {
@@ -131,9 +129,9 @@ export function buildQ1(question) {
   return makeBubble({ body });
 }
 
-export function buildQ2(question) {
-  const buttons = question.q2.options.map((opt, i) =>
-    goldButton(opt, `q2回答:${i}`)
+export function buildQ2(q2Data) {
+  const buttons = q2Data.options.map(opt =>
+    goldButton(opt, opt)
   );
 
   const body = {
@@ -141,7 +139,7 @@ export function buildQ2(question) {
     layout: 'vertical',
     spacing: 'none',
     contents: [
-      { type: 'text', text: question.q2.label, weight: 'bold', color: COLOR_GOLD, size: 'md', wrap: true, margin: 'md' },
+      { type: 'text', text: q2Data.label, weight: 'bold', color: COLOR_GOLD, size: 'md', wrap: true, margin: 'md' },
       ...buttons,
       goldButton('← 戻る', '戻る'),
     ],
@@ -149,7 +147,7 @@ export function buildQ2(question) {
   return makeBubble({ body });
 }
 
-export function buildQ3(question) {
+export function buildQ3(q3Data) {
   const body = {
     type: 'box',
     layout: 'vertical',
@@ -165,14 +163,14 @@ export function buildQ3(question) {
       },
       {
         type: 'text',
-        text: `書き方のヒント：${question.q3.hint}`,
+        text: `書き方のヒント：${q3Data.hint}`,
         color: COLOR_MUTED,
         size: 'xs',
         wrap: true,
       },
       {
         type: 'text',
-        text: 'メッセージで送るか、下のボタンでスキップできます',
+        text: 'メッセージで送ってください',
         color: COLOR_MUTED,
         size: 'xs',
         wrap: true,
@@ -185,7 +183,6 @@ export function buildQ3(question) {
     type: 'box',
     layout: 'vertical',
     contents: [
-      goldButton('このまま鑑定する', 'このまま鑑定する'),
       goldButton('← 戻る', '戻る'),
     ],
   };
@@ -193,7 +190,6 @@ export function buildQ3(question) {
   return makeBubble({ body, footer });
 }
 
-// ⑥ 受付完了カード: 待ち時間のメッセージを充実
 export function buildReadingComplete(name, categoryLabel, subcategoryLabel) {
   const body = {
     type: 'box',
