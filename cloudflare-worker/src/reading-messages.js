@@ -203,7 +203,7 @@ export function buildReadingComplete(name, categoryLabel, subcategoryLabel) {
       { type: 'separator', color: '#3d3a2e', margin: 'md' },
       {
         type: 'text',
-        text: 'カイが星を読み、カードを引き、数字を紐解いています。鑑定が終わり次第お届けします。',
+        text: '星を読み、カードを引き、数字を紐解いています。鑑定が終わり次第お届けします。',
         color: COLOR_LIGHT,
         size: 'sm',
         wrap: true,
@@ -211,7 +211,7 @@ export function buildReadingComplete(name, categoryLabel, subcategoryLabel) {
       },
       {
         type: 'text',
-        text: '届くまでの間、今日の占いもぜひご覧ください✨',
+        text: '届くまでの間、今日の占いもぜひご覧ください',
         color: COLOR_MUTED,
         size: 'xs',
         wrap: true,
@@ -220,4 +220,43 @@ export function buildReadingComplete(name, categoryLabel, subcategoryLabel) {
     ],
   };
   return makeBubble({ body });
+}
+
+export function buildReadingDelivery(name, categoryLabel, subcategoryLabel, pdfUrl) {
+  const body = {
+    type: 'box',
+    layout: 'vertical',
+    spacing: 'md',
+    contents: [
+      { type: 'text', text: '鑑定書が届きました', weight: 'bold', color: COLOR_GOLD, size: 'xl' },
+      { type: 'separator', color: COLOR_GOLD, margin: 'sm' },
+      { type: 'text', text: `${name}さん`, color: COLOR_LIGHT, size: 'md', margin: 'md' },
+      { type: 'text', text: `${categoryLabel} — ${subcategoryLabel}`, color: COLOR_MUTED, size: 'sm' },
+      { type: 'separator', color: '#3d3a2e', margin: 'md' },
+      {
+        type: 'text',
+        text: '星を読み、カードを引き、数字を紐解きました。あなただけの鑑定書をお届けします。',
+        color: COLOR_LIGHT,
+        size: 'sm',
+        wrap: true,
+        margin: 'sm',
+      },
+    ],
+  };
+
+  const footer = {
+    type: 'box',
+    layout: 'vertical',
+    contents: [
+      {
+        type: 'button',
+        style: 'link',
+        color: COLOR_GOLD,
+        action: { type: 'uri', label: '鑑定書を見る', uri: pdfUrl },
+        margin: 'md',
+      },
+    ],
+  };
+
+  return makeBubble({ body, footer });
 }
