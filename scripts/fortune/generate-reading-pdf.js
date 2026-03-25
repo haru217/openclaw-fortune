@@ -195,7 +195,27 @@ async function generateReadingPdf(request, opts = {}) {
     22: '大きな仕組みを現実にする年',
   };
 
-  const tarotId = request.tarot_card?.id ?? Math.floor(Math.random() * 22);
+  // カテゴリ×カード相性フィルター（重み付きランダム）
+  const CARD_WEIGHTS = {
+    'love:start':    { 0:3, 6:3, 8:2, 17:3, 18:2, 19:2 },       // 愚者,恋人たち,力,星,月,太陽
+    'love:partner':  { 3:2, 6:3, 8:3, 11:2, 14:3, 21:2 },       // 女帝,恋人たち,力,正義,節制,世界
+    'love:reunion':  { 4:3, 8:2, 12:3, 14:2, 17:2, 18:3, 20:3 },// 皇帝,力,吊るされた男,節制,星,月,審判
+    'relation:family': { 4:2, 8:3, 9:2, 11:3, 14:3, 20:2 },     // 皇帝,力,隠者,正義,節制,審判
+    'relation:friend': { 8:3, 9:3, 11:2, 14:3, 17:2 },          // 力,隠者,正義,節制,星
+    'work:career':   { 1:3, 3:2, 4:2, 7:3, 10:3, 21:2 },        // 魔術師,女帝,皇帝,戦車,運命の輪,世界
+    'work:people':   { 8:3, 9:2, 11:3, 14:3, 17:2, 20:2 },      // 力,隠者,正義,節制,星,審判
+  };
+  function weightedTarotDraw(category, subcategory) {
+    const key = `${category}:${subcategory}`;
+    const weights = CARD_WEIGHTS[key] || {};
+    const pool = [];
+    for (let i = 0; i < 22; i++) {
+      const w = weights[i] || 1;
+      for (let j = 0; j < w; j++) pool.push(i);
+    }
+    return pool[Math.floor(Math.random() * pool.length)];
+  }
+  const tarotId = request.tarot_card?.id ?? weightedTarotDraw(request.category, request.subcategory);
   const tarotReversed = request.tarot_card?.reversed ?? (Math.random() < 0.3);
   const cardName = TAROT_NAMES[tarotId];
   const cardPosition = tarotReversed ? '逆位置' : '正位置';

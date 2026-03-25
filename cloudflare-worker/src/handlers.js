@@ -40,6 +40,27 @@ function buildSubcategoryMap(categoryId) {
   return map;
 }
 
+// カテゴリ×カード相性フィルター（重み付きランダム）
+const CARD_WEIGHTS = {
+  'love:start':    { 0:3, 6:3, 8:2, 17:3, 18:2, 19:2 },
+  'love:partner':  { 3:2, 6:3, 8:3, 11:2, 14:3, 21:2 },
+  'love:reunion':  { 4:3, 8:2, 12:3, 14:2, 17:2, 18:3, 20:3 },
+  'relation:family': { 4:2, 8:3, 9:2, 11:3, 14:3, 20:2 },
+  'relation:friend': { 8:3, 9:3, 11:2, 14:3, 17:2 },
+  'work:career':   { 1:3, 3:2, 4:2, 7:3, 10:3, 21:2 },
+  'work:people':   { 8:3, 9:2, 11:3, 14:3, 17:2, 20:2 },
+};
+function weightedTarotDraw(category, subcategory) {
+  const key = `${category}:${subcategory}`;
+  const weights = CARD_WEIGHTS[key] || {};
+  const pool = [];
+  for (let i = 0; i < 22; i++) {
+    const w = weights[i] || 1;
+    for (let j = 0; j < w; j++) pool.push(i);
+  }
+  return pool[Math.floor(Math.random() * pool.length)];
+}
+
 async function handleEvent(event, env, ctx) {
   const kv = env.FORTUNE_KV;
   const baseUrl = env.ASSETS_BASE_URL || '';
@@ -297,7 +318,7 @@ async function handleReadingFlow(kv, baseUrl, userId, user, text, state, ctx) {
       }];
     }
     const q3 = text;
-    const cardId = Math.floor(Math.random() * 22);
+    const cardId = weightedTarotDraw(state.category, state.subcategory);
     const reversed = Math.random() < 0.3;
 
     if (ctx) {
