@@ -33,6 +33,7 @@ export async function saveReadingRequest(kv, data) {
     subcategory_label: data.subcategoryLabel,
     q1: data.q1,
     q2: data.q2,
+    emotion: data.emotion || '',
     q3: data.q3 || '',
     requested_at: now.toISOString(),
     deliver_after: deliverAfter.toISOString(),

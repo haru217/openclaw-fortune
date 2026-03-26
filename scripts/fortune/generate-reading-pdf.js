@@ -321,6 +321,7 @@ JSONで返してください:
         .replace('{subcategory}', request.subcategory_label)
         .replace('{q1_text}', request.q1)
         .replace('{q2_text}', request.q2)
+        .replace('{emotion}', request.emotion || '（なし）')
         .replace('{q3_text}', request.q3 || '（なし）')
         .replace('{astronomical_data_json}', astroText);
 

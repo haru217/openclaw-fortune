@@ -253,9 +253,48 @@ async function handleReadingFlow(kv, baseUrl, userId, user, text, state, ctx) {
         contents: buildQ2(q3Data),
       }];
     }
+    // 感情トーン質問がある場合: Q2→emotion→Q3(自由記述)
+    if (question.emotion) {
+      await setReadingState(kv, userId, { step: 'awaiting_emotion', q2: answer });
+      return [{
+        type: 'flex',
+        altText: question.emotion.label,
+        contents: buildQ2(question.emotion),
+      }];
+    }
     // 通常フロー: Q2→Q3(自由記述)
     const q3Hint = question.q3[state.q1];
     await setReadingState(kv, userId, { step: 'awaiting_q3', q2: answer });
+    return [{
+      type: 'flex',
+      altText: 'いま困っていることを教えてください',
+      contents: buildQ3(q3Hint),
+    }];
+  }
+
+  // awaiting_emotion（感情トーン選択: work:people等）
+  if (step === 'awaiting_emotion') {
+    if (text === '戻る') {
+      const question = getQuestion(state.category, state.subcategory);
+      const q2Data = question.q2[state.q1];
+      await setReadingState(kv, userId, { step: 'awaiting_q2', q1: state.q1 });
+      return [{
+        type: 'flex',
+        altText: q2Data.label,
+        contents: buildQ2(q2Data),
+      }];
+    }
+    const question = getQuestion(state.category, state.subcategory);
+    const answer = question.emotion.options.find(opt => opt === text);
+    if (!answer) {
+      return [{
+        type: 'flex',
+        altText: question.emotion.label,
+        contents: buildQ2(question.emotion),
+      }];
+    }
+    const q3Hint = question.q3[state.q1];
+    await setReadingState(kv, userId, { step: 'awaiting_q3', emotion: answer });
     return [{
       type: 'flex',
       altText: 'いま困っていることを教えてください',
@@ -310,6 +349,15 @@ async function handleReadingFlow(kv, baseUrl, userId, user, text, state, ctx) {
           contents: buildQ2(q3Data),
         }];
       }
+      // 感情トーンがある場合はemotionに戻る
+      if (question.emotion && state.emotion) {
+        await setReadingState(kv, userId, { step: 'awaiting_emotion', q2: state.q2 });
+        return [{
+          type: 'flex',
+          altText: question.emotion.label,
+          contents: buildQ2(question.emotion),
+        }];
+      }
       await setReadingState(kv, userId, { step: 'awaiting_q2', q1: state.q1 });
       return [{
         type: 'flex',
@@ -335,6 +383,7 @@ async function handleReadingFlow(kv, baseUrl, userId, user, text, state, ctx) {
           subcategoryLabel: state.subcategoryLabel,
           q1: state.q1,
           q2: state.q2,
+          emotion: state.emotion || '',
           q3,
           tarotCard: { id: cardId, reversed },
         });
