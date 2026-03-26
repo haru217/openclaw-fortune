@@ -54,17 +54,21 @@ export async function getReadingRequest(kv, requestId) {
 }
 
 export async function listPendingRequests(kv) {
+  return listRequestsByStatus(kv, 'pending');
+}
+
+export async function listRequestsByStatus(kv, status) {
   const index = await kv.get(INDEX_KEY, { type: 'json' }) || [];
-  const pending = [];
+  const results = [];
 
   for (const id of index) {
     const req = await kv.get(`${REQUEST_PREFIX}${id}`, { type: 'json' });
-    if (req && req.status === 'pending') {
-      pending.push(req);
+    if (req && req.status === status) {
+      results.push(req);
     }
   }
 
-  return pending;
+  return results;
 }
 
 export async function updateRequestStatus(kv, requestId, status) {

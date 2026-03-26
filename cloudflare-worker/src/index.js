@@ -1,10 +1,10 @@
 ﻿import { verifySignature, replyMessage } from './line.js';
 import { handleEvent } from './handlers.js';
 import { saveDailyFortune } from './kv.js';
-import { listPendingRequests, updateRequestStatus } from './reading-request.js';
+import { listPendingRequests, listRequestsByStatus, updateRequestStatus } from './reading-request.js';
 
 export default {
-  async fetch(request, env) {
+  async fetch(request, env, ctx) {
     const url = new URL(request.url);
 
     if (url.pathname === '/health' && request.method === 'GET') {
@@ -12,7 +12,7 @@ export default {
     }
 
     if (url.pathname === '/webhook' && request.method === 'POST') {
-      return handleWebhook(request, env);
+      return handleWebhook(request, env, ctx);
     }
 
     if (url.pathname === '/api/daily' && request.method === 'POST') {
@@ -42,7 +42,7 @@ export default {
   },
 };
 
-async function handleWebhook(request, env) {
+async function handleWebhook(request, env, ctx) {
   const body = await request.text();
   const signature = request.headers.get('x-line-signature') || '';
 
@@ -62,12 +62,14 @@ async function handleWebhook(request, env) {
 
   for (const event of events) {
     try {
-      const messages = await handleEvent(event, env);
+      const messages = await handleEvent(event, env, ctx);
+      console.log('[webhook] messages count:', messages.length, 'replyToken:', !!event.replyToken);
       if (messages.length > 0 && event.replyToken) {
-        await replyMessage(event.replyToken, messages, env.LINE_CHANNEL_ACCESS_TOKEN);
+        const res = await replyMessage(event.replyToken, messages, env.LINE_CHANNEL_ACCESS_TOKEN);
+        console.log('[webhook] reply status:', res.status);
       }
     } catch (error) {
-      console.error('[webhook] Event error:', error.message);
+      console.error('[webhook] Event error:', error.message, error.stack);
     }
   }
 
@@ -105,8 +107,11 @@ async function handleListReadings(request, env) {
     return new Response('Unauthorized', { status: 401 });
   }
 
-  const pending = await listPendingRequests(env.FORTUNE_KV);
-  return Response.json({ ok: true, requests: pending });
+  const status = new URL(request.url).searchParams.get('status');
+  const requests = status
+    ? await listRequestsByStatus(env.FORTUNE_KV, status)
+    : await listPendingRequests(env.FORTUNE_KV);
+  return Response.json({ ok: true, requests });
 }
 
 async function handlePdfUpload(request, env) {
