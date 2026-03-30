@@ -169,6 +169,11 @@ async function handleUpdateReadingStatus(request, env) {
     return Response.json({ error: 'id and status required' }, { status: 400 });
   }
 
+  const ALLOWED_STATUSES = ['pending', 'unpaid', 'ready', 'delivered', 'error'];
+  if (!ALLOWED_STATUSES.includes(data.status)) {
+    return Response.json({ error: `status must be one of: ${ALLOWED_STATUSES.join(', ')}` }, { status: 400 });
+  }
+
   const updated = await updateRequestStatus(env.FORTUNE_KV, data.id, data.status);
   if (!updated) {
     return Response.json({ error: 'request not found' }, { status: 404 });

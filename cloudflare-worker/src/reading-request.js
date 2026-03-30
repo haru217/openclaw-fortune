@@ -4,7 +4,7 @@ const REQUEST_PREFIX = 'reading_req:';
 const INDEX_KEY = 'reading_req_index';
 
 function generateId() {
-  return `req_${Date.now().toString(36)}_${Math.random().toString(36).slice(2, 8)}`;
+  return `req_${crypto.randomUUID()}`;
 }
 
 function randomDelay() {

@@ -365,6 +365,9 @@ async function handleReadingFlow(kv, baseUrl, userId, user, text, state, ctx) {
         contents: buildQ2(q2Data),
       }];
     }
+    if (text.length > 500) {
+      return [{ type: 'text', text: '500文字以内でお願いします🙏' }];
+    }
     const q3 = text;
     const cardId = weightedTarotDraw(state.category, state.subcategory);
     const reversed = Math.random() < 0.3;
