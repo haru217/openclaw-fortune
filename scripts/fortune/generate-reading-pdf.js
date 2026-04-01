@@ -655,7 +655,7 @@ with sync_playwright() as p:
     page.pdf(path="${pdfPath.replace(/\\/g, '/')}", width='595px', height='842px', print_background=True, margin={'top':'0','right':'0','bottom':'0','left':'0'})
     browser.close()
 `;
-  execSync(`python3 -c "${pyScript.replace(/"/g, '\\"')}"`, { timeout: 30_000, shell: 'bash' });
+  execSync(`python3 -c "${pyScript.replace(/"/g, '\\"')}"`, { timeout: 120_000, shell: 'bash' });
 
   console.log(`[reading] PDF saved: ${pdfPath}`);
   return pdfPath;
