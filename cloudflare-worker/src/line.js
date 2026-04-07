@@ -72,4 +72,27 @@ async function replyMessage(replyToken, messages, channelAccessToken) {
   return response;
 }
 
-export { verifySignature, replyMessage, buildReplyBody };
+/**
+ * LINE Push API 呼び出し（能動送信）
+ * reply tokenが使えない非同期納品時に使用
+ */
+async function pushMessage(to, messages, channelAccessToken) {
+  const response = await fetch('https://api.line.me/v2/bot/message/push', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${channelAccessToken}`,
+    },
+    body: JSON.stringify({ to, messages }),
+  });
+
+  if (!response.ok) {
+    const text = await response.text();
+    console.error('[line] Push API error:', response.status, text);
+    throw new Error(`LINE Push API failed: ${response.status} ${text}`);
+  }
+
+  return response;
+}
+
+export { verifySignature, replyMessage, pushMessage, buildReplyBody };

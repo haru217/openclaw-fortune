@@ -12,7 +12,8 @@ const LINE_TOKEN = process.env.LINE_CHANNEL_ACCESS_TOKEN;
 const OUTPUT_DIR = path.join(__dirname, '..', '..', 'data', 'readings');
 
 async function fetchPendingRequests() {
-  const res = await fetch(`${WORKER_URL}/api/readings`, {
+  // status=pending を明示的に指定（デフォルトもpendingだが、明示する）
+  const res = await fetch(`${WORKER_URL}/api/readings?status=pending`, {
     headers: { 'X-Api-Key': API_KEY },
   });
   const data = await res.json();
@@ -31,7 +32,8 @@ async function uploadPdfToWorkers(requestId, pdfPath) {
   const pdfData = fs.readFileSync(pdfPath);
   console.log(`[deliver] Uploading PDF to Workers KV (${(pdfData.length / 1024).toFixed(0)} KB)...`);
 
-  const res = await fetch(`${WORKER_URL}/api/pdf/upload?id=${requestId}`, {
+  // skip_delivery=1: このスクリプトは自前でLINE push送信するため、Worker側の自動納品を抑止
+  const res = await fetch(`${WORKER_URL}/api/pdf/upload?id=${requestId}&skip_delivery=1`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/pdf',

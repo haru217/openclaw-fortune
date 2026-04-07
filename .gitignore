@@ -1,4 +1,5 @@
 node_modules/
+cloudflare-worker/.wrangler/
 .env
 *.log
 data/backups/

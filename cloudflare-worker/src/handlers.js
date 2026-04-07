@@ -73,12 +73,23 @@ async function handleEvent(event, env, ctx) {
     }];
   }
 
-  if (event.type !== 'message' || event.message.type !== 'text') {
+  // Postbackイベント（リッチメニューやボタンからのdata送信）をtext相当として扱う
+  // action.data の形式: "text=鑑定を受ける" or 単に "鑑定を受ける"
+  let userId;
+  let text;
+  if (event.type === 'postback') {
+    if (!event.source || !event.source.userId || !event.postback) return [];
+    userId = event.source.userId;
+    const data = event.postback.data || '';
+    const textMatch = data.match(/^text=(.+)$/);
+    text = textMatch ? textMatch[1] : data;
+    text = text.trim();
+  } else if (event.type === 'message' && event.message.type === 'text') {
+    userId = event.source.userId;
+    text = event.message.text.trim();
+  } else {
     return [];
   }
-
-  const userId = event.source.userId;
-  const text = event.message.text.trim();
   const user = await getUser(kv, userId);
 
   if (!user) {

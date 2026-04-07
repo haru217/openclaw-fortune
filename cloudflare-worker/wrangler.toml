@@ -11,4 +11,17 @@ id = "cf68e524cbe344b087eb7d060ea01b8b"
 
 [vars]
 ASSETS_BASE_URL = "https://raw.githubusercontent.com/haru217/openclaw-fortune/master/assets"
-# LINE_CHANNEL_SECRET, LINE_CHANNEL_ACCESS_TOKEN, API_KEY は wrangler secret put で設定
+# 以下はwrangler secret putで設定:
+# - LINE_CHANNEL_SECRET, LINE_CHANNEL_ACCESS_TOKEN, API_KEY（既存）
+# - THREADS_USER_ID, OPENAI_API_KEY（Threads用に追加）
+# ※ THREADS_APP_ID, THREADS_APP_SECRET はOAuth初回取得時のみ使うためWorkersには入れない
+
+[triggers]
+crons = [
+  "0 22 * * *",       # 毎朝7:00 JST → A(ランキング) or C(新月満月)
+  "30 22 * * 0",      # 月曜7:30 JST（日曜22:30 UTC）→ B(週次テーマ)
+  "0 2 * * 6",        # 土曜11:00 JST → F(豆知識)
+  "0 12 * * 2,3,4",   # 火水木21:00 JST → E(共感)
+  "0 11 * * 0",       # 日曜20:00 JST → D(告知、M2以降のみ発火)
+  "0 3 * * 1",        # 月曜3:00 UTC → トークン週次リフレッシュ
+]
