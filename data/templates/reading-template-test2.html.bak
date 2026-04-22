@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>個別鑑定 — ごりらさん</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #111; display: flex; flex-direction: column; align-items: center; gap: 0; padding: 0; margin: 0; }
+  @media screen { body { gap: 30px; padding: 40px; } }
+  @media print { .page { page-break-after: always; } .page:last-child { page-break-after: avoid; } }
+  .page { width: 595px; height: 842px; background: #141428; font-family: 'Noto Serif JP', serif; color: #e0e0e0; padding: 38px 46px 44px; position: relative; overflow: hidden; }
+  .z { position: relative; z-index: 1; }
+  .sp { height: 14px; }
+  .sp-s { height: 8px; }
+  strong { color: #e8d5a3; font-weight: 700; }
+  .divider { width: 50%; margin: 0 auto 18px; height: 1px; background: linear-gradient(90deg, transparent, #c9a84c, transparent); }
+  .divider-f { width: 100%; height: 1px; margin: 16px 0; background: rgba(201,168,76,0.2); }
+  .footer { position: absolute; bottom: 16px; left: 46px; right: 46px; display: flex; justify-content: space-between; color: #555; font-size: 9px; letter-spacing: 1px; }
+  .hdr { text-align: center; margin-bottom: 20px; }
+  .hdr h1 { color: #c9a84c; font-size: 22px; letter-spacing: 6px; margin-bottom: 6px; }
+  .hdr .meta { color: #777; font-size: 11px; }
+  .usr { text-align: center; margin-bottom: 18px; }
+  .usr .name { color: #c9a84c; font-size: 22px; font-weight: 700; }
+  .usr .info { color: #888; font-size: 13px; margin-top: 4px; }
+  .con { display: flex; gap: 18px; }
+  .timg { width: 88px; height: 132px; border: 2px solid #c9a84c; border-radius: 4px; overflow: hidden; flex-shrink: 0; box-shadow: 0 2px 12px rgba(201,168,76,0.12); }
+  .timg img { width: 100%; height: 100%; object-fit: cover; }
+  .con-r { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+  .con-r .cat { color: #c9a84c; font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+  .con-r .q { color: #ccc; font-size: 14px; line-height: 1.9; font-style: italic; }
+  .con-r .tn { color: #999; font-size: 12px; margin-top: 8px; }
+  .con-r .tn strong { font-size: 13px; }
+  .st { color: #c9a84c; font-size: 16px; font-weight: 700; letter-spacing: 1px; margin-bottom: 12px; }
+  p.b { font-size: 15px; line-height: 2.1; color: #d0d0d0; }
+  .conclusion { font-size: 15px; line-height: 2.2; color: #d0d0d0; margin-top: 16px; }
+  .act { background: rgba(201,168,76,0.06); border-radius: 6px; padding: 14px 18px; margin-bottom: 10px; }
+  .act .an { color: #c9a84c; font-size: 13px; font-weight: 700; margin-bottom: 6px; }
+  .act p { font-size: 14px; line-height: 2.0; color: #d0d0d0; }
+  .mg { background: rgba(201,168,76,0.04); border: 1px solid rgba(201,168,76,0.12); border-radius: 8px; padding: 16px 18px; margin-bottom: 12px; }
+  .mg .mg-h { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+  .mg .mg-num { color: #c9a84c; font-size: 18px; font-weight: 700; }
+  .mg .mg-title { color: #c9a84c; font-size: 14px; font-weight: 700; }
+  .mg p { font-size: 14px; line-height: 2.0; color: #d0d0d0; }
+  .ci { display: flex; gap: 10px; margin-bottom: 8px; align-items: baseline; }
+  .cd { font-size: 13px; font-weight: 700; width: 74px; flex-shrink: 0; }
+  .cg { color: #c9a84c; }
+  .cw { color: #c27c4c; }
+  .cx { font-size: 13px; line-height: 1.7; color: #d0d0d0; }
+  .adv { background: rgba(201,168,76,0.08); border-left: 3px solid #c9a84c; padding: 20px 22px; border-radius: 0 8px 8px 0; }
+  .adv p { font-size: 15px; line-height: 2.2; color: #d0d0d0; }
+</style>
+</head>
+<body>
+
+<!-- P1: 表紙＋今回の結論 -->
+<div class="page">
+  <div class="hdr z"><h1>個 別 鑑 定 書</h1><div class="meta">2026年3月22日 鑑定</div></div>
+  <div class="divider"></div>
+  <div class="usr z"><div class="name">ごりらさん</div><div class="info">♍ 乙女座 — 1992年8月24日 生まれ</div><div class="info">ライフパスナンバー 8 ／ 個人年数 6</div></div>
+  <div class="divider-f"></div>
+  <div class="con z">
+    <div class="timg"><img src="C:/Users/senta/openclaw-fortune/assets/tarot/00-fool.jpg" alt="愚者"></div>
+    <div class="con-r">
+      <div class="cat">仕事のこと — キャリアの悩み</div>
+      <div class="q">仕事が向いていない</div>
+      <div class="tn">タロット: <strong>愚者（正位置）</strong></div>
+    </div>
+  </div>
+  <div class="divider-f"></div>
+  <div class="z">
+    <p class="conclusion">ごりらさんの今回の答えは、<strong>仕事そのものが向いていないのではなく、力を出せない形で働こうとしてきたことが苦しさの中心</strong>です。乙女座は役に立つことに真剣で、ライフパス8は結果を出したい気持ちが強い方です。だからこそ、曖昧な評価や、自分で決められない環境の中に長くいるほど、「自分が足りないからだ」と受け取りやすくなります。けれど今の停滞は能力不足の証明ではありません。愚者の正位置は、これまでのやり方をいったん降りて、新しい働き方を試す時期に入ったことを示しています。<strong>向いている方向を探す鍵は、職種名ではなく、どんな条件なら自然に力が出るかを見ること</strong>です。</p>
+  </div>
+  <div class="footer"><span>Fortune by カイ — 西洋占星術 × 数秘術 × タロット</span><span>1</span></div>
+</div>
+
+<!-- P2: 今あなたが苦しい理由 -->
+<div class="page">
+  <div class="z">
+    <div class="st">今ごりらさんが苦しい理由</div>
+    <p class="b">「仕事が向いていない」と感じるとき、本当に苦しいのは働くことそのものではなく、頑張っても手応えが残らないことです。ちゃんと考えて、ちゃんと動いているのに、合っている感じだけが返ってこない。このずれが、ごりらさんを静かに削ってきたはずです。</p><div class="sp-s"></div>
+<p class="b">乙女座は細かい違和感を見逃さず、ライフパス8は自分の力で状況を動かしたい人です。だから本来は、整えて終わりではなく、整えた先で結果につなげる役割に強さがあります。なのに今は、力を出す前に消耗してしまい、自分の価値まで曇って見えやすくなっています。</p><div class="sp-s"></div>
+<p class="b">これがごりらさんのパターンです。<strong>できる形に整うまで一人で抱え、外に出す頃には疲れてしまう</strong>。助けを借りる前に自分で何とかしようとして、形にならない時間まで自分の責任にしてしまう。この癖があると、方向選びの悩みはただの迷いではなく、自分否定に変わりやすくなります。</p><div class="sp-s"></div>
+<p class="b">独立や新しい働き方が気になるのに、簡単に踏み切れないのも自然です。自由がほしい気持ちと、失敗したくない気持ちが同時にあるからです。特に今の個人年数6は、無理に切り離すよりも、何を守りながら変えるかを考える流れです。勢いだけで決められないのは、弱さではありません。</p><div class="sp-s"></div>
+<p class="b">今しんどいのは、ごりらさんが怠けたからでも、覚悟が足りないからでもありません。真面目に向き合う人ほど、合わない場所でも自分を合わせてしまいます。だからまず必要なのは根性ではなく、<strong>苦しさの原因を自分の能力から切り離して見ること</strong>です。そこからようやく、方向が見え始めます。</p><div class="sp-s"></div>
+
+  </div>
+  <div class="footer"><span>Fortune by カイ — 西洋占星術 × 数秘術 × タロット</span><span>2</span></div>
+</div>
+
+<!-- P3: この悩みの本質 -->
+<div class="page">
+  <div class="z">
+    <div class="st">この悩みの本質</div>
+    <p class="b">この悩みの本質は、「何の仕事をするか」より先に、「どんな働き方なら自分が鈍らないか」を見ないまま答えを出そうとしていることです。向いている方向が分からないのではなく、合わない条件の中で自分を測り続けたために、感覚が混線しています。本当の問題は職業適性の欠如ではありません。</p><div class="sp-s"></div>
+<p class="b">誤解しやすいのは、我慢して続けられることと、向いていることは別だという点です。乙女座は役割に合わせる力があり、ライフパス8は責任を引き受ける胆力があります。そのため、合っていない場でも一定以上やれてしまいます。やれてしまうからこそ、離れる判断が遅れやすいのです。</p><div class="sp-s"></div>
+<p class="b">愚者の正位置は、未熟さではなく、<strong>既存の評価軸からいったん降りる勇気</strong>を示します。4月10日に火星が牡羊座へ入り、4月17日の牡羊座新月で動く力が前に出ます。この流れは、ごりらさんに「正しく選ぶ」より「試して確かめる」ほうが合う時期だと伝えています。今は完成形を決めるより、小さく始めて反応を見るほうが合っています。</p><div class="sp-s"></div>
+<p class="b">もう一つ見直したいのは、助けを求めることへの構えです。ライフパス8は、力のある人ほど弱みを見せにくく、自分の判断で進めたい気持ちが強い数字です。けれど今回の転換では、何でも一人で決めるほど視野が狭くなります。味方は依存先ではなく、視界を増やす存在として必要です。</p><div class="sp-s"></div>
+<p class="b">ここに気づくと、問いが変わります。「向いている仕事は何か」ではなく、<strong>自分の判断が生きる場はどこか、成果が実感できる形は何か</strong>へと変わります。この問いに変わった瞬間、ごりらさんは仕事に向いていない人ではなく、働く土台を選び直す段階にいる人になります。</p><div class="sp-s"></div>
+
+  </div>
+  <div class="footer"><span>Fortune by カイ — 西洋占星術 × 数秘術 × タロット</span><span>3</span></div>
+</div>
+
+<!-- P4: これからどう動くといいか -->
+<div class="page">
+  <div class="z">
+    <div class="st">これからどう動くといいか</div>
+    <div class="act"><div class="an">4月17日の牡羊座新月まで、答えを急がず試す</div><p>4月10日に火星が牡羊座へ入ると、動きたい気持ちが強まりやすくなります。その勢いで一気に決めるより、4月17日の牡羊座新月までは「小さく試す期間」と決めてください。気になる働き方を一つに絞らず、3日単位で体験してみることです。たとえば、1人で進める作業、人と話して進める作業、自分で決められる作業をそれぞれ試し、終えたあとに気持ちが軽いか重いかだけを書き残してください。方向は、考え込むより体感で見えてきます。</p></div>
+<div class="act"><div class="an">まず『自分の判断で進められる場』を選ぶ</div><p>ごりらさんが勝負しやすいのは、細かく気づける乙女座の目と、結果に結びつけるライフパス8の強さが両方使える場です。つまり、誰かの指示を待つだけの形より、自分で順番を決めて進められる形です。4月24日に金星が双子座へ入ったら、人との会話からヒントを得やすくなります。この頃に、仕事内容より先に「裁量があるか」「成果の手応えが見えるか」「無理に愛想で埋めなくていいか」を条件として見てください。肩書きより条件で選ぶことが大切です。</p></div>
+<div class="act"><div class="an">話すと視界が広がる人を味方にする</div><p>一人で考えるほど、ごりらさんは厳しめの採点者になりやすい方です。だから味方にすべきなのは、励ますだけの人ではなく、話すと選択肢が増える人です。5月3日に水星が牡牛座へ入ると、考えが現実に落ちやすくなります。この前後で、落ち着いて話を聞き、すぐに結論を迫らず、ごりらさんの強みを具体的な場面で返してくれる人と時間を取ってください。相談のテーマは「向いている仕事は何か」ではなく、「どんな条件だと動きやすかったか」にすると、答えがぶれにくくなります。</p></div>
+<p style="color:#c27c4c;font-size:13px;line-height:2.0;margin-top:10px;">やらない方がいいこと: 今の苦しさを証明するために、向かない形へもう一度自分を押し込まないことです。勢いだけの独立宣言も、我慢だけの継続も避けてください。</p>
+<p style="color:#aaa;font-size:13px;line-height:2.0;margin-top:4px;">判断基準: 話したあとより、動いたあとに気持ちが整う選択が増えているなら順調です。疲れていても納得が残るかどうかを目印にしてください。</p>
+
+  </div>
+  <div class="footer"><span>Fortune by カイ — 西洋占星術 × 数秘術 × タロット</span><span>4</span></div>
+</div>
+
+<!-- P5: これから1〜2ヶ月の流れ -->
+<div class="page">
+  <div class="z">
+    <div class="st">これからの流れ</div>
+    <div class="mg z"><div class="mg-h"><div class="mg-num">4月</div><div class="mg-title">試して見分ける月</div></div><p style="color:#aaa;font-size:13px;margin-bottom:6px;">起きやすいこと: 月前半は焦りと停滞感が交互に出やすく、今すぐ答えを出したくなる場面が増えそうです。4月2日の天秤座満月では、人と比べて自分を低く見積もりやすくなります。一方で、4月10日の火星牡羊座入りからは、止まっていた気持ちが前に出てきます。</p><p>4月は結論の月ではなく、反応を見る月です。4月17日の牡羊座新月までは、向いている方向を決めるより、合わない条件をはっきりさせてください。4月24日以降は会話から材料が集まりやすくなるので、考えを外に出すほど整理が進みます。迷いが出た日は、職種ではなく条件に戻ることです。</p></div>
+<div class="mg z"><div class="mg-h"><div class="mg-num">5月</div><div class="mg-title">現実に落とし込む月</div></div><p style="color:#aaa;font-size:13px;margin-bottom:6px;">起きやすいこと: 5月前半は、やりたいことと生活感覚のすり合わせがテーマになります。5月2日の蠍座満月では、極端な判断や、全部変えたくなる気持ちが出やすい時です。けれど5月3日に水星が牡牛座へ入り、5月19日に火星も牡牛座へ移ると、地に足のついた選び方がしやすくなります。</p><p>5月は、試した感触の中から残すものを決める月です。勢いで広げるより、続けられる形を選んでください。5月17日の牡牛座新月は、働き方の土台を置き直す好機です。5月後半は、少し遅く見えても安定する道のほうがごりらさんに合います。山羊座満月へ向かう流れを意識して、形にできる一歩だけを続けるとよいです。</p></div>
+<div class="divider-f"></div><div class="st" style="font-size:14px;">好機日・注意日</div>
+<div class="ci"><div class="cd cw">4月2日 △</div><div class="cx"><strong>天秤座満月</strong> — 比較で揺れやすい日。決断は翌日に回す。</div></div>
+<div class="ci"><div class="cd cg">4月10日 ◎</div><div class="cx"><strong>火星 牡羊座入り</strong> — 動く力が戻る日。小さな試行を始める。</div></div>
+<div class="ci"><div class="cd cg">4月17日 ◎</div><div class="cx"><strong>牡羊座新月</strong> — 新しい働き方の仮決めに向く。</div></div>
+<div class="ci"><div class="cd cw">5月2日 △</div><div class="cx"><strong>蠍座満月</strong> — 全部変えたくなりやすい。一晩置く。</div></div>
+<div class="ci"><div class="cd cg">5月17日 ◎</div><div class="cx"><strong>牡牛座新月</strong> — 続けられる形を選び直す好機。</div></div>
+<div class="ci"><div class="cd cg">5月19日 ◎</div><div class="cx"><strong>火星 牡牛座入り</strong> — 焦りが落ち着く。地に足をつけて進む。</div></div>
+
+  </div>
+  <div class="footer"><span>Fortune by カイ — 西洋占星術 × 数秘術 × タロット</span><span>5</span></div>
+</div>
+
+<!-- P6: 最後のメッセージ -->
+<div class="page">
+  <div class="z" style="display:flex;flex-direction:column;justify-content:center;height:680px;">
+    <div class="st" style="text-align:center;">最後にごりらさんへ</div>
+    <div class="sp"></div>
+    <div class="adv">
+      <p><strong>ごりらさんは仕事が向いていないのではなく、自分の力が抜けていく場所で長く頑張りすぎただけです。</strong> 今回、見直すべきなのは能力ではなく、働く条件です。</p><div class="sp-s"></div>
+<p>乙女座の丁寧さとライフパス8の現実を動かす強さは、本来とても実務に強い組み合わせです。苦しかったのは、その強さを自分を責める方向に使ってきたからです。だから責めるより先に、条件を変えて反応を見ることが必要です。</p><div class="sp-s"></div>
+<p>愚者の正位置は、白紙に戻ることではなく、余計な思い込みを手放して始め直すことを示します。4月から5月で試し、残すものを決めてください。<strong>山羊座満月へ向かう頃には、「向いていない」という言葉ではなく、「こう働くとやれる」という手応えに変わっていきます。</strong></p><div class="sp-s"></div>
+    </div>
+  </div>
+  <div class="footer"><span>Fortune by カイ — 西洋占星術 × 数秘術 × タロット</span><span>6</span></div>
+</div>
+
+</body>
+</html>

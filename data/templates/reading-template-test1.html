@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>個別鑑定 — {{name}}さん</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #111; display: flex; flex-direction: column; align-items: center; gap: 0; padding: 0; margin: 0; }
+  @media screen { body { gap: 30px; padding: 40px; } }
+  @media print { .page { page-break-after: always; } .page:last-child { page-break-after: avoid; } }
+  .page { width: 595px; height: 842px; background: #141428; font-family: 'Noto Serif JP', serif; color: #e0e0e0; padding: 38px 46px 44px; position: relative; overflow: hidden; }
+  .z { position: relative; z-index: 1; }
+  .sp { height: 14px; }
+  .sp-s { height: 8px; }
+  strong { color: #e8d5a3; font-weight: 700; }
+  .divider { width: 50%; margin: 0 auto 18px; height: 1px; background: linear-gradient(90deg, transparent, #c9a84c, transparent); }
+  .divider-f { width: 100%; height: 1px; margin: 16px 0; background: rgba(201,168,76,0.2); }
+  .footer { position: absolute; bottom: 16px; left: 46px; right: 46px; display: flex; justify-content: space-between; color: #555; font-size: 9px; letter-spacing: 1px; }
+  .hdr { text-align: center; margin-bottom: 20px; }
+  .hdr h1 { color: #c9a84c; font-size: 22px; letter-spacing: 6px; margin-bottom: 6px; }
+  .hdr .meta { color: #777; font-size: 11px; }
+  .usr { text-align: center; margin-bottom: 18px; }
+  .usr .name { color: #c9a84c; font-size: 22px; font-weight: 700; }
+  .usr .info { color: #888; font-size: 13px; margin-top: 4px; }
+  .con { display: flex; gap: 18px; }
+  .timg { width: 88px; height: 132px; border: 2px solid #c9a84c; border-radius: 4px; overflow: hidden; flex-shrink: 0; box-shadow: 0 2px 12px rgba(201,168,76,0.12); }
+  .timg img { width: 100%; height: 100%; object-fit: cover; }
+  .con-r { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+  .con-r .cat { color: #c9a84c; font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+  .con-r .q { color: #ccc; font-size: 14px; line-height: 1.9; font-style: italic; }
+  .con-r .tn { color: #999; font-size: 12px; margin-top: 8px; }
+  .con-r .tn strong { font-size: 13px; }
+  .st { color: #c9a84c; font-size: 16px; font-weight: 700; letter-spacing: 1px; margin-bottom: 12px; }
+  p.b { font-size: 15px; line-height: 2.1; color: #d0d0d0; }
+  .greeting { font-size: 15px; line-height: 2.2; color: #d0d0d0; margin-top: 20px; }
+  .act { background: rgba(201,168,76,0.06); border-radius: 6px; padding: 14px 18px; margin-bottom: 10px; }
+  .act .an { color: #c9a84c; font-size: 13px; font-weight: 700; margin-bottom: 6px; }
+  .act p { font-size: 14px; line-height: 2.0; color: #d0d0d0; }
+  .qi { margin-bottom: 30px; }
+  .qi p { font-size: 18px; line-height: 2.2; color: #d0d0d0; text-align: center; }
+  .adv { background: rgba(201,168,76,0.08); border-left: 3px solid #c9a84c; padding: 20px 22px; border-radius: 0 8px 8px 0; }
+  .adv p { font-size: 15px; line-height: 2.2; color: #d0d0d0; }
+  .center-content { display: flex; flex-direction: column; justify-content: center; height: 680px; }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="hdr z"><h1>個 別 鑑 定 書</h1><div class="meta">{{date}} 鑑定</div></div>
+  <div class="divider"></div>
+  <div class="usr z"><div class="name">{{name}}さん</div><div class="info">{{sign_symbol}} {{sign_name}} — {{birthday_formatted}} 生まれ</div><div class="info">ライフパスナンバー {{life_path}} ／ 個人年数 {{personal_year}}</div></div>
+  <div class="divider-f"></div>
+  <div class="con z">
+    <div class="timg"><img src="{{tarot_image_path}}" alt="{{tarot_card_name}}"></div>
+    <div class="con-r">
+      <div class="cat">{{category_label}} — {{subcategory_label}}</div>
+      <div class="q">{{consultation_text}}</div>
+      <div class="tn">タロット: <strong>{{tarot_card_name}}（{{tarot_position}}）</strong></div>
+    </div>
+  </div>
+  <div class="divider-f"></div>
+  <div class="z"><p class="greeting">{{p1_greeting}}</p></div>
+  <div class="footer"><span>Fortune by カイ — 西洋占星術 × 数秘術 × タロット</span><span>1</span></div>
+</div>
+<div class="page">
+  <div class="z"><div class="st">{{name}}さんの声を聴いて</div>{{p2_empathy}}</div>
+  <div class="footer"><span>Fortune by カイ — 西洋占星術 × 数秘術 × タロット</span><span>2</span></div>
+</div>
+<div class="page">
+  <div class="z"><div class="st">星と数字が語る{{name}}さん</div>{{p3_essence}}</div>
+  <div class="footer"><span>Fortune by カイ — 西洋占星術 × 数秘術 × タロット</span><span>3</span></div>
+</div>
+<div class="page">
+  <div class="z"><div class="st">{{tarot_card_name}}が今伝えていること</div>{{p4_timing}}</div>
+  <div class="footer"><span>Fortune by カイ — 西洋占星術 × 数秘術 × タロット</span><span>4</span></div>
+</div>
+<div class="page">
+  <div class="center-content z"><div class="st" style="text-align:center;">カイからの問いかけ</div><div class="sp"></div>{{p5_questions}}</div>
+  <div class="footer"><span>Fortune by カイ — 西洋占星術 × 数秘術 × タロット</span><span>5</span></div>
+</div>
+<div class="page">
+  <div class="z"><div class="st">明日への小さな一歩</div>{{p6_actions}}</div>
+  <div class="footer"><span>Fortune by カイ — 西洋占星術 × 数秘術 × タロット</span><span>6</span></div>
+</div>
+<div class="page">
+  <div class="center-content z"><div class="st" style="text-align:center;">最後に{{name}}さんへ</div><div class="sp"></div><div class="adv">{{p7_closing_html}}</div></div>
+  <div class="footer"><span>Fortune by カイ — 西洋占星術 × 数秘術 × タロット</span><span>7</span></div>
+</div>
+</body>
+</html>

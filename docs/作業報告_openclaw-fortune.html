@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>作業報告書 — openclaw-fortune</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    @page { size: A4 portrait; margin: 15mm 18mm 16mm; }
+    body {
+      font-family: 'Noto Sans JP', sans-serif; font-size: 12px; line-height: 1.65;
+      color: #111827; background: #fff; print-color-adjust: exact;
+      -webkit-print-color-adjust: exact; padding: 40px 56px;
+    }
+    .page { max-width: 780px; margin: 0 auto; }
+    .print-bar { text-align: right; margin-bottom: 18px; }
+    .print-btn {
+      background: #1e3a8a; color: #fff; border: none; padding: 7px 20px;
+      font-family: 'Noto Sans JP', sans-serif; font-size: 13px; font-weight: 600;
+      border-radius: 4px; cursor: pointer;
+    }
+    .print-btn:hover { background: #1e40af; }
+    @media print { .print-bar { display: none; } }
+    .cover { margin-bottom: 16px; padding-bottom: 14px; border-bottom: 2px solid #1e3a8a; }
+    .cover-label { font-size: 10px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: #2563eb; margin-bottom: 5px; }
+    .cover h1 { font-size: 21px; font-weight: 700; color: #111827; line-height: 1.3; margin-bottom: 10px; }
+    .cover-meta { display: flex; gap: 28px; }
+    .cover-meta-label { font-size: 10px; color: #6b7280; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 1px; }
+    .cover-meta-value { font-size: 13px; color: #111827; font-weight: 500; }
+    .stats-row { display: flex; margin-bottom: 20px; border: 1px solid #e0e0e0; border-radius: 4px; overflow: hidden; }
+    .stat { flex: 1; padding: 10px 14px; text-align: center; border-right: 1px solid #e0e0e0; background: #f7f7f7; }
+    .stat:last-child { border-right: none; }
+    .stat-val { font-size: 19px; font-weight: 700; color: #111827; line-height: 1.2; }
+    .stat-lbl { font-size: 10px; color: #6b7280; margin-top: 2px; }
+    .section { margin-bottom: 24px; }
+    .section:last-child { margin-bottom: 0; }
+    .sec-title { font-size: 13px; font-weight: 700; color: #111827; padding: 4px 0 4px 9px; border-left: 3px solid #2563eb; margin-bottom: 12px; }
+    .day-entry { margin-bottom: 16px; page-break-inside: avoid; }
+    .day-entry:last-child { margin-bottom: 0; }
+    .day-header { display: flex; align-items: baseline; gap: 10px; margin-bottom: 8px; padding-bottom: 6px; border-bottom: 2px solid #2563eb; }
+    .day-date { font-size: 15px; font-weight: 700; color: #111827; }
+    .day-effort { font-size: 13px; font-weight: 600; color: #2563eb; }
+    .day-summary { font-size: 11px; color: #6b7280; }
+    .work-items { display: flex; flex-direction: column; gap: 9px; }
+    .work-item-title { font-size: 12px; font-weight: 700; color: #111827; margin-bottom: 3px; }
+    .work-item-time { font-size: 11px; color: #9ca3af; margin-left: 5px; font-weight: 400; }
+    .detail-block { background: #f5f5f5; border-left: 3px solid #bbb; padding: 7px 12px; }
+    .detail-block ul { list-style: none; padding: 0; }
+    .detail-block ul li { font-size: 11px; color: #111827; line-height: 1.65; padding-left: 1.1em; text-indent: -1.1em; margin-bottom: 3px; }
+    .detail-block ul li:last-child { margin-bottom: 0; }
+    .detail-block ul li::before { content: "• "; color: #888; }
+    .detail-block code { font-family: 'SFMono-Regular', Consolas, monospace; font-size: 10px; background: rgba(0,0,0,0.08); padding: 1px 4px; border-radius: 2px; color: #111827; }
+    .tech-notes { margin-top: 6px; display: flex; flex-direction: column; gap: 4px; }
+    .tech-note { padding: 6px 10px; font-size: 11px; line-height: 1.6; border-left: 3px solid; }
+    .tech-note-lbl { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 2px; }
+    .tech-note p { color: #111827; }
+    .tech-note code { font-family: 'SFMono-Regular', Consolas, monospace; font-size: 10px; background: rgba(0,0,0,0.08); padding: 1px 3px; border-radius: 2px; }
+    .tech-note.issue   { background: #fafafa; border-color: #e53e3e; }
+    .tech-note.issue   .tech-note-lbl { color: #c53030; }
+    .tech-note.resolve { background: #fafafa; border-color: #38a169; }
+    .tech-note.resolve .tech-note-lbl { color: #276749; }
+    .tech-note.note    { background: #fafafa; border-color: #60a5fa; }
+    .tech-note.note    .tech-note-lbl { color: #2563eb; }
+    .del-table { width: 100%; border-collapse: collapse; }
+    .del-table th { text-align: left; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #6b7280; padding: 0 0 6px; border-bottom: 1px solid #374151; }
+    .del-table td { padding: 7px 0; border-bottom: 1px solid #e5e7eb; font-size: 11px; vertical-align: top; color: #111827; }
+    .del-table tr:last-child td { border-bottom: none; }
+    .del-table td:first-child { font-family: 'SFMono-Regular', Consolas, monospace; font-size: 11px; color: #111827; font-weight: 600; width: 160px; padding-right: 16px; }
+    .report-footer { margin-top: 20px; padding-top: 11px; border-top: 1px solid #e5e7eb; display: flex; justify-content: space-between; align-items: center; }
+    .footer-total { font-size: 13px; font-weight: 700; color: #1e3a8a; }
+    .footer-total .val { font-size: 17px; margin: 0 2px; }
+    .footer-note { font-size: 10px; color: #9ca3af; margin-left: 8px; font-weight: 400; }
+    .footer-date { font-size: 11px; color: #9ca3af; }
+    @media (max-width: 600px) { body { padding: 20px; } }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <div class="print-bar">
+    <button class="print-btn" onclick="window.print()">PDF として印刷</button>
+  </div>
+
+  <!-- Cover -->
+  <div class="cover">
+    <div class="cover-label">作業報告書</div>
+    <h1>openclaw-fortune 鑑定PDF・質問設計</h1>
+    <div class="cover-meta">
+      <div class="cover-meta-item">
+        <div class="cover-meta-label">依頼内容</div>
+        <div class="cover-meta-value">個別鑑定PDFテンプレート改修・質問フロー再設計</div>
+      </div>
+      <div class="cover-meta-item">
+        <div class="cover-meta-label">期間</div>
+        <div class="cover-meta-value">2026/03/23 〜 2026/03/25</div>
+      </div>
+      <div class="cover-meta-item">
+        <div class="cover-meta-label">ステータス</div>
+        <div class="cover-meta-value">稼働中</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stats -->
+  <div class="stats-row">
+    <div class="stat">
+      <div class="stat-val">3.0</div>
+      <div class="stat-lbl">累計工数 (day)</div>
+    </div>
+    <div class="stat">
+      <div class="stat-val">3</div>
+      <div class="stat-lbl">稼働日数</div>
+    </div>
+    <div class="stat">
+      <div class="stat-val">10</div>
+      <div class="stat-lbl">成果物</div>
+    </div>
+    <div class="stat">
+      <div class="stat-val">1</div>
+      <div class="stat-lbl">解消した障害</div>
+    </div>
+  </div>
+
+  <!-- Work Log -->
+  <div class="section">
+    <div class="sec-title">作業ログ</div>
+
+    <!-- 2026/03/23 -->
+    <div class="day-entry">
+      <div class="day-header">
+        <div class="day-date">2026年3月23日（月）</div>
+        <div class="day-effort">1.0 day</div>
+        <div class="day-summary">鑑定PDFテンプレート test3 大幅改修</div>
+      </div>
+      <div class="work-items">
+
+        <div class="work-item">
+          <div class="work-item-title">PDF背景色の境界線問題修正 <span class="work-item-time">~ 1h</span></div>
+          <div class="detail-block">
+            <ul>
+              <li><code>.section</code> の <code>background: transparent</code> を <code>#141428</code> に変更</li>
+              <li><code>html { background: #141428 }</code> 追加</li>
+              <li>P1の星空gradientを<code>::before</code>疑似要素に分離し背景色を統一</li>
+              <li>最終的にP1のgradient装飾を削除して全ページ同一背景色に</li>
+            </ul>
+            <div class="tech-notes">
+              <div class="tech-note issue">
+                <div class="tech-note-lbl">障害原因</div>
+                <p>Playwrightの<code>page.pdf()</code>で<code>print_background=True</code>でも、<code>transparent</code>セクションとbody背景の継ぎ目で色の境界線が発生</p>
+              </div>
+              <div class="tech-note resolve">
+                <div class="tech-note-lbl">対応結果</div>
+                <p>全要素に明示的に<code>#141428</code>を指定し、<code>transparent</code>を排除して解消</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="work-item">
+          <div class="work-item-title">P2「悩みの正体」改修 <span class="work-item-time">~ 1h</span></div>
+          <div class="detail-block">
+            <ul>
+              <li>見出し追加、段落を前半・後半に分割してスペース挿入</li>
+              <li>プルクォート（核心フレーズ）CSS実装</li>
+              <li>鍵のイラスト画像を<code>assets/illustrations/key-identity.png</code>に配置</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="work-item">
+          <div class="work-item-title">P3「星と数字が語るあなた」新設 <span class="work-item-time">~ 1.5h</span></div>
+          <div class="detail-block">
+            <ul>
+              <li>旧P3「なぜ今この時期に」を廃止、Test1のアイデアを採用</li>
+              <li>太陽星座・ライフパス・個人年数の3ブロック構成を実装</li>
+              <li>各ブロックにシンボル＋ラベル＋左ボーダー付き解説文</li>
+              <li>JSON構造を<code>s2_timing</code>から<code>s2_sun_sign</code>/<code>s2_life_path</code>/<code>s2_personal_year</code>に変更</li>
+              <li>星空イラスト<code>stars-numerology.png</code>配置</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="work-item">
+          <div class="work-item-title">P5「タロットが示す道」改修 <span class="work-item-time">~ 1h</span></div>
+          <div class="detail-block">
+            <ul>
+              <li>見出しを「愚者が示す道」→「タロットが示す道」に変更</li>
+              <li>タロットカード画像＋カード名＋位置＋キーワード表示を追加</li>
+              <li>本文に左ボーダー装飾追加</li>
+              <li>タロットカードキーワードマップ（22枚分）を<code>generate-reading-pdf.js</code>に追加</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="work-item">
+          <div class="work-item-title">P6「天運カレンダー」新設 <span class="work-item-time">~ 1.5h</span></div>
+          <div class="detail-block">
+            <ul>
+              <li>旧「いつ動くか」を「天運カレンダー」にリネーム</li>
+              <li>上部にサマリーカード2枚（好機日/注意日、日付横並び）</li>
+              <li>下部にカテゴリ別カレンダー（日付＋ラベル＋アドバイス）</li>
+              <li>JSON構造: <code>s5_key_dates</code>（good/caution配列）を新設</li>
+              <li>好機日はゴールド系、注意日は赤系で色分け</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="work-item">
+          <div class="work-item-title">全ページ共通CSS改修 <span class="work-item-time">~ 1h</span></div>
+          <div class="detail-block">
+            <ul>
+              <li>見出しをゴールドグラデーション＋グローに全ページ統一</li>
+              <li>フォントサイズ 15px→14px、行間 2.1→1.8 に調整</li>
+              <li>セクションpadding調整（38px→34px）</li>
+              <li>クレジットを最終ページのみに変更（<code>position: absolute; bottom</code>）</li>
+              <li>プロンプトに<code>&lt;strong&gt;</code>タグ使用ルール追加</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 2026/03/24 -->
+    <div class="day-entry">
+      <div class="day-header">
+        <div class="day-date">2026年3月24日（火）</div>
+        <div class="day-effort">1.0 day</div>
+        <div class="day-summary">P4・P7改修、イラスト配置、質問設計v2開始</div>
+      </div>
+      <div class="work-items">
+
+        <div class="work-item">
+          <div class="work-item-title">P4「あなたが持っている力」改修 <span class="work-item-time">~ 1h</span></div>
+          <div class="detail-block">
+            <ul>
+              <li>旧「パターン」→「あなたが持っている力」にリネーム</li>
+              <li>プルクォート（<code>s3_quote</code>）追加</li>
+              <li>段落を3→4に拡張</li>
+              <li>光球イラスト<code>mirror-pattern.png</code>配置</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="work-item">
+          <div class="work-item-title">P7 最終ページリデザイン <span class="work-item-time">~ 1h</span></div>
+          <div class="detail-block">
+            <ul>
+              <li>夜明けイラスト<code>dawn-closing.png</code>配置</li>
+              <li>メッセージをグラデーション枠カードに変更（上下ゴールドライン）</li>
+              <li>最終段落をゴールドイタリック表示</li>
+              <li>見出しをセンター＋下線装飾</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="work-item">
+          <div class="work-item-title">質問設計v2: work:career 設計 <span class="work-item-time">~ 3h</span></div>
+          <div class="detail-block">
+            <ul>
+              <li>Q1「相談したいテーマは？」全モジュール共通化</li>
+              <li>Q1: 今の仕事が合わない気がする / 独立・副業について / 働き始めたい・復帰したい / キャリアプランについて</li>
+              <li>独立・副業のみ4ステップ（Q2状況分岐→Q3選択→Q4自由記述）</li>
+              <li>Q2をQ1回答ごとに動的切り替え</li>
+              <li>Q3 hintをQ1ごとに最適化</li>
+              <li>Webリサーチ＋turningのRAGデータ（coaching_client_needs.json）を活用</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="work-item">
+          <div class="work-item-title">質問設計v2: work:people 設計 <span class="work-item-time">~ 2h</span></div>
+          <div class="detail-block">
+            <ul>
+              <li>Q1を占い向け「答えのない問い」に再設計: 相手の本音 / この人との相性 / いつ状況が変わるか / 我慢か離脱か</li>
+              <li>Q2を状況・感情ベースに（上司にどう思われているか等）</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 2026/03/25 -->
+    <div class="day-entry">
+      <div class="day-header">
+        <div class="day-date">2026年3月25日（水）</div>
+        <div class="day-effort">1.0 day</div>
+        <div class="day-summary">質問設計v2 恋愛・家族・友人 + 実装・デプロイ</div>
+      </div>
+      <div class="work-items">
+
+        <div class="work-item">
+          <div class="work-item-title">質問設計v2: love:start / love:partner / love:reunion <span class="work-item-time">~ 3h</span></div>
+          <div class="detail-block">
+            <ul>
+              <li>love:start サブカテゴリ名を「恋の始まり」→「片思い・出会い」に変更</li>
+              <li>love:partner Q1を「相手の気持ち/二人の未来/別れるべきか/二人の相性」に再設計（Q1間の被り解消）</li>
+              <li>love:reunion 状況ベースQ2導入（相手の今の気持ち、この恋を諦めるべきか）</li>
+              <li>Webリサーチで占い相談の実態を調査し選択肢に反映</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="work-item">
+          <div class="work-item-title">質問設計v2: relation:family / relation:friend <span class="work-item-time">~ 2h</span></div>
+          <div class="detail-block">
+            <ul>
+              <li>relation:family Q1: 家族の本音 / 干渉や束縛 / 離れたいけど罪悪感 / 居場所がない</li>
+              <li>relation:friend Q1: 友達の本音 / 距離を取るべきか / グループで居心地が悪い / 気を遣いすぎて疲れる</li>
+              <li>Q2ラベルを2種類に統一（「知りたいことは？」/「もう少し教えてください」）</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="work-item">
+          <div class="work-item-title">質問設計v2 実装・デプロイ <span class="work-item-time">~ 2h</span></div>
+          <div class="detail-block">
+            <ul>
+              <li><code>reading-questions.js</code> 全面書き換え（Q1→Q2動的マッピング構造）</li>
+              <li><code>handlers.js</code> Q2のQ1依存、独立・副業の4ステップ対応</li>
+              <li><code>reading-messages.js</code> <code>buildQ2</code>/<code>buildQ3</code>をデータオブジェクト受け取りに変更</li>
+              <li>Cloudflare Workers にデプロイ完了</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  <!-- /Work Log -->
+  </div>
+
+  <!-- Deliverables -->
+  <div class="section">
+    <div class="sec-title">成果物一覧</div>
+    <table class="del-table">
+      <thead>
+        <tr><th>ファイル</th><th>内容・役割</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>reading-template-test3.html</td><td>鑑定PDFテンプレート（全7ページ改修済み）</td></tr>
+        <tr><td>generate-reading-pdf.js</td><td>PDF生成スクリプト（タロットMeaningsマップ、新JSON構造対応）</td></tr>
+        <tr><td>reading-prompt-v3.md</td><td>鑑定プロンプト（strongタグルール追加）</td></tr>
+        <tr><td>key-identity.png</td><td>P2用イラスト（霧の中の金色の鍵）</td></tr>
+        <tr><td>stars-numerology.png</td><td>P3用イラスト（星空と星座線）</td></tr>
+        <tr><td>mirror-pattern.png</td><td>P4用イラスト（手のひらの光球）</td></tr>
+        <tr><td>dawn-closing.png</td><td>P7用イラスト（夜明けの地平線）</td></tr>
+        <tr><td>reading-questions.js</td><td>質問データv2（Q1→Q2動的マッピング、全7モジュール）</td></tr>
+        <tr><td>handlers.js</td><td>鑑定フローハンドラー（4ステップ対応）</td></tr>
+        <tr><td>question-redesign-v2.md</td><td>質問設計書（全モジュールのQ1/Q2/Q3設計）</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Footer -->
+  <div class="report-footer">
+    <div class="footer-total">
+      累計工数　<span class="val">3.0</span> day
+    </div>
+    <div class="footer-date">報告日: 2026/03/25</div>
+  </div>
+
+</div>
+</body>
+</html>
